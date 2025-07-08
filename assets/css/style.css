@@ -679,6 +679,69 @@ fieldset {
 	line-height: 1.6;
 }
 
+/* Core Competencies Card Design */
+.competency-card {
+	background-color: #f9f9f9;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	padding: 25px;
+	margin-bottom: 30px;
+	transition: all 0.3s ease-in-out;
+	height: 100%; /* Ensure cards in a row have the same height */
+}
+
+.competency-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.competency-card .icon {
+	font-size: 30px; /* Placeholder for icon styling */
+	color: #1C3F39;   /* Theme color */
+	margin-bottom: 15px;
+	display: block; /* Or inline-block if you prefer */
+	text-align: center; /* Center icon if it's block */
+}
+.competency-card .icon img { /* If using img tags for icons */
+	width: 40px; /* Adjust as needed */
+	height: 40px; /* Adjust as needed */
+	margin-bottom: 15px;
+}
+
+
+.competency-card h5 {
+	font-size: 20px; /* Slightly larger for card titles */
+	color: #222;
+	margin-bottom: 10px;
+	font-weight: 600; /* Make title bolder */
+}
+
+.competency-card p {
+	font-size: 15px;
+	color: #555;
+	line-height: 1.7;
+	margin-bottom: 0; /* Remove bottom margin if it's the last element */
+}
+
+.competency-card .read-more-btn {
+	display: inline-block;
+	margin-top: 15px;
+	color: #1C3F39;
+	font-weight: 500;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.competency-card .read-more-btn:hover {
+	color: #C9F31D;
+	text-decoration: underline;
+}
+.competency-card .read-more-btn i {
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+
 /* Removed spercent and skillbar styles as they are not used with the new content */
 
 .ab-content{
