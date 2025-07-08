@@ -500,9 +500,13 @@ fieldset {
 
 	
 }
-.home-banner,
+.home-banner{
+	min-height: 650px; /* min-height for flexibility */
+	display: flex; /* enable flexbox */
+	align-items: center; /* vertically center content */
+}
 .home_banner_content{
-	height: 750px;
+	/* height: 750px; */ /* Remove fixed height or adjust as needed */
 }
 .home-banner .social_link {
 	position: absolute;

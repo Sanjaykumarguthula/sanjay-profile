@@ -12,9 +12,23 @@ Version      : 1.0
 		jQuery(document).ready(function($) {
 
 			/*Counter */
-			$('.single-counter h4').counterUp({
-				delay: 10,
-				time: 1000
+			$('.single-counter h4').each(function() {
+				var $this = $(this);
+				var countTo = $this.attr('data-count');
+				$({ countNum: $this.text()}).animate({
+					countNum: countTo
+				  },
+				  {
+					duration: 1000, // Animation time
+					easing:'linear',
+					step: function() {
+					  $this.text(Math.floor(this.countNum));
+					},
+					complete: function() {
+					  $this.text(this.countNum); // Ensure final number is accurate
+					  // Optionally, add back the plus or M+ symbols here if needed, or handle in HTML
+					}
+				  });
 			});
 			
 			/* Active Menu */
