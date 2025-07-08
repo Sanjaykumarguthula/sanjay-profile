@@ -15,19 +15,23 @@ Version      : 1.0
 			$('.single-counter h4').each(function() {
 				var $this = $(this);
 				var countTo = $this.attr('data-count');
-				var symbol = $this.next('.counter-symbol').text(); // Get the symbol text
+				var symbol = $this.next('.counter-symbol').text();
 
-				$({ countNum: 0}).animate({ // Start animation from 0 or an initial value
+				// Set initial text to 0 or a placeholder if needed, to avoid NaN flash
+				$this.text('0');
+
+				$({ countNum: 0}).animate({
 					countNum: countTo
 				  },
 				  {
-					duration: 1000, // Animation time
+					duration: 1000,
 					easing:'linear',
 					step: function() {
 					  $this.text(Math.floor(this.countNum));
 					},
 					complete: function() {
-					  $this.text(this.countNum + symbol); // Append the symbol after animation
+					  // Ensure the final text is exactly the number plus the symbol
+					  $this.text(countTo + symbol);
 					}
 				  });
 			});
