@@ -15,23 +15,23 @@ Version      : 1.0
 			$('.single-counter h4').each(function() {
 				var $this = $(this);
 				var countTo = $this.attr('data-count');
-				var symbol = $this.next('.counter-symbol').text();
+				// var symbol = $this.next('.counter-symbol').text(); // Symbol is already in the span, not needed here
 
-				// Set initial text to 0 or a placeholder if needed, to avoid NaN flash
-				$this.text('0');
+				$this.text('0'); // Initialize h4 text to '0' to prevent NaN flash
 
 				$({ countNum: 0}).animate({
-					countNum: countTo
+					countNum: parseFloat(countTo) // Ensure countTo is a number for animation
 				  },
 				  {
 					duration: 1000,
 					easing:'linear',
 					step: function() {
-					  $this.text(Math.floor(this.countNum));
+					  $this.text(Math.floor(this.countNum)); // Update h4 with animated number
 					},
 					complete: function() {
-					  // Ensure the final text is exactly the number plus the symbol
-					  $this.text(countTo + symbol);
+					  // On complete, the h4 should have the final number from data-count.
+					  // The symbol is already visually next to it in the span.
+					  $this.text(countTo);
 					}
 				  });
 			});
