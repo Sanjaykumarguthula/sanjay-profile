@@ -12,9 +12,28 @@ Version      : 1.0
 		jQuery(document).ready(function($) {
 
 			/*Counter */
-			$('.single-counter h4').counterUp({
-				delay: 10,
-				time: 1000
+			$('.single-counter h4').each(function() {
+				var $this = $(this);
+				var countTo = $this.attr('data-count');
+				var symbol = $this.next('.counter-symbol').text();
+
+				// Set initial text to 0 or a placeholder if needed, to avoid NaN flash
+				$this.text('0');
+
+				$({ countNum: 0}).animate({
+					countNum: countTo
+				  },
+				  {
+					duration: 1000,
+					easing:'linear',
+					step: function() {
+					  $this.text(Math.floor(this.countNum));
+					},
+					complete: function() {
+					  // Ensure the final text is exactly the number plus the symbol
+					  $this.text(countTo + symbol);
+					}
+				  });
 			});
 			
 			/* Active Menu */
