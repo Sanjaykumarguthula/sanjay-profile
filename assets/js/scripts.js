@@ -15,7 +15,9 @@ Version      : 1.0
 			$('.single-counter h4').each(function() {
 				var $this = $(this);
 				var countTo = $this.attr('data-count');
-				$({ countNum: $this.text()}).animate({
+				var symbol = $this.next('.counter-symbol').text(); // Get the symbol text
+
+				$({ countNum: 0}).animate({ // Start animation from 0 or an initial value
 					countNum: countTo
 				  },
 				  {
@@ -25,8 +27,7 @@ Version      : 1.0
 					  $this.text(Math.floor(this.countNum));
 					},
 					complete: function() {
-					  $this.text(this.countNum); // Ensure final number is accurate
-					  // Optionally, add back the plus or M+ symbols here if needed, or handle in HTML
+					  $this.text(this.countNum + symbol); // Append the symbol after animation
 					}
 				  });
 			});
