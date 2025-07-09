@@ -7,10 +7,11 @@ const toolsData = [
         // url: "#word-counter-tool" // No longer primary navigation, handled by JS
     },
     {
+        id: "jsonValidatorToolSection", // Matches the ID of the HTML section
         name: "JSON Validator",
         category: "Developer Tools",
         description: "Validates and formats JSON input. Great for developers.",
-        url: "#json-validator-tool"
+        // url: "#json-validator-tool" // JS handled
     },
     {
         name: "Image Compressor",
@@ -175,33 +176,38 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- End Word Counter Logic ---
 
     // --- Tool Navigation Logic ---
-    const wordCounterToolSection = document.getElementById('wordCounterToolSection');
-    const backToToolsBtn = document.getElementById('backToToolsBtn');
+    const allToolSections = document.querySelectorAll('.tool-content .row[id$="ToolSection"]'); // Selects all tool sections based on ID pattern
+    const backToToolsBtns = document.querySelectorAll('.back-to-tools-btn'); // Select all back buttons by class
 
-    function showToolSection(toolId) {
-        // Hide all tool sections first (if more are added later)
-        if (wordCounterToolSection) wordCounterToolSection.style.display = 'none';
-        // Potentially loop through a list of all tool section IDs if many tools
-
-        // Hide tool cards container
+    function showToolSection(toolIdToShow) {
+        // Hide tool cards container and search bar
         if (toolCardsContainer) toolCardsContainer.style.display = 'none';
+        if (searchInput) searchInput.closest('.row').style.display = 'none';
+
+        // Hide all tool sections
+        allToolSections.forEach(section => {
+            section.style.display = 'none';
+        });
 
         // Show the selected tool section
-        const sectionToShow = document.getElementById(toolId);
+        const sectionToShow = document.getElementById(toolIdToShow);
         if (sectionToShow) {
-            sectionToShow.style.display = 'block'; // Or 'flex' if it's a flex container
+            sectionToShow.style.display = 'block'; // Or 'flex' if it's a flex container (Bootstrap row)
         } else {
-            console.warn(`Tool section with ID "${toolId}" not found.`);
+            console.warn(`Tool section with ID "${toolIdToShow}" not found.`);
             showToolsList(); // Fallback to tools list if section not found
         }
     }
 
     function showToolsList() {
-        if (wordCounterToolSection) wordCounterToolSection.style.display = 'none';
-        // Potentially loop through and hide all other specific tool sections
+        // Hide all tool sections
+        allToolSections.forEach(section => {
+            section.style.display = 'none';
+        });
 
+        // Show tool cards container and search bar
         if (toolCardsContainer) toolCardsContainer.style.display = 'flex'; // Bootstrap .row is display:flex
-         if (searchInput) searchInput.closest('.row').style.display = 'flex'; // Show search bar
+        if (searchInput) searchInput.closest('.row').style.display = 'flex';
     }
 
     // Event listener for "Use Now" buttons (delegated from the container)
@@ -210,22 +216,63 @@ document.addEventListener('DOMContentLoaded', function () {
             const target = event.target;
             if (target.classList.contains('btn-use-now')) {
                 const toolId = target.getAttribute('data-tool-id');
-                if (toolId === 'wordCounterToolSection') { // Explicitly check for word counter
-                    if (searchInput) searchInput.closest('.row').style.display = 'none'; // Hide search bar
-                    showToolSection(toolId);
-                } else if (toolId) {
-                    // Placeholder for other tools:
-                    // Potentially show a "Tool not yet implemented" message or navigate differently
-                    alert(`Tool "${toolId}" selected. Implementation pending.`);
-                    // showToolSection(toolId); // Uncomment if you have other sections ready
+                if (toolId) {
+                    const toolDataEntry = toolsData.find(t => t.id === toolId || t.name.toLowerCase().replace(/\s+/g, '-') === toolId);
+                    if (toolDataEntry && document.getElementById(toolId)) { // Check if section exists
+                        showToolSection(toolId);
+                    } else {
+                         alert(`Tool "${toolId}" selected. Implementation pending or section not found.`);
+                    }
                 }
             }
         });
     }
 
-    // Event listener for "Back to Tools" button
-    if (backToToolsBtn) {
-        backToToolsBtn.addEventListener('click', showToolsList);
+    // Event listener for all "Back to Tools" buttons
+    if (backToToolsBtns) {
+        backToToolsBtns.forEach(btn => {
+            btn.addEventListener('click', showToolsList);
+        });
     }
     // --- End Tool Navigation Logic ---
+
+    // --- JSON Validator Logic ---
+    const jsonInputArea = document.getElementById('jsonInputArea');
+    const validateJsonBtn = document.getElementById('validateJsonBtn');
+    const jsonResultArea = document.getElementById('jsonResultArea');
+    const formattedJsonContainer = document.getElementById('formattedJsonContainer');
+    const formattedJsonOutput = document.getElementById('formattedJsonOutput');
+
+    function handleJsonValidation() {
+        if (!jsonInputArea || !jsonResultArea || !formattedJsonOutput || !formattedJsonContainer) return;
+
+        const jsonString = jsonInputArea.value.trim();
+        jsonResultArea.innerHTML = ''; // Clear previous results
+        formattedJsonOutput.textContent = '';
+        formattedJsonContainer.style.display = 'none';
+        jsonResultArea.className = 'mt-3 alert'; // Reset classes, keep margin
+
+        if (!jsonString) {
+            jsonResultArea.classList.add('alert-warning');
+            jsonResultArea.textContent = 'Input is empty. Please paste some JSON.';
+            return;
+        }
+
+        try {
+            const parsedJson = JSON.parse(jsonString);
+            jsonResultArea.classList.add('alert-success');
+            jsonResultArea.textContent = 'Valid JSON!';
+
+            formattedJsonOutput.textContent = JSON.stringify(parsedJson, null, 2); // Pretty print with 2 spaces
+            formattedJsonContainer.style.display = 'block';
+        } catch (error) {
+            jsonResultArea.classList.add('alert-danger');
+            jsonResultArea.textContent = `Invalid JSON: ${error.message}`;
+        }
+    }
+
+    if (validateJsonBtn) {
+        validateJsonBtn.addEventListener('click', handleJsonValidation);
+    }
+    // --- End JSON Validator Logic ---
 });
