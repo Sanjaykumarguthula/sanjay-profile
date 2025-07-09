@@ -1,9 +1,10 @@
 const toolsData = [
     {
+        id: "wordCounterToolSection", // Matches the ID of the HTML section
         name: "Word Counter",
         category: "Text Analysis",
         description: "Counts words and characters in text input. Useful for marketers and writers.",
-        url: "#word-counter-tool" // Placeholder URL
+        // url: "#word-counter-tool" // No longer primary navigation, handled by JS
     },
     {
         name: "JSON Validator",
@@ -134,8 +135,9 @@ document.addEventListener('DOMContentLoaded', function () {
             cardElement.innerHTML = `
                 <h5>${tool.name}</h5>
                 <p>${tool.description}</p>
-                <a href="${tool.url}" class="btn btn-use-now">Use Now</a>
+                <button data-tool-id="${tool.id || tool.name.toLowerCase().replace(/\s+/g, '-')}" class="btn btn-use-now">Use Now</button>
             `;
+            // Removed direct href, will handle navigation via JS
 
             cardWrapper.appendChild(cardElement);
             toolCardsContainer.appendChild(cardWrapper);
@@ -148,4 +150,82 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // The filterTools function (defined above) will work by showing/hiding these generated cards.
+
+    // --- Word Counter Logic ---
+    const wordCounterInput = document.getElementById('wordCounterInput');
+    const wordCountOutput = document.getElementById('wordCountOutput');
+    const charCountOutput = document.getElementById('charCountOutput');
+
+    function updateCounts() {
+        if (!wordCounterInput || !wordCountOutput || !charCountOutput) return;
+
+        const text = wordCounterInput.value;
+
+        // Character count
+        charCountOutput.textContent = text.length;
+
+        // Word count
+        const words = text.trim().split(/\s+/).filter(word => word !== "");
+        wordCountOutput.textContent = words.length === 1 && words[0] === "" ? 0 : words.length;
+    }
+
+    if (wordCounterInput) {
+        wordCounterInput.addEventListener('input', updateCounts);
+    }
+    // --- End Word Counter Logic ---
+
+    // --- Tool Navigation Logic ---
+    const wordCounterToolSection = document.getElementById('wordCounterToolSection');
+    const backToToolsBtn = document.getElementById('backToToolsBtn');
+
+    function showToolSection(toolId) {
+        // Hide all tool sections first (if more are added later)
+        if (wordCounterToolSection) wordCounterToolSection.style.display = 'none';
+        // Potentially loop through a list of all tool section IDs if many tools
+
+        // Hide tool cards container
+        if (toolCardsContainer) toolCardsContainer.style.display = 'none';
+
+        // Show the selected tool section
+        const sectionToShow = document.getElementById(toolId);
+        if (sectionToShow) {
+            sectionToShow.style.display = 'block'; // Or 'flex' if it's a flex container
+        } else {
+            console.warn(`Tool section with ID "${toolId}" not found.`);
+            showToolsList(); // Fallback to tools list if section not found
+        }
+    }
+
+    function showToolsList() {
+        if (wordCounterToolSection) wordCounterToolSection.style.display = 'none';
+        // Potentially loop through and hide all other specific tool sections
+
+        if (toolCardsContainer) toolCardsContainer.style.display = 'flex'; // Bootstrap .row is display:flex
+         if (searchInput) searchInput.closest('.row').style.display = 'flex'; // Show search bar
+    }
+
+    // Event listener for "Use Now" buttons (delegated from the container)
+    if (toolCardsContainer) {
+        toolCardsContainer.addEventListener('click', function(event) {
+            const target = event.target;
+            if (target.classList.contains('btn-use-now')) {
+                const toolId = target.getAttribute('data-tool-id');
+                if (toolId === 'wordCounterToolSection') { // Explicitly check for word counter
+                    if (searchInput) searchInput.closest('.row').style.display = 'none'; // Hide search bar
+                    showToolSection(toolId);
+                } else if (toolId) {
+                    // Placeholder for other tools:
+                    // Potentially show a "Tool not yet implemented" message or navigate differently
+                    alert(`Tool "${toolId}" selected. Implementation pending.`);
+                    // showToolSection(toolId); // Uncomment if you have other sections ready
+                }
+            }
+        });
+    }
+
+    // Event listener for "Back to Tools" button
+    if (backToToolsBtn) {
+        backToToolsBtn.addEventListener('click', showToolsList);
+    }
+    // --- End Tool Navigation Logic ---
 });

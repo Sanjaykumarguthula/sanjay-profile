@@ -2171,6 +2171,59 @@ li.comment{
     padding-left: 15px; /* Standard Bootstrap gutter */
     padding-right: 15px; /* Standard Bootstrap gutter */
 }
+
+/* Word Counter Tool Specific Styles */
+#wordCounterToolSection .tool-container.card {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+#wordCounterToolSection .card-title {
+    color: #1C3F39; /* Using existing dark green color */
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#wordCounterInput {
+    min-height: 150px; /* Ensure a decent default height */
+    font-size: 1rem;
+    border-color: #ccc;
+}
+
+#wordCounterInput:focus {
+    border-color: #1C3F39; /* Dark green border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(28, 63, 57, 0.25); /* Subtle focus shadow */
+}
+
+#wordCounterToolSection .form-group p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+#wordCounterToolSection .row.mt-3 p { /* Targeting the output paragraphs */
+    font-size: 1.1rem;
+    color: #333;
+}
+
+#wordCounterToolSection .row.mt-3 p strong {
+    color: #1C3F39; /* Dark green for the labels "Word Count:", "Character Count:" */
+}
+
+#wordCountOutput, #charCountOutput {
+    font-weight: 600;
+    color: #C9F31D; /* Accent color for the numbers */
+    background-color: #1c3f39; /* Dark background for contrast */
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#backToToolsBtn {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+}
+
+
 @media only screen and (max-width:1366px) { 
 	#navigation {
 		padding: 30px 40px;
