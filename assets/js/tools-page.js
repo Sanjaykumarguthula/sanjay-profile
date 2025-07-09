@@ -17,13 +17,14 @@ const toolsData = [
         name: "Image Compressor",
         category: "Web Optimization",
         description: "Compresses images client-side. Useful for web optimization.",
-        url: "#image-compressor-tool"
+        url: "#image-compressor-tool" // Placeholder, will need an ID when implemented
     },
     {
+        id: "seoMetaTagCheckerToolSection", // Matches the ID of the HTML section
         name: "SEO Meta Tag Checker",
         category: "SEO",
         description: "Analyzes a URL’s meta tags. Client-side or via API.",
-        url: "#seo-meta-tag-checker-tool"
+        // url: "#seo-meta-tag-checker-tool" // JS handled
     },
     {
         name: "Color Palette Generator",
@@ -275,4 +276,100 @@ document.addEventListener('DOMContentLoaded', function () {
         validateJsonBtn.addEventListener('click', handleJsonValidation);
     }
     // --- End JSON Validator Logic ---
+
+    // --- SEO Meta Tag Checker Logic ---
+    const htmlInputArea = document.getElementById('htmlInputArea');
+    const analyzeMetaTagsBtn = document.getElementById('analyzeMetaTagsBtn');
+    const metaTagsResultArea = document.getElementById('metaTagsResultArea');
+
+    function displayMetaResult(label, value, isMissing = false) {
+        const item = document.createElement('div');
+        item.classList.add('meta-tag-item', 'mb-2');
+
+        const labelEl = document.createElement('strong');
+        labelEl.textContent = `${label}: `;
+        item.appendChild(labelEl);
+
+        if (isMissing) {
+            const valueEl = document.createElement('span');
+            valueEl.textContent = 'Not found';
+            valueEl.classList.add('text-danger');
+            item.appendChild(valueEl);
+        } else if (value) {
+            const valueEl = document.createElement('span');
+            valueEl.textContent = value;
+            valueEl.classList.add('text-success');
+            item.appendChild(valueEl);
+        } else { // Found but empty or null content
+            const valueEl = document.createElement('span');
+            valueEl.textContent = 'Found but empty';
+            valueEl.classList.add('text-warning');
+            item.appendChild(valueEl);
+        }
+        metaTagsResultArea.appendChild(item);
+    }
+
+    function handleMetaTagAnalysis() {
+        if (!htmlInputArea || !metaTagsResultArea) return;
+
+        const htmlString = htmlInputArea.value.trim();
+        metaTagsResultArea.innerHTML = ''; // Clear previous results
+
+        if (!htmlString) {
+            const warning = document.createElement('p');
+            warning.textContent = 'HTML input is empty. Please paste some HTML source code.';
+            warning.className = 'alert alert-warning';
+            metaTagsResultArea.appendChild(warning);
+            return;
+        }
+
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlString, "text/html");
+
+            // Title
+            displayMetaResult('Title', doc.title || null, !doc.title);
+
+            // Meta Description
+            const description = doc.querySelector('meta[name="description"]');
+            displayMetaResult('Meta Description', description?.content || null, !description);
+
+            // Meta Keywords
+            const keywords = doc.querySelector('meta[name="keywords"]');
+            displayMetaResult('Meta Keywords', keywords?.content || null, !keywords);
+
+            // Viewport
+            const viewport = doc.querySelector('meta[name="viewport"]');
+            displayMetaResult('Viewport', viewport?.content || null, !viewport);
+
+            // Open Graph Tags
+            const ogTitle = doc.querySelector('meta[property="og:title"]');
+            displayMetaResult('Open Graph Title (og:title)', ogTitle?.content || null, !ogTitle);
+
+            const ogDescription = doc.querySelector('meta[property="og:description"]');
+            displayMetaResult('Open Graph Description (og:description)', ogDescription?.content || null, !ogDescription);
+
+            const ogImage = doc.querySelector('meta[property="og:image"]');
+            displayMetaResult('Open Graph Image (og:image)', ogImage?.content || null, !ogImage);
+
+            const ogUrl = doc.querySelector('meta[property="og:url"]');
+            displayMetaResult('Open Graph URL (og:url)', ogUrl?.content || null, !ogUrl);
+
+            const ogType = doc.querySelector('meta[property="og:type"]');
+            displayMetaResult('Open Graph Type (og:type)', ogType?.content || null, !ogType);
+
+            // Add more tags as needed (e.g., Twitter cards, canonical)
+
+        } catch (error) {
+            const errorMsg = document.createElement('p');
+            errorMsg.textContent = `Error parsing HTML: ${error.message}`;
+            errorMsg.className = 'alert alert-danger';
+            metaTagsResultArea.appendChild(errorMsg);
+        }
+    }
+
+    if (analyzeMetaTagsBtn) {
+        analyzeMetaTagsBtn.addEventListener('click', handleMetaTagAnalysis);
+    }
+    // --- End SEO Meta Tag Checker Logic ---
 });

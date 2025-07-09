@@ -2298,6 +2298,90 @@ li.comment{
     background-color: #f0f0f0; /* Slightly different background for <pre> */
 }
 
+/* SEO Meta Tag Checker Tool Specific Styles */
+#seoMetaTagCheckerToolSection .tool-container.card {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+#seoMetaTagCheckerToolSection .card-title {
+    color: #1C3F39;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#htmlInputArea {
+    min-height: 250px; /* Larger area for HTML source */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    border-color: #ccc;
+    background-color: #fdfdfd;
+}
+
+#htmlInputArea:focus {
+    border-color: #1C3F39;
+    box-shadow: 0 0 0 0.2rem rgba(28, 63, 57, 0.25);
+}
+
+#analyzeMetaTagsBtn {
+    background-color: #1C3F39;
+    border-color: #1C3F39;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+#analyzeMetaTagsBtn:hover,
+#analyzeMetaTagsBtn:focus {
+    background-color: #C9F31D;
+    border-color: #C9F31D;
+    color: #1C3F39;
+}
+
+#metaTagsResultArea .meta-tag-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+#metaTagsResultArea .meta-tag-item:last-child {
+    border-bottom: none;
+}
+
+#metaTagsResultArea .meta-tag-item strong {
+    color: #1C3F39; /* Dark green for labels */
+    margin-right: 5px;
+    display: inline-block;
+    min-width: 200px; /* Align values somewhat */
+}
+
+#metaTagsResultArea .meta-tag-item .text-success {
+    color: #28a745 !important; /* Bootstrap success green */
+}
+
+#metaTagsResultArea .meta-tag-item .text-danger {
+    color: #dc3545 !important; /* Bootstrap danger red */
+    font-style: italic;
+}
+
+#metaTagsResultArea .meta-tag-item .text-warning {
+    color: #ffc107 !important; /* Bootstrap warning yellow */
+    font-style: italic;
+}
+
+#metaTagsResultArea .alert { /* For general messages like empty input */
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+#metaTagsResultArea .alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+#metaTagsResultArea .alert-danger { /* For parsing error */
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
 
 @media only screen and (max-width:1366px) { 
 	#navigation {
