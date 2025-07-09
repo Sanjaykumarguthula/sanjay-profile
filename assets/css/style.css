@@ -552,14 +552,112 @@ fieldset {
 }
 
 .home_banner_content h2 {
-	font-size: 80px;
+	font-size: 70px; /* Reduced from 80px */
+	line-height: 1.15; /* Added for better control */
 	color: #fff;
 	margin-bottom: 20px;
 }
+.home_banner_content h3 {
+    font-size: 42px; /* Reduced from 48px */
+    color: #fff;
+    margin-bottom: 20px; /* Adjusted from 25px */
+}
+.home_banner_content p {
+    margin-bottom: 35px; /* Reduced from 45px */
+    padding-right: 15%; /* Add padding to prevent text from hitting the far right if container is wide */
+}
+
 .home_banner_content h2 span{
 	color: #C9F31D;
 }
-.home_banner_content p{
+
+/* Specific adjustments for very large screens if needed, otherwise the above applies */
+@media (min-width: 1600px) {
+	.home_banner_content h2 {
+		font-size: 76px; /* Can be slightly larger on very wide screens */
+	}
+    .home_banner_content h3 {
+		font-size: 46px;
+	}
+    .home_banner_content p {
+        padding-right: 20%;
+    }
+}
+
+/* Keep existing tablet and mobile responsive adjustments below this */
+@media (max-width: 991.98px) {
+    .home_banner_content {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+    }
+    .home_banner_content h3 {
+        font-size: 32px;
+    }
+    .home_banner_content h2 {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+    .home_banner_content p {
+        font-size: 16px;
+        padding-right: 0; /* Reset padding for centered text */
+    }
+    /* Hide decorative shapes that might interfere with centered text */
+    .home-banner .bshape_1,
+    .home-banner .bshape_2,
+    .home-banner .bshape_3,
+    .home-banner .about-con {
+        display: none;
+    }
+    .home-banner .social_link {
+        display: none;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .home-banner {
+        padding: 80px 0;
+        min-height: auto;
+    }
+    .home_banner_content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .home_banner_content h3 {
+        font-size: 28px;
+    }
+    .home_banner_content h2 {
+        font-size: 40px;
+    }
+    .home_banner_content p {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .home_banner_content h3 {
+        font-size: 24px;
+    }
+    .home_banner_content h2 {
+        font-size: 32px;
+    }
+    .home_banner_content p {
+        font-size: 14px;
+    }
+    .yellow_btn, .normal_btn {
+        padding: 8px 20px;
+        font-size: 15px;
+    }
+    .home_banner_content .normal_btn {
+	margin-left: 10px;
+	}
+}
+
+
+/* .home_banner_content p{
 	margin-bottom: 45px;
 }
 .home_banner_content .normal_btn{
