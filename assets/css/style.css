@@ -262,6 +262,10 @@ fieldset {
 
 .section-title{margin-bottom:60px;}
 
+.portfolio .section-title {
+	margin-bottom: 30px; /* Reduced gap for portfolio section */
+}
+
 .section-title{
 	position: relative;
 }
