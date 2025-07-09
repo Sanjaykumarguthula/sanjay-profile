@@ -130,6 +130,61 @@
 				<div id="toolCardsContainer" class="row">
 					<!-- Tool cards will be dynamically inserted here by JavaScript -->
 				</div>
+
+				<!-- Word Counter Tool Section (Hidden by default) -->
+				<div id="wordCounterToolSection" class="row mt-5" style="display: none;">
+					<div class="col-12">
+						<div class="tool-container card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-center mb-3">
+									<h4 class="card-title">Word Counter</h4>
+									<button id="backToToolsBtn" class="btn btn-sm btn-outline-secondary back-to-tools-btn">Back to Tools</button>
+								</div>
+								<p>Enter your text below to count words and characters.</p>
+								<div class="form-group">
+									<textarea id="wordCounterInput" class="form-control" rows="10" placeholder="Start typing or paste your text here..."></textarea>
+								</div>
+								<div class="row mt-3">
+									<div class="col-md-6">
+										<p class="mb-0"><strong>Word Count:</strong> <span id="wordCountOutput">0</span></p>
+									</div>
+									<div class="col-md-6">
+										<p class="mb-0"><strong>Character Count:</strong> <span id="charCountOutput">0</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Word Counter Tool Section -->
+
+				<!-- JSON Validator Tool Section (Hidden by default) -->
+				<div id="jsonValidatorToolSection" class="row mt-5" style="display: none;">
+					<div class="col-12">
+						<div class="tool-container card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-center mb-3">
+									<h4 class="card-title">JSON Validator & Formatter</h4>
+									<button id="backToToolsBtnJson" class="btn btn-sm btn-outline-secondary back-to-tools-btn">Back to Tools</button>
+								</div>
+								<p>Paste your JSON data below to validate and format it.</p>
+								<div class="form-group">
+									<textarea id="jsonInputArea" class="form-control" rows="10" placeholder="Enter JSON here..."></textarea>
+								</div>
+								<button id="validateJsonBtn" class="btn btn-primary mt-2 mb-3">Validate & Format JSON</button>
+								<div id="jsonResultArea" class="mt-3">
+									<!-- Validation messages will appear here -->
+								</div>
+								<div id="formattedJsonContainer" class="mt-3" style="display: none;">
+									<h5>Formatted JSON:</h5>
+									<pre id="formattedJsonOutput" class="bg-light p-3 border rounded"></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End JSON Validator Tool Section -->
+
 			</div>
 		</section>
 		<!-- END Tools Content -->

@@ -2163,6 +2163,138 @@ li.comment{
     padding-left: 15px; /* Standard Bootstrap gutter */
     padding-right: 15px; /* Standard Bootstrap gutter */
 }
+
+/* Word Counter Tool Specific Styles */
+#wordCounterToolSection .tool-container.card {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+#wordCounterToolSection .card-title {
+    color: #1C3F39; /* Using existing dark green color */
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#wordCounterInput {
+    min-height: 150px; /* Ensure a decent default height */
+    font-size: 1rem;
+    border-color: #ccc;
+}
+
+#wordCounterInput:focus {
+    border-color: #1C3F39; /* Dark green border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(28, 63, 57, 0.25); /* Subtle focus shadow */
+}
+
+#wordCounterToolSection .form-group p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+#wordCounterToolSection .row.mt-3 p { /* Targeting the output paragraphs */
+    font-size: 1.1rem;
+    color: #333;
+}
+
+#wordCounterToolSection .row.mt-3 p strong {
+    color: #1C3F39; /* Dark green for the labels "Word Count:", "Character Count:" */
+}
+
+#wordCountOutput, #charCountOutput {
+    font-weight: 600;
+    color: #C9F31D; /* Accent color for the numbers */
+    background-color: #1c3f39; /* Dark background for contrast */
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#backToToolsBtn {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+}
+
+/* JSON Validator Tool Specific Styles */
+#jsonValidatorToolSection .tool-container.card {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+#jsonValidatorToolSection .card-title {
+    color: #1C3F39; /* Using existing dark green color */
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#jsonInputArea {
+    min-height: 200px; /* Decent height for JSON input */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* Monospace font for code */
+    font-size: 0.9rem;
+    border-color: #ccc;
+    background-color: #fdfdfd;
+}
+
+#jsonInputArea:focus {
+    border-color: #1C3F39;
+    box-shadow: 0 0 0 0.2rem rgba(28, 63, 57, 0.25);
+}
+
+#validateJsonBtn {
+    background-color: #1C3F39; /* Dark green */
+    border-color: #1C3F39;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+#validateJsonBtn:hover,
+#validateJsonBtn:focus {
+    background-color: #C9F31D; /* Yellow accent for hover */
+    border-color: #C9F31D;
+    color: #1C3F39;
+}
+
+#jsonResultArea {
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+#jsonResultArea.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+#jsonResultArea.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+#jsonResultArea.alert-warning { /* For empty input message */
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+#formattedJsonContainer h5 {
+    font-family: 'Rajdhani', sans-serif;
+    color: #1C3F39;
+    margin-bottom: 0.5rem;
+}
+
+#formattedJsonOutput {
+    min-height: 100px;
+    max-height: 400px; /* Prevent very long outputs from breaking page layout */
+    overflow-y: auto; /* Add scroll for long outputs */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* Monospace font */
+    font-size: 0.85rem;
+    white-space: pre; /* Keep whitespace and newlines */
+    background-color: #f0f0f0; /* Slightly different background for <pre> */
+}
+
+
 @media only screen and (max-width:1366px) { 
 	#navigation {
 		padding: 30px 40px;
