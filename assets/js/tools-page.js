@@ -219,10 +219,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 const toolId = target.getAttribute('data-tool-id');
                 if (toolId) {
                     const toolDataEntry = toolsData.find(t => t.id === toolId || t.name.toLowerCase().replace(/\s+/g, '-') === toolId);
-                    if (toolDataEntry && document.getElementById(toolId)) { // Check if section exists
+                    if (toolDataEntry && document.getElementById(toolId)) { // Check if an implemented section exists
                         showToolSection(toolId);
-                    } else {
-                         alert(`Tool "${toolId}" selected. Implementation pending or section not found.`);
+                    } else if (toolId) { // If toolId exists but no section, it's a placeholder for an unimplemented tool
+                        window.location.href = 'coming-soon.html';
                     }
                 }
             }
