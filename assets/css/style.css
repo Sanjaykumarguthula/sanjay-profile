@@ -262,6 +262,10 @@ fieldset {
 
 .section-title{margin-bottom:60px;}
 
+.portfolio .section-title {
+	margin-bottom: 30px; /* Reduced gap for portfolio section */
+}
+
 .section-title{
 	position: relative;
 }
@@ -1076,9 +1080,6 @@ img{
 .testimonials .owl-item.active.center .testimonial{
 	background: #fff;
 }
-.testimonials .owl-item.active.center .testimonial .avarage_rating{
-	color: #444;
-}
 .testimonials .owl-item.active.center .testimonial .trating{
 	color: #1C3F39;
 }
@@ -1098,11 +1099,6 @@ img{
 }
 .testimonial span{
 	display: block;
-}
-.testimonial .avarage_rating{
-	font-family: 'Rajdhani', sans-serif;
-	font-weight: 500;
-	font-size: 17px;
 }
 .testi-bottom {
 	display: block;

@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- SITE TITLE -->
-		<title>Free Tools - Sanjay Guthula</title>
+		<title>Blog - Sanjay Guthula</title>
 		<!-- Latest Bootstrap min CSS -->
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<!-- Google Font -->
@@ -54,7 +54,7 @@
 				<div class="row">
 					<div class="col-20 align-self-center">
 						<div class="site-logo">
-							<a href="index.html"><img src="assets/img/new-logo.svg" alt="Sanjay Guthula Logo"></a>
+							<a href="index.html"><img src="assets/img/logo.svg" alt=""></a>
 						</div>
 					</div><!--- END Col -->
 
@@ -62,8 +62,8 @@
 						<nav id="main-menu">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-                                <li class="current"><a href="tools.html">Free Tools</a></li>
-                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="tools.html">Free Tools</a></li>
+								<li class="current"><a href="blog.html">Blog</a></li>
 								<li><a href="contact.html">Contact</a></li>
 							</ul>
 						</nav>
@@ -76,7 +76,7 @@
 					<ul class="mobile_menu">
 						<li><a href="index.html">Home</a></li>
                         <li><a href="tools.html">Free Tools</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+						<li class="current"><a href="blog.html">Blog</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</div><!--- END ROW -->
@@ -90,8 +90,8 @@
 				<div class="row">
 					<div class="col-xl-8 align-self-center wow fadeIn">
 						<div class="main_banner_content">
-							<span>Free Tools</span>
-							<h4>Explore Useful Tools & Resources</h4>
+							<span>My Blog</span>
+							<h4>Insights on Digital Marketing & AI</h4>
 							<div class="ba_shape">
 								<svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
 							</div>
@@ -115,109 +115,154 @@
 		</section>
 		<!-- END Main Banner -->
 
-		<!-- START Tools Content -->
-		<section class="tools-content section-padding">
+		<!-- START Blog Grid -->
+		<section class="blog-grid section-padding">
 			<div class="container">
-				<!-- Search Bar -->
-				<div class="row mb-4">
-					<div class="col-md-8 offset-md-2">
-						<div class="input-group">
-							<input type="text" id="toolSearchInput" class="form-control" placeholder="Search for tools by name or category (e.g., SEO, Text)...">
-							<button class="btn btn-outline-secondary" type="button" id="clearSearchBtn">Clear Search</button>
-						</div>
-					</div>
-				</div>
-
-				<!-- Tool Cards Grid -->
-				<div id="toolCardsContainer" class="row">
-					<!-- Tool cards will be dynamically inserted here by JavaScript -->
-				</div>
-
-				<!-- Word Counter Tool Section (Hidden by default) -->
-				<div id="wordCounterToolSection" class="row mt-5" style="display: none;">
-					<div class="col-12">
-						<div class="tool-container card">
-							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-center mb-3">
-									<h4 class="card-title">Word Counter</h4>
-									<button id="backToToolsBtn" class="btn btn-sm btn-outline-secondary back-to-tools-btn">Back to Tools</button>
-								</div>
-								<p>Enter your text below to count words and characters.</p>
-								<div class="form-group">
-									<textarea id="wordCounterInput" class="form-control" rows="10" placeholder="Start typing or paste your text here..."></textarea>
-								</div>
-								<div class="row mt-3">
-									<div class="col-md-6">
-										<p class="mb-0"><strong>Word Count:</strong> <span id="wordCountOutput">0</span></p>
-									</div>
-									<div class="col-md-6">
-										<p class="mb-0"><strong>Character Count:</strong> <span id="charCountOutput">0</span></p>
-									</div>
-								</div>
+				<div class="row">
+					<div class="col-xl-8 col-lg-8 col-md-12 col-12 ">
+						<div class="single-post wow fadeIn">
+							<!-- Placeholder image, recommend replacing with actual blog post image -->
+							<div class="post-image">
+								<img src="assets/img/blog/b1.jpg" alt="AI Image Generators">
 							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Word Counter Tool Section -->
 
-				<!-- JSON Validator Tool Section (Hidden by default) -->
-				<div id="jsonValidatorToolSection" class="row mt-5" style="display: none;">
-					<div class="col-12">
-						<div class="tool-container card">
-							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-center mb-3">
-									<h4 class="card-title">JSON Validator & Formatter</h4>
-									<button id="backToToolsBtnJson" class="btn btn-sm btn-outline-secondary back-to-tools-btn">Back to Tools</button>
+							<div class="post-content">
+								<div class="bpost-meta">
+									<span>
+										<a href="#">AI Tools</a> / <a href="#">Image Generation</a>
+									</span>	-
+
+									<span class="pm-date">
+										[Date Placeholder]
+									</span>
 								</div>
-								<p>Paste your JSON data below to validate and format it.</p>
-								<div class="form-group">
-									<textarea id="jsonInputArea" class="form-control" rows="10" placeholder="Enter JSON here..."></textarea>
-								</div>
-								<button id="validateJsonBtn" class="btn btn-primary mt-2 mb-3">Validate & Format JSON</button>
-								<div id="jsonResultArea" class="mt-3">
-									<!-- Validation messages will appear here -->
-								</div>
-								<div id="formattedJsonContainer" class="mt-3" style="display: none;">
-									<h5>Formatted JSON:</h5>
-									<pre id="formattedJsonOutput" class="bg-light p-3 border rounded"></pre>
-								</div>
+
+								<h2>
+									<a href="blog-ai-image-generators-2025.html">The Best AI Image Generators in 2025: Top Tools Compared</a>
+								</h2>
+                                <p>Artificial intelligence has transformed creative industries, and AI image generators are at the forefront of this revolution. From crafting stunning visuals for marketing to generating unique artwork for personal projects, these tools empower everyone to create professional-grade images with ease...</p>
+								<a class="border-btn" href="blog-ai-image-generators-2025.html"> Read More</a>
 							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End JSON Validator Tool Section -->
+						</div><!-- End Single Post -->
 
-				<!-- SEO Meta Tag Checker Tool Section (Hidden by default) -->
-				<div id="seoMetaTagCheckerToolSection" class="row mt-5" style="display: none;">
-					<div class="col-12">
-						<div class="tool-container card">
-							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-center mb-3">
-									<h4 class="card-title">SEO Meta Tag Checker</h4>
-									<button class="btn btn-sm btn-outline-secondary back-to-tools-btn">Back to Tools</button>
-								</div>
-								<p>Paste your website's full HTML source code below to analyze its meta tags.</p>
-								<div class="form-group">
-									<textarea id="htmlInputArea" class="form-control" rows="12" placeholder="Paste HTML source code here..."></textarea>
-								</div>
-								<button id="analyzeMetaTagsBtn" class="btn btn-primary mt-2 mb-3">Analyze Meta Tags</button>
-								<div id="metaTagsResultArea" class="mt-3">
-									<!-- Meta tag analysis results will appear here -->
-								</div>
+						<div class="single-post wow fadeIn">
+							<!-- Placeholder image, recommend replacing with actual blog post image -->
+							<div class="post-image">
+								<img src="assets/img/blog/b2.jpg" alt="AI Voice Generators">
 							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End SEO Meta Tag Checker Tool Section -->
+							<div class="post-content">
+								<div class="bpost-meta">
+									<span>
+										<a href="#">AI Tools</a> / <a href="#">Voice Generation</a>
+									</span>	-
 
+									<span class="pm-date">
+										[Date Placeholder]
+									</span>
+								</div>
+
+								<h2>
+									<a href="blog-ai-voice-generators-2025.html">The Best AI Voice Generators in 2025: Top Tools Compared</a>
+								</h2>
+                                <p>AI voice generators have transformed content creation, offering lifelike, customizable voices for everything from podcasts to marketing videos. These tools use advanced machine learning to produce natural-sounding audio, saving time and resources for creators, businesses, and educators...</p>
+								<a class="border-btn" href="blog-ai-voice-generators-2025.html"> Read More</a>
+							</div>
+						</div><!-- End Single Post -->
+
+						<!-- Pagination removed as there are only two posts for now -->
+						<!-- <div class="post-pagination text-center">
+							Page 1 of 1
+						</div> -->
+					</div><!-- END Col -->
+
+					<div class="col-xl-4 col-lg-4 col-md-12 col-12 wow fadeIn">
+						<div class="sidebar">
+							<div class="widget search-widget">
+								<div class="search-form">
+									<form action="#" method="post">
+										<input type="text" class="search-control" placeholder="write text and search">
+										<button type="submit" class="search-btn"><svg fill="none" viewBox="0 0 14 6"><path fill="#222" fill-rule="evenodd" d="M13.62 2.886v.233a524.78 524.78 0 01-3.22 2.828c-.288.117-.465.04-.531-.233.015-.042.029-.085.04-.128l2.62-2.293L.213 3.27A.408.408 0 010 3.12v-.233c.05-.07.12-.12.213-.151l12.29-.023c-.847-.764-1.702-1.52-2.568-2.27-.124-.24-.04-.387.253-.442a.619.619 0 01.186.035c1.088.948 2.17 1.898 3.245 2.851z" clip-rule="evenodd" opacity=".967"/></svg></button>
+									</form>
+								</div>
+							</div><!-- END Widget -->
+
+							<div class="widget category-widget">
+								<h3 class="widget-title">Category</h3>
+								<ul>
+									<li><a href="#">UI / UX Design</a></li>
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">App Development</a></li>
+									<li><a href="#">Branding and Printing</a></li>
+								</ul>
+							</div><!-- END Widget -->
+
+							<div class="widget popular-posts-widget">
+								<h3 class="widget-title">Popular Posts</h3>
+								<ul>
+									<li>
+										<a href="#">
+											<div class="float-start ppimage">
+												<img src="assets/img/blog/1.jpg" alt="image">
+											</div>
+											<div class="ppcontent">
+												<h4>Lorem Ipsum is simply dummy</h4>
+												<span>10 Jan,  2024</span>
+											</div>
+										</a>
+									</li>
+
+									<li>
+										<a href="#">
+											<div class="float-start ppimage">
+												<img src="assets/img/blog/2.jpg" alt="image">
+											</div>
+											<div class="ppcontent">
+												<h4>Lorem Ipsum is simply dummy</h4>
+												<span>10 Jan,  2024</span>
+											</div>
+										</a>
+									</li>
+
+									<li>
+										<a href="#">
+											<div class="float-start ppimage">
+												<img src="assets/img/blog/3.jpg" alt="image">
+											</div>
+											<div class="ppcontent">
+												<h4>Lorem Ipsum is simply dummy</h4>
+												<span>10 Jan,  2024</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div><!-- END Widget -->
+
+							<div class="widget about-me-widget">
+								<img src="assets/img/testimonials/3.jpg" alt="image">
+								<h4><a href="#">Md . Masum Billah</a></h4>
+								<span>CEO and Founder</span>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry  Lorem Ipsum has been the industry's standard dummy text ever since .
+								</p>
+								<ul class="amsocail-link">
+									<li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+									<li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+									<li><a href="#"><i class='bx bxl-dribbble'></i></a></li>
+									<li><a href="#"><i class='bx bxl-github'></i></a></li>
+								</ul>
+							</div><!-- END Widget -->
+						</div>
+					</div><!-- END Col -->
+				</div>
 			</div>
 		</section>
-		<!-- END Tools Content -->
+		<!-- END Blog Grid -->
+
 
 		<!-- Start Call To Action -->
 		<div class="container call-to-action text-center mb160" style="background-image: url(assets/img/bg/newsletter.svg);">
 			<h2>Let's Start Creating together</h2>
-			<a href="contact.html" class="border-btn-2">Hire Me</a>
+			<a href="#" class="border-btn-2">Hire Me</a>
 		</div>
 		<!-- End Call To Action -->
 
@@ -230,9 +275,10 @@
 							<div class="footer-widget">
 								<h4 class="fotter-title">Follow Me</h4>
 								<ul class="socail-link">
-									<li><a href="https://x.com/Sanjay18991236" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-									<li><a href="https://www.instagram.com/sanjay_guthula" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-									<li><a href="https://linkedin.com/in/sanjayguthula" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+									<li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+									<li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+									<li><a href="#"><i class='bx bxl-dribbble'></i></a></li>
+									<li><a href="#"><i class='bx bxl-github'></i></a></li>
 								</ul>
 							</div>
 						</div><!--- END COL -->
@@ -240,12 +286,12 @@
 						<div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
 							<div class="footer-widget fcontact-info">
 								<h4 class="fotter-title">Contact Info</h4>
-								<p><a href="tel:+919000114476">+91 9000114476</a></p>
-								<p><a href="mailto:sanjaykumarguthula@gmail.com">sanjaykumarguthula@gmail.com</a></p>
+								<p><a href="tel:+8802154687545">+8802154 68 75 45</a></p>
+								<p><a href="mailto:example@example.com">example@example.com</a></p>
 							</div>
 						</div><!--- END COL -->
 
-						<div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn" style="display:none;">
+						<div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
 							<div class="footer-widget">
 								<h4 class="fotter-title">Newsletter</h4>
 								<div class="newsletter-form">
@@ -264,7 +310,7 @@
 					<div class="row">
 						<div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
 							<p class="copyright_text">
-								Copyright © 2024 Sanjay Guthula. All rights reserved.
+								Copyright © 2024 Portfx  All rights reserved.
 							</p>
 						</div><!--- END COL -->
 
@@ -272,7 +318,7 @@
 							<div class="foot_menu">
 								<ul>
                                     <li><a href="tools.html">Free Tools</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
+									<li><a href="blog.html">Blog</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
 							</div>
@@ -282,6 +328,7 @@
 			</div><!--- END CONTAINER -->
 		</footer>
 		<!-- END FOOTER -->
+
 
 		<!-- Latest jQuery -->
 		<script src="assets/js/jquery.min.js" ></script>
@@ -307,16 +354,14 @@
 		<script src="assets/js/YouTubePopUp.jquery.js"></script>
 		<!-- yvpopup-active js -->
 		<script src="assets/js/yvpopup-active.js"></script>
-		<!-- Wow js -->
-		<script src="assets/js/wow.js"></script>
 		<!-- scrolltopcontrol js -->
 		<script src="assets/js/scrolltopcontrol.js"></script>
+		<!-- Wow js -->
+		<script src="assets/js/wow.js"></script>
 		<!-- slick js -->
 		<script src="assets/js/slick.js"></script>
 		<!-- scripts js -->
 		<script src="assets/js/scripts.js"></script>
-		<!-- Tools Page Specific JS -->
-		<script src="assets/js/tools-page.js"></script>
 
     </body>
 </html>
