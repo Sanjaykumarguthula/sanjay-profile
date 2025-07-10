@@ -574,7 +574,32 @@ fieldset {
 }
 .home_banner_content p{
 	margin-bottom: 45px;
+	max-width: 650px; /* Limit line length for readability on desktop */
+	/* If text is centered in mobile, ensure it's not here unless intended */
+	/* margin-left: 0; margin-right: 0; /* Resets mobile centering if it was applied directly */
+	/* On mobile, if it was centered, ensure it's reset for desktop if needed */
+	/* Example: text-align: left; margin-left: 0; */
 }
+
+/* Media query for very large screens */
+@media (min-width: 1600px) {
+	.home_banner_content h2 {
+		font-size: 72px; /* Slightly reduce from 80px */
+	}
+	.home_banner_content h3 {
+		font-size: 42px; /* Slightly reduce from 48px */
+	}
+	.home_banner_content p {
+		/* max-width might need adjustment if overall container is wider */
+	}
+	.section-padding {
+		padding: 150px 0; /* Can slightly increase padding if desired, or keep at 130px */
+	}
+	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+		max-width: 1400px; /* Allow content to be a bit wider on very large screens */
+	}
+}
+
 .home_banner_content .normal_btn{
 	color: #fff;
 	font-family: 'Rajdhani', sans-serif;
@@ -721,6 +746,9 @@ fieldset {
 }
 .ab-content{
 	
+}
+.ab-content p { /* Add this rule */
+	max-width: 70ch; /* Limit line length for readability */
 }
 
 .ab-content strong{
