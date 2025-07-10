@@ -36,74 +36,52 @@ Version      : 1.0
 			// or that counterup is configured to use data-count if it supports it.
 			// Standard counterup uses the text content.
 			// The HTML has <h4 class="counter-number" data-count="1000">1000</h4>
-			// So, we target ".counter-number"
-			if ($('.counter-number').length) {
-				$('.counter-number').waypoint(function() {
-					// The data-count attribute holds the actual number to count to.
-					// CounterUp.js usually animates the number present in the text of the element.
-					// Let's ensure the text is set from data-count if it's different, or just use it.
-					// The current HTML has the same number in text and data-count for base values.
-					// For "10M+", data-count="10", text="10". This will animate to 10.
-					// We need to adjust data-count to be the full number for "M" values.
+			// So, we target ".single-counter" for waypoints for better structure
+			if ($('.single-counter').length) {
+				$('.single-counter').waypoint(function(direction) {
+					var $thisCounterContainer = $(this.element); // Current .single-counter div that hit waypoint
 
-					// For CounterUp, the numbers like "10M" should be "10000000" in the HTML text if we want it to count to that.
-					// The current custom script handles "data-count" and animates that.
-					// Let's try to make the existing custom script waypoint-triggered.
+					if ($thisCounterContainer.hasClass('animated-counter')) {
+						return; // Already animated this container
+					}
 
-					$('.single-counter').each(function() {
-						var $thisCounterContainer = $(this);
-						if ($thisCounterContainer.hasClass('animated-counter')) {
-							return; // Already animated
+					// Find the h4.counter-number within this specific container
+					$thisCounterContainer.find('h4.counter-number').each(function() {
+						var $thisH4 = $(this); // The h4 element
+						var dataCountVal = $thisH4.attr('data-count'); // Target display number, e.g., "10", "1000"
+						var initialText = $thisH4.text(); // Initial "incorrect" text e.g., "10,000,000" or "1,000"
+
+						var initialNumericValue = parseFloat(initialText.replace(/,/g, ''));
+						if (isNaN(initialNumericValue)) {
+							initialNumericValue = 0; // Fallback
 						}
-						$thisCounterContainer.find('h4').each(function() {
-							var $this = $(this); // The h4 element
-							var dataCountVal = $this.attr('data-count'); // Target display number, e.g., "10", "1000"
-							var initialText = $this.text(); // Initial "incorrect" text e.g., "10,000,000" or "1,000"
 
-							// Parse the initial text to a number, removing commas
-							var initialNumericValue = parseFloat(initialText.replace(/,/g, ''));
-							if (isNaN(initialNumericValue)) {
-								initialNumericValue = 0; // Fallback if parsing fails
+						var targetNumericValue = parseFloat(dataCountVal);
+
+						// Explicitly set the starting text with formatting,
+						// in case of any delay before the first animation step.
+						$thisH4.text(initialNumericValue.toLocaleString());
+
+						// Start animation from the initialNumericValue
+						$({ countNum: initialNumericValue }).animate({
+							countNum: targetNumericValue
+						  },
+						  {
+							duration: 2000,
+							easing:'linear',
+							step: function() {
+							  let currentStepVal = Math.floor(this.countNum);
+							  $thisH4.text(currentStepVal.toLocaleString());
+							},
+							complete: function() {
+							  $thisH4.text(dataCountVal);
+							  $thisCounterContainer.addClass('animated-counter'); // Add class to container
 							}
-
-							var targetNumericValue = parseFloat(dataCountVal); // The actual number to display finally in h4
-
-							// For numbers that had "M" in their "incorrect" start text (e.g. 10,000,000M+),
-							// the initialNumericValue is already large.
-							// The targetNumericValue is small (e.g. 10).
-							// The animation should go from initialNumericValue down to targetNumericValue.
-							// However, the visual effect is "10,000,000" counting down to "10" (for the "10M+" case)
-
-							// No need to multiply targetNumericValue by 1,000,000 for animation here,
-							// as the animation will be on the displayed number.
-							// The final display text for h4 is determined by dataCountVal.
-
-							// Start animation from the initialNumericValue
-							$({ countNum: initialNumericValue }).animate({
-								countNum: targetNumericValue // Animate to the target value for the h4
-							  },
-							  {
-								duration: 2000, // Slightly longer duration for more complex transitions
-								easing:'linear',
-								step: function() {
-								  // Display the animated number with formatting
-								  // For numbers counting down (like 10,000,000 to 10), this will show the reduction
-								  // For numbers like 1,000 to 1000, it will just reformat.
-								  let currentStepVal = Math.floor(this.countNum);
-								  $this.text(currentStepVal.toLocaleString());
-								},
-								complete: function() {
-								  // On complete, set the h4 text to the plain data-count value.
-								  // The sibling span provides the "M+" or "+".
-								  $this.text(dataCountVal);
-								  $thisCounterContainer.addClass('animated-counter');
-								}
-							  });
-						});
-					}, {
-						offset: '75%', // Trigger when 75% of the element is visible
-						triggerOnce: true // Only trigger once
+						  });
 					});
+				}, {
+					offset: '90%',
+					triggerOnce: true
 				});
 			}
 			
