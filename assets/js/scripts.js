@@ -31,60 +31,6 @@ Version      : 1.0
 			// 	  });
 			// });
 
-			// New Counter using jquery.counterup.min.js and Waypoints
-			// Ensure the target elements for counterup have the final number as their text content initially
-			// or that counterup is configured to use data-count if it supports it.
-			// Standard counterup uses the text content.
-			// The HTML has <h4 class="counter-number" data-count="1000">1000</h4>
-			// So, we target ".single-counter" for waypoints for better structure
-			if ($('.single-counter').length) {
-				$('.single-counter').waypoint(function(direction) {
-					var $thisCounterContainer = $(this.element); // Current .single-counter div that hit waypoint
-
-					if ($thisCounterContainer.hasClass('animated-counter')) {
-						return; // Already animated this container
-					}
-
-					// Find the h4.counter-number within this specific container
-					$thisCounterContainer.find('h4.counter-number').each(function() {
-						var $thisH4 = $(this); // The h4 element
-						var dataCountVal = $thisH4.attr('data-count'); // Target display number, e.g., "10", "1000"
-						var initialText = $thisH4.text(); // Initial "incorrect" text e.g., "10,000,000" or "1,000"
-
-						var initialNumericValue = parseFloat(initialText.replace(/,/g, ''));
-						if (isNaN(initialNumericValue)) {
-							initialNumericValue = 0; // Fallback
-						}
-
-						var targetNumericValue = parseFloat(dataCountVal);
-
-						// Explicitly set the starting text with formatting,
-						// in case of any delay before the first animation step.
-						$thisH4.text(initialNumericValue.toLocaleString());
-
-						// Start animation from the initialNumericValue
-						$({ countNum: initialNumericValue }).animate({
-							countNum: targetNumericValue
-						  },
-						  {
-							duration: 2000,
-							easing:'linear',
-							step: function() {
-							  let currentStepVal = Math.floor(this.countNum);
-							  $thisH4.text(currentStepVal.toLocaleString());
-							},
-							complete: function() {
-							  $thisH4.text(dataCountVal);
-							  $thisCounterContainer.addClass('animated-counter'); // Add class to container
-							}
-						  });
-					});
-				}, {
-					offset: '90%',
-					triggerOnce: true
-				});
-			}
-			
 			/* Active Menu */
 			$(".mobile_menu").simpleMobileMenu({			
 				"menuStyle": "slide"
