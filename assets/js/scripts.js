@@ -56,43 +56,47 @@ Version      : 1.0
 							return; // Already animated
 						}
 						$thisCounterContainer.find('h4').each(function() {
-							var $this = $(this);
-							var countTo = $this.attr('data-count');
-							var originalText = $this.text(); // This is what CounterUp would use. Our custom one uses data-count.
+							var $this = $(this); // The h4 element
+							var dataCountVal = $this.attr('data-count'); // Target display number, e.g., "10", "1000"
+							var initialText = $this.text(); // Initial "incorrect" text e.g., "10,000,000" or "1,000"
 
-							// Adjust for M (Million) - this logic needs to be applied before animation
-							var actualCountTo = parseFloat(countTo);
-							var symbolSpan = $this.next('.counter-symbol');
-							if (symbolSpan.text().includes('M')) {
-								actualCountTo *= 1000000;
+							// Parse the initial text to a number, removing commas
+							var initialNumericValue = parseFloat(initialText.replace(/,/g, ''));
+							if (isNaN(initialNumericValue)) {
+								initialNumericValue = 0; // Fallback if parsing fails
 							}
-							// K for thousand could be added here too if needed.
 
-							$this.text('0');
-							$({ countNum: 0}).animate({
-								countNum: actualCountTo
+							var targetNumericValue = parseFloat(dataCountVal); // The actual number to display finally in h4
+
+							// For numbers that had "M" in their "incorrect" start text (e.g. 10,000,000M+),
+							// the initialNumericValue is already large.
+							// The targetNumericValue is small (e.g. 10).
+							// The animation should go from initialNumericValue down to targetNumericValue.
+							// However, the visual effect is "10,000,000" counting down to "10" (for the "10M+" case)
+
+							// No need to multiply targetNumericValue by 1,000,000 for animation here,
+							// as the animation will be on the displayed number.
+							// The final display text for h4 is determined by dataCountVal.
+
+							// Start animation from the initialNumericValue
+							$({ countNum: initialNumericValue }).animate({
+								countNum: targetNumericValue // Animate to the target value for the h4
 							  },
 							  {
-								duration: 1500, // Slightly longer duration
+								duration: 2000, // Slightly longer duration for more complex transitions
 								easing:'linear',
 								step: function() {
-								  // Format number with commas for display during animation if it's large
-								  if (actualCountTo >= 1000) {
-									$this.text(Math.floor(this.countNum).toLocaleString());
-								  } else {
-									$this.text(Math.floor(this.countNum));
-								  }
+								  // Display the animated number with formatting
+								  // For numbers counting down (like 10,000,000 to 10), this will show the reduction
+								  // For numbers like 1,000 to 1000, it will just reformat.
+								  let currentStepVal = Math.floor(this.countNum);
+								  $this.text(currentStepVal.toLocaleString());
 								},
 								complete: function() {
-								  // On complete, show the original simple number (like 10 for 10M) or formatted full number
-								  // For consistency with the original display of "10" then "M+", we set text to original data-count.
-								  // Or, if we want to show the full number always: $this.text(actualCountTo.toLocaleString());
-								  // The current HTML design is <h4 data-count="10">10</h4><span>M+</span>
-								  // So, it's better to animate to the full 'actualCountTo' but display 'countTo' on complete to match the HTML.
-								  // However, counterup usually displays the final animated number.
-								  // Let's display the final animated number, formatted.
-									$this.text(actualCountTo.toLocaleString());
-									$thisCounterContainer.addClass('animated-counter');
+								  // On complete, set the h4 text to the plain data-count value.
+								  // The sibling span provides the "M+" or "+".
+								  $this.text(dataCountVal);
+								  $thisCounterContainer.addClass('animated-counter');
 								}
 							  });
 						});
