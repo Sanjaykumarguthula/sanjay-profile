@@ -262,6 +262,10 @@ fieldset {
 
 .section-title{margin-bottom:60px;}
 
+.portfolio .section-title {
+	margin-bottom: 30px; /* Reduced gap for portfolio section */
+}
+
 .section-title{
 	position: relative;
 }
@@ -1076,9 +1080,6 @@ img{
 .testimonials .owl-item.active.center .testimonial{
 	background: #fff;
 }
-.testimonials .owl-item.active.center .testimonial .avarage_rating{
-	color: #444;
-}
 .testimonials .owl-item.active.center .testimonial .trating{
 	color: #1C3F39;
 }
@@ -1098,11 +1099,6 @@ img{
 }
 .testimonial span{
 	display: block;
-}
-.testimonial .avarage_rating{
-	font-family: 'Rajdhani', sans-serif;
-	font-weight: 500;
-	font-size: 17px;
 }
 .testi-bottom {
 	display: block;
@@ -2089,6 +2085,87 @@ li.comment{
 
 .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
 	max-width: 1200px;
+}
+
+/* Free Tools Page Specific Styles */
+#toolSearchInput {
+	height: calc(2.5rem + 2px); /* Match button height */
+}
+
+.tool-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure cards in the same row have the same height */
+}
+
+.tool-card h5 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem; /* Slightly larger than default h5 */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tool-card p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow description to take available space */
+}
+
+.tool-card .btn-use-now {
+    background-color: #C9F31D; /* Using existing yellow_btn color */
+    border-color: #C9F31D;
+    color: #222;
+    font-family: 'Rajdhani', sans-serif;
+	font-weight: 600;
+	font-size: 1rem; /* Adjusted size */
+    padding: 8px 15px; /* Adjusted padding */
+    border-radius: 5px;
+    text-align: center;
+    transition: .5s;
+    align-self: flex-start; /* Align button to the start of the card footer area */
+}
+
+.tool-card .btn-use-now:hover,
+.tool-card .btn-use-now:focus {
+    background-color: #1C3F39; /* Using existing dark color for hover */
+    border-color: #1C3F39;
+    color: #fff;
+}
+
+/* Responsive Grid for Tool Cards */
+/* Mobile: 1 column */
+#toolCardsContainer .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) { /* lg breakpoint */
+    #toolCardsContainer .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+/* Ensure consistent height for cards in a row if using Bootstrap's row > col structure */
+#toolCardsContainer .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#toolCardsContainer .col-lg-4, #toolCardsContainer .col-md-6, #toolCardsContainer .col-12 {
+    display: flex; /* Makes columns flex containers */
+    padding-left: 15px; /* Standard Bootstrap gutter */
+    padding-right: 15px; /* Standard Bootstrap gutter */
 }
 @media only screen and (max-width:1366px) { 
 	#navigation {
