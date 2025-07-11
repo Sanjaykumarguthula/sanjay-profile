@@ -157,70 +157,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const wordCounterInput = document.getElementById('wordCounterInput');
     const wordCountOutput = document.getElementById('wordCountOutput');
     const charCountOutput = document.getElementById('charCountOutput');
-    const charCountIncludeSpacesToggle = document.getElementById('charCountIncludeSpacesToggle');
-    const sentenceCountOutput = document.getElementById('sentenceCountOutput');
-    const paragraphCountOutput = document.getElementById('paragraphCountOutput');
-    const readingTimeOutput = document.getElementById('readingTimeOutput');
 
     function updateCounts() {
-        if (!wordCounterInput || !wordCountOutput || !charCountOutput || !charCountIncludeSpacesToggle || !sentenceCountOutput || !paragraphCountOutput || !readingTimeOutput) return;
+        if (!wordCounterInput || !wordCountOutput || !charCountOutput) return;
 
         const text = wordCounterInput.value;
 
         // Character count
-        if (charCountIncludeSpacesToggle.checked) {
-            charCountOutput.textContent = text.length;
-        } else {
-            charCountOutput.textContent = text.replace(/\s/g, '').length;
-        }
+        charCountOutput.textContent = text.length;
 
         // Word count
         const words = text.trim().split(/\s+/).filter(word => word !== "");
         wordCountOutput.textContent = words.length === 1 && words[0] === "" ? 0 : words.length;
-
-        // Sentence count
-        if (text.trim() === "") {
-            sentenceCountOutput.textContent = 0;
-        } else {
-            const sentences = text.match(/[^.!?]+[.!?]+(\s|$)/g);
-            sentenceCountOutput.textContent = sentences ? sentences.length : 0;
-        }
-
-        // Paragraph count
-        if (text.trim() === "") {
-            paragraphCountOutput.textContent = 0;
-        } else {
-            // Split by one or more newline characters, then filter out empty strings that might result from multiple blank lines.
-            const paragraphs = text.trim().split(/\n\s*\n*/).filter(p => p.trim() !== "");
-            paragraphCountOutput.textContent = paragraphs.length;
-        }
-
-        // Reading time estimate
-        const wpm = 200; // Average words per minute
-        const wordCount = words.length === 1 && words[0] === "" ? 0 : words.length;
-        if (wordCount === 0) {
-            readingTimeOutput.textContent = "~0 min";
-        } else {
-            const minutes = Math.ceil(wordCount / wpm);
-            readingTimeOutput.textContent = `~${minutes} min`;
-        }
     }
 
     if (wordCounterInput) {
         wordCounterInput.addEventListener('input', updateCounts);
-    }
-    if (charCountIncludeSpacesToggle) {
-        charCountIncludeSpacesToggle.addEventListener('change', updateCounts);
-    }
-
-    const clearTextBtn = document.getElementById('clearTextBtn');
-    if (clearTextBtn) {
-        clearTextBtn.addEventListener('click', function() {
-            if (wordCounterInput) {
-                wordCounterInput.value = '';
-            }
-            updateCounts(); // Trigger update to reset all counts to 0
-        });
     }
     // --- End Word Counter Logic ---
 
