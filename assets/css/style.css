@@ -1384,7 +1384,12 @@ img{
 	width: 100%;
 }
 
-/* Blog Page New Styles */
+/* Original Blog Page Styles (before recent list redesign) - Retained for blog.html */
+/* .single-post, .post-content, .bpost-meta etc. are original styles that blog.html relies on */
+/* Sidebar styles that were updated but are also used by the original blog.html layout are kept below */
+
+/* Styles for blog cards that were part of the reverted blog.html redesign - now removed or commented */
+/*
 .blog-grid .blog-post {
     background-color: #fff;
     border-radius: 15px;
@@ -1393,7 +1398,7 @@ img{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 100%; /* For equal height cards in a row */
+    height: 100%;
 }
 
 .blog-grid .blog-post:hover {
@@ -1411,22 +1416,25 @@ img{
     height: auto;
     object-fit: cover;
     transition: transform 0.4s ease;
-    border-top-left-radius: 15px; /* Match card radius */
-    border-top-right-radius: 15px; /* Match card radius */
-    border-bottom-left-radius: 0; /* Images shouldn't have bottom radius if content follows */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 .blog-post:hover .post-image img {
     transform: scale(1.05);
 }
-
+*/
+/* Keep .blog-post .post-content if it's used by original blog.html, or adjust if it conflicts */
+/*
 .blog-post .post-content {
-    padding: 25px; /* Uniform padding */
-    flex-grow: 1; /* Allows content to fill space if card height is fixed by row */
+    padding: 25px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
-
+*/
+/*
 .blog-post .post-meta {
     font-size: 0.85rem;
     color: #777;
@@ -1437,12 +1445,12 @@ img{
 }
 
 .blog-post .post-meta .post-category a {
-    color: #1C3F39; /* Primary dark green */
+    color: #1C3F39;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 .blog-post .post-meta .post-category a:hover {
-    color: #C9F31D; /* Accent yellow */
+    color: #C9F31D;
 }
 
 .blog-post .post-meta .post-date {
@@ -1451,7 +1459,7 @@ img{
 
 .blog-post .post-title {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.6rem; /* Slightly larger for featured, adjusted for regular below */
+    font-size: 1.6rem;
     font-weight: 700;
     color: #222;
     margin-bottom: 15px;
@@ -1463,12 +1471,12 @@ img{
     transition: color 0.3s ease;
 }
 .blog-post .post-title a:hover {
-    color: #C9F31D; /* Accent yellow on hover */
+    color: #C9F31D;
 }
 
-/* Specifics for non-featured posts (smaller cards) */
-.row .blog-post:not(.featured-post) .post-title { /* Target titles in grid but not featured */
-    font-size: 1.25rem; /* Smaller title for grid cards */
+
+.row .blog-post:not(.featured-post) .post-title {
+    font-size: 1.25rem;
 }
 
 
@@ -1477,7 +1485,7 @@ img{
     color: #555;
     line-height: 1.7;
     margin-bottom: 20px;
-    flex-grow: 1; /* Excerpt takes available space */
+    flex-grow: 1;
 }
 
 .blog-post .read-more-btn,
@@ -1491,11 +1499,11 @@ img{
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    margin-top: auto; /* Pushes button to bottom of card */
-    align-self: flex-start; /* Align to the left */
+    margin-top: auto;
+    align-self: flex-start;
 }
 
-.blog-post .read-more-btn { /* Primary button for featured */
+.blog-post .read-more-btn {
     background-color: #1C3F39;
     border-color: #1C3F39;
     color: #fff;
@@ -1506,7 +1514,7 @@ img{
     color: #1C3F39;
 }
 
-.blog-post .read-more-btn-sm { /* Secondary button for grid cards */
+.blog-post .read-more-btn-sm {
     background-color: transparent;
     border: 1px solid #ddd;
     color: #555;
@@ -1522,29 +1530,28 @@ img{
 .blog-post .read-more-btn i,
 .blog-post .read-more-btn-sm i {
     margin-left: 5px;
-    font-size: 0.8em; /* Make icon slightly smaller */
+    font-size: 0.8em;
     position: relative;
     top: -1px;
 }
 
 
-/* Featured Post Specifics */
 .featured-post .post-image img {
-    max-height: 450px; /* Control height of featured image */
+    max-height: 450px;
     object-fit: cover;
 }
 .featured-post .post-title {
-    font-size: 2.2rem; /* Larger title for featured post */
+    font-size: 2.2rem;
     line-height: 1.2;
 }
 .featured-post .post-excerpt {
-    font-size: 1.05rem; /* Slightly larger excerpt for featured */
+    font-size: 1.05rem;
 }
+*/
 
-
-/* Sidebar new styles */
+/* Sidebar new styles - These are kept as they are general improvements for any sidebar */
 .sidebar .widget {
-    background-color: #f9f9f9; /* Light background for widgets */
+    background-color: #f9f9f9;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
