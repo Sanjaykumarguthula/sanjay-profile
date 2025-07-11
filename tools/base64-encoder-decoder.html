@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <title>Base64 Encoder/Decoder - Encode & Decode Text/Files Online</title>
+    <meta name="description" content="Easily encode text to Base64 or decode Base64 strings online. Free, client-side tool for developers and data handling. Supports UTF-8.">
+    <meta name="keywords" content="base64 encoder, base64 decoder, encode base64, decode base64, base64 online, text to base64, base64 to text, developer tools, free tools, utf-8 base64">
+    <!-- Add canonical URL if applicable -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Base64 Encoder/Decoder - Encode & Decode Text/Files Online">
+    <meta property="og:description" content="Easily encode text to Base64 or decode Base64 strings online. Free, client-side tool for developers and data handling. Supports UTF-8.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="https://www.yourdomain.com/assets/img/og-image-base64.png"> -->
+    <!-- <meta property="og:url" content="https://www.yourdomain.com/tools/base64-encoder-decoder.html"> -->
+
+    <!-- Common CSS (paths adjusted for subdirectory) -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-simple-mobilemenu.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/YouTubePopUp.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="../assets/css/slick-theme.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body data-spy="scroll" data-offset="80">
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- START NAVBAR (Copied, paths adjusted) -->
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo">
+                        <a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a>
+                    </div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="current"><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center">
+                    <a href="../contact.html" class="border-btn">Get in Touch</a>
+                </div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+
+    <!-- START Main Banner -->
+    <section class="main-banner tool-specific-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 align-self-center wow fadeIn">
+                    <div class="main_banner_content">
+                        <h1>Free Base64 Encoder & Decoder Online</h1>
+                        <h4>Encode Text to Base64 or Decode Base64 Strings with UTF-8 Support</h4>
+                        <div class="ba_shape">
+                            <svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bashape_1"><img src="../assets/img/shapes/banner-shape1.svg" alt="decorative shape"></div>
+        <div class="bashape_2"><img src="../assets/img/shapes/star-1.svg" alt="decorative shape"></div>
+        <div class="bashape_3"><img src="../assets/img/shapes/star-2.svg" alt="decorative shape"></div>
+    </section>
+    <!-- END Main Banner -->
+
+    <!-- START Tool Content -->
+    <section class="tools-content section-padding">
+        <div class="container">
+            <!-- Base64 Encoder/Decoder Tool Section -->
+            <div class="row mt-0">
+                <div class="col-12">
+                    <div class="tool-container card">
+                        <div class="card-body">
+                            <p class="lead mb-4">Paste your text or Base64 string into the input area. This tool correctly handles UTF-8 characters for encoding and decoding.</p>
+
+                            <div class="form-group mb-3">
+                                <label for="base64Input" class="form-label">Input (Text or Base64 String):</label>
+                                <textarea id="base64Input" class="form-control" rows="8" placeholder="Enter text to encode or Base64 string to decode..."></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <button id="encodeBase64Btn" class="btn btn-primary me-2">Encode to Base64</button>
+                                <button id="decodeBase64Btn" class="btn btn-secondary me-2">Decode from Base64</button>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="base64Output" class="form-label">Output:</label>
+                                <textarea id="base64Output" class="form-control" rows="8" placeholder="Result will appear here..." readonly></textarea>
+                            </div>
+
+                            <div>
+                                <button id="copyOutputBtn" class="btn btn-outline-primary me-2">Copy Output</button>
+                                <button id="clearBtn" class="btn btn-danger">Clear All</button>
+                            </div>
+                             <div id="errorDisplay" class="alert alert-danger mt-3" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Base64 Encoder/Decoder Tool Section -->
+
+            <!-- Additional Content Sections -->
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="tool-description card">
+                        <div class="card-body">
+                            <h2 class="h4">Encode and Decode Base64</h2>
+                            <p>Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation. This tool allows you to easily encode your text data into Base64 strings and decode Base64 strings back into their original text form.</p>
+
+                            <h2 class="h4 mt-4">What is Base64 Encoding?</h2>
+                            <p>Base64 encoding is commonly used when there is a need to encode binary data that needs to be stored and transferred over media that are designed to deal with textual data. This ensures that the data remains intact without modification during transport. It's widely used in various applications, including email via MIME, and storing complex data in XML or JSON.</p>
+                            <p>Our tool correctly handles UTF-8 characters, ensuring that international characters are encoded and decoded properly, which is a common pitfall with basic `btoa()` and `atob()` JavaScript functions.</p>
+
+                            <h2 class="h4 mt-4">Features</h2>
+                            <ul>
+                                <li><strong>Text to Base64 Encoding:</strong> Convert any plain text into its Base64 encoded string.</li>
+                                <li><strong>Base64 to Text Decoding:</strong> Convert a valid Base64 string back to its original text form.</li>
+                                <li><strong>UTF-8 Support:</strong> Correctly encodes and decodes text containing multi-byte UTF-8 characters (e.g., emojis, non-English characters).</li>
+                                <!-- <li><strong>File Encoding/Decoding (Optional Future Feature):</strong> Support for encoding small files to Base64 strings and decoding Base64 strings back to files.</li> -->
+                                <li><strong>Client-Side Operations:</strong> All processing is done in your browser for speed and security. Your data is not sent to any server.</li>
+                            </ul>
+
+                            <h2 class="h4 mt-4">How to Use</h2>
+                            <ol>
+                                <li>Enter the text you want to encode or the Base64 string you want to decode into the "Input" field.</li>
+                                <li>Click "Encode to Base64" if you're providing plain text.</li>
+                                <li>Click "Decode from Base64" if you're providing a Base64 string.</li>
+                                <li>The result will be displayed in the "Output" field.</li>
+                                <li>Use "Copy Output" to copy the result or "Clear All" to reset. Error messages will be shown if decoding fails.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar card">
+                        <div class="card-body">
+                            <h3 class="h5">Related Developer Tools</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="url-encoder-decoder.html">URL Encoder/Decoder</a></li>
+                                <li><a href="json-validator-formatter.html">JSON Validator & Formatter</a></li>
+                                <!-- <li><a href="password-generator.html">Password Generator</a></li> -->
+                            </ul>
+                            <hr>
+                            <h3 class="h5 mt-3">From Our Blog</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Understanding Base64 Encoding (Future Post)</a></li>
+                                <li><a href="#">When to Use Base64 in Web Development (Future Post)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="faq-section card">
+                        <div class="card-body">
+                            <h2 class="h4 text-center mb-4">Frequently Asked Questions (Base64 Tool)</h2>
+                            <div class="accordion" id="faqAccordionBase64">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBase64HeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBase64CollapseOne" aria-expanded="false" aria-controls="faqBase64CollapseOne">
+                                            Why is Base64 encoding used?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBase64CollapseOne" class="accordion-collapse collapse" aria-labelledby="faqBase64HeadingOne" data-bs-parent="#faqAccordionBase64">
+                                        <div class="accordion-body">
+                                            Base64 encoding is used to convert binary data into a text-based format so it can be transmitted over channels that only support plain text (like email or some older protocols) or stored in text-based formats (like XML or JSON). It ensures data integrity during these processes. For example, embedding small images directly into HTML or CSS using Data URLs often involves Base64 encoding.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBase64HeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBase64CollapseTwo" aria-expanded="false" aria-controls="faqBase64CollapseTwo">
+                                            Can I encode/decode files with this tool?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBase64CollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqBase64HeadingTwo" data-bs-parent="#faqAccordionBase64">
+                                        <div class="accordion-body">
+                                            Currently, this tool is optimized for text-based Base64 encoding and decoding. While you can paste Base64 data representing a file and decode it (if it's text-based), direct file upload for encoding or download for decoded binary files is not yet implemented but may be considered for future updates.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBase64HeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBase64CollapseThree" aria-expanded="false" aria-controls="faqBase64CollapseThree">
+                                            How does this tool handle special characters (UTF-8)?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBase64CollapseThree" class="accordion-collapse collapse" aria-labelledby="faqBase64HeadingThree" data-bs-parent="#faqAccordionBase64">
+                                        <div class="accordion-body">
+                                            Standard JavaScript `btoa()` function can cause issues with multi-byte UTF-8 characters. Our tool implements a common workaround: it first converts the input string to a UTF-8 byte stream using `TextEncoder`, then encodes these bytes to Base64. For decoding, it decodes the Base64 string to bytes and then uses `TextDecoder` to convert these bytes back to a UTF-8 string. This ensures proper handling of international characters, emojis, and other special symbols.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Tool Content -->
+
+    <!-- Start Call To Action (Copied, paths adjusted) -->
+    <div class="container call-to-action text-center mb160" style="background-image: url(../assets/img/bg/newsletter.svg);">
+        <h2>Let's Start Creating together</h2>
+        <a href="../contact.html" class="border-btn-2">Hire Me</a>
+    </div>
+    <!-- End Call To Action -->
+
+    <!-- START FOOTER (Copied, paths adjusted) -->
+    <footer class="footer pt220">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Follow Me</h4>
+                            <ul class="socail-link">
+                                <li><a href="https://x.com/Sanjay18991236" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                <li><a href="https://www.instagram.com/sanjay_guthula" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                                <li><a href="https://linkedin.com/in/sanjayguthula" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget fcontact-info">
+                            <h4 class="fotter-title">Contact Info</h4>
+                            <p><a href="tel:+919000114476">+91 9000114476</a></p>
+                            <p><a href="mailto:sanjaykumarguthula@gmail.com">sanjaykumarguthula@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn" style="display:none;">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Newsletter</h4>
+                            <div class="newsletter-form">
+                                <form method="post" action="">
+                                    <input type="email" placeholder="Email Address">
+                                    <button type="submit"><img src="../assets/img/icons/arrow-newsletter.svg" alt=""></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">
+                            Copyright © 2024 Sanjay Guthula. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- Common JS (paths adjusted) -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
+    <script src="../assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.js"></script>
+    <script src="../assets/js/YouTubePopUp.jquery.js"></script>
+    <script src="../assets/js/yvpopup-active.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scrolltopcontrol.js"></script>
+    <script src="../assets/js/slick.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <!-- Base64 Encoder/Decoder Specific JS -->
+    <script src="../assets/js/base64-encoder-decoder.js"></script>
+
+</body>
+</html>

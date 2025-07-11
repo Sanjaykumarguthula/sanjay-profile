@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <title>Color Palette Generator - Create & Export Color Schemes</title>
+    <meta name="description" content="Generate beautiful color palettes online. Choose a base color and discover monochromatic, analogous, complementary, and triadic color schemes.">
+    <meta name="keywords" content="color palette generator, color scheme generator, color picker, design tools, web design colors, free tools, color harmony">
+    <!-- Add canonical URL if applicable -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Color Palette Generator - Create & Export Color Schemes">
+    <meta property="og:description" content="Generate beautiful color palettes online. Choose a base color and discover monochromatic, analogous, complementary, and triadic color schemes.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="https://www.yourdomain.com/assets/img/og-image-color-palette.png"> -->
+    <!-- <meta property="og:url" content="https://www.yourdomain.com/tools/color-palette-generator.html"> -->
+
+    <!-- Common CSS (paths adjusted for subdirectory) -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-simple-mobilemenu.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/YouTubePopUp.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="../assets/css/slick-theme.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Custom CSS for Color Palette Generator -->
+    <style>
+        .color-swatch {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .color-swatch:hover {
+            transform: scale(1.05);
+        }
+        .color-swatch span {
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            padding: 2px 5px;
+            font-size: 0.8em;
+            width: 100%;
+            text-align: center;
+        }
+        .palette-group { margin-bottom: 20px; }
+        .palette-group h5 { margin-bottom: 10px; }
+        #baseColorPicker { width: 60px; height: 30px; vertical-align: middle; }
+        .toast-copied {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1050;
+            display: none;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-offset="80">
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- START NAVBAR (Copied, paths adjusted) -->
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo">
+                        <a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a>
+                    </div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="current"><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center">
+                    <a href="../contact.html" class="border-btn">Get in Touch</a>
+                </div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+
+    <!-- START Main Banner -->
+    <section class="main-banner tool-specific-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 align-self-center wow fadeIn">
+                    <div class="main_banner_content">
+                        <h1>Free Color Palette Generator</h1>
+                        <h4>Discover Harmonious Color Schemes for Your Designs</h4>
+                        <div class="ba_shape">
+                            <svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bashape_1"><img src="../assets/img/shapes/banner-shape1.svg" alt="decorative shape"></div>
+        <div class="bashape_2"><img src="../assets/img/shapes/star-1.svg" alt="decorative shape"></div>
+        <div class="bashape_3"><img src="../assets/img/shapes/star-2.svg" alt="decorative shape"></div>
+    </section>
+    <!-- END Main Banner -->
+
+    <!-- START Tool Content -->
+    <section class="tools-content section-padding">
+        <div class="container">
+            <!-- Color Palette Generator Tool Section -->
+            <div class="row mt-0">
+                <div class="col-12">
+                    <div class="tool-container card">
+                        <div class="card-body">
+                            <p class="lead mb-4">Choose a base color to generate various color palettes. Click on any color swatch to copy its HEX code.</p>
+
+                            <div class="form-group mb-4">
+                                <label for="baseColorInput" class="form-label">Select Base Color: </label>
+                                <input type="color" id="baseColorPicker" value="#3498db">
+                                <input type="text" id="baseColorHexInput" class="form-control d-inline-block ms-2" style="width: 120px;" value="#3498db" placeholder="HEX Code">
+                                <button id="generatePalettesBtn" class="btn btn-primary ms-2">Generate Palettes</button>
+                            </div>
+
+                            <div id="palettesContainer" class="mt-4">
+                                <!-- Palettes will be dynamically inserted here -->
+                                <p class="text-muted">Generated palettes will appear here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Color Palette Generator Tool Section -->
+
+            <!-- Additional Content Sections -->
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="tool-description card">
+                        <div class="card-body">
+                            <h2 class="h4">Create Stunning Color Schemes</h2>
+                            <p>Our Color Palette Generator helps you find harmonious color combinations for your website, app, presentation, or any design project. Select a base color, and the tool will generate palettes based on color theory principles.</p>
+
+                            <h2 class="h4 mt-4">How It Works</h2>
+                            <ol>
+                                <li><strong>Pick Your Base Color:</strong> Use the color picker or enter a HEX code for your desired starting color.</li>
+                                <li><strong>Generate Palettes:</strong> Click the "Generate Palettes" button.</li>
+                                <li><strong>Explore Palette Types:</strong> The tool will display several types of palettes:
+                                    <ul>
+                                        <li><strong>Monochromatic:</strong> Variations in lightness and saturation of a single color.</li>
+                                        <li><strong>Analogous:</strong> Colors that are next to each other on the color wheel.</li>
+                                        <li><strong>Complementary:</strong> Colors opposite each other on the color wheel, creating high contrast.</li>
+                                        <li><strong>Split-Complementary:</strong> A variation of complementary, using two colors adjacent to its complement.</li>
+                                        <li><strong>Triadic:</strong> Three colors evenly spaced around the color wheel.</li>
+                                        <li><strong>Tetradic (Rectangle):</strong> Four colors arranged into two complementary pairs.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Copy & Use Color Codes:</strong> Click on any color swatch in the generated palettes to copy its HEX code to your clipboard.</li>
+                            </ol>
+
+                            <h2 class="h4 mt-4">Understanding Color Theory</h2>
+                            <p>Color theory is a set of principles used to create harmonious color combinations. Understanding these concepts can significantly improve your design work. Our tool leverages these principles to provide you with well-balanced and visually appealing color schemes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar card">
+                        <div class="card-body">
+                            <h3 class="h5">Related Design Tools</h3>
+                            <ul class="list-unstyled">
+                                <!-- Add more related tools once they are created -->
+                                <!-- <li><a href="image-compressor.html">Image Compressor</a></li> -->
+                            </ul>
+                            <hr>
+                            <h3 class="h5 mt-3">From Our Blog</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Using Color in Web Design (Future Post)</a></li>
+                                <li><a href="#">A Guide to Color Psychology (Future Post)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="faq-section card">
+                        <div class="card-body">
+                            <h2 class="h4 text-center mb-4">Frequently Asked Questions (Color Palette Generator)</h2>
+                            <div class="accordion" id="faqAccordionColor">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqColorHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqColorCollapseOne" aria-expanded="false" aria-controls="faqColorCollapseOne">
+                                            What are complementary colors?
+                                        </button>
+                                    </h3>
+                                    <div id="faqColorCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqColorHeadingOne" data-bs-parent="#faqAccordionColor">
+                                        <div class="accordion-body">
+                                            Complementary colors are pairs of colors which, when combined or mixed, cancel each other out (lose hue) by producing a grayscale color like white or black. When placed next to each other, they create the strongest contrast for those two colors. For example, red and green are complementary colors.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqColorHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqColorCollapseTwo" aria-expanded="false" aria-controls="faqColorCollapseTwo">
+                                            Can I save the palettes?
+                                        </button>
+                                    </h3>
+                                    <div id="faqColorCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqColorHeadingTwo" data-bs-parent="#faqAccordionColor">
+                                        <div class="accordion-body">
+                                            Currently, this tool allows you to copy the HEX codes of individual colors by clicking on them. You can then paste these codes into your design software or notes. We are considering options for exporting full palettes in the future.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqColorHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqColorCollapseThree" aria-expanded="false" aria-controls="faqColorCollapseThree">
+                                            How do I choose a good base color?
+                                        </button>
+                                    </h3>
+                                    <div id="faqColorCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqColorHeadingThree" data-bs-parent="#faqAccordionColor">
+                                        <div class="accordion-body">
+                                            Choosing a good base color depends on your project's branding, target audience, and the mood you want to convey. Consider the emotions associated with different colors (e.g., blue for trust, green for nature/growth). You can also draw inspiration from existing designs you like or use a color that represents your brand identity.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Tool Content -->
+
+    <div id="toastCopied" class="toast-copied">Color code copied to clipboard!</div>
+
+    <!-- Start Call To Action (Copied, paths adjusted) -->
+    <div class="container call-to-action text-center mb160" style="background-image: url(../assets/img/bg/newsletter.svg);">
+        <h2>Let's Start Creating together</h2>
+        <a href="../contact.html" class="border-btn-2">Hire Me</a>
+    </div>
+    <!-- End Call To Action -->
+
+    <!-- START FOOTER (Copied, paths adjusted) -->
+    <footer class="footer pt220">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Follow Me</h4>
+                            <ul class="socail-link">
+                                <li><a href="https://x.com/Sanjay18991236" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                <li><a href="https://www.instagram.com/sanjay_guthula" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                                <li><a href="https://linkedin.com/in/sanjayguthula" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget fcontact-info">
+                            <h4 class="fotter-title">Contact Info</h4>
+                            <p><a href="tel:+919000114476">+91 9000114476</a></p>
+                            <p><a href="mailto:sanjaykumarguthula@gmail.com">sanjaykumarguthula@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn" style="display:none;">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Newsletter</h4>
+                            <div class="newsletter-form">
+                                <form method="post" action="">
+                                    <input type="email" placeholder="Email Address">
+                                    <button type="submit"><img src="../assets/img/icons/arrow-newsletter.svg" alt=""></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">
+                            Copyright © 2024 Sanjay Guthula. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- Common JS (paths adjusted) -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
+    <script src="../assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.js"></script>
+    <script src="../assets/js/YouTubePopUp.jquery.js"></script>
+    <script src="../assets/js/yvpopup-active.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scrolltopcontrol.js"></script>
+    <script src="../assets/js/slick.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <!-- Color Palette Generator Specific JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.6.0/tinycolor.min.js"></script> <!-- tinycolor for color manipulation -->
+    <script src="../assets/js/color-palette-generator.js"></script>
+
+</body>
+</html>

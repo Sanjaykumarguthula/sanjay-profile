@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <title>Free QR Code Generator - Create QR Codes Online</title>
+    <meta name="description" content="Generate custom QR codes for URLs, text, WiFi, and more. Free, fast, and easy to use online QR code maker. Download as PNG or SVG.">
+    <meta name="keywords" content="qr code generator, qr code maker, free qr code, online qr code, generate qr code, url to qr code, text to qr code, wifi qr code">
+    <!-- Add canonical URL if applicable -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free QR Code Generator - Create QR Codes Online">
+    <meta property="og:description" content="Generate custom QR codes for URLs, text, WiFi, and more. Free, fast, and easy to use online QR code maker. Download as PNG or SVG.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="https://www.yourdomain.com/assets/img/og-image-qr-code.png"> -->
+    <!-- <meta property="og:url" content="https://www.yourdomain.com/tools/qr-code-generator.html"> -->
+
+    <!-- Common CSS (paths adjusted for subdirectory) -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-simple-mobilemenu.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/YouTubePopUp.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="../assets/css/slick-theme.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Custom CSS for QR Code Generator -->
+    <style>
+        #qrcodeCanvas { border: 1px solid #eee; }
+        .qr-options label { margin-right: 10px; }
+        .qr-options input[type="color"] { vertical-align: middle; margin-left: 5px; height: 25px; width: 40px; }
+    </style>
+</head>
+
+<body data-spy="scroll" data-offset="80">
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- START NAVBAR (Copied, paths adjusted) -->
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo">
+                        <a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a>
+                    </div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="current"><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center">
+                    <a href="../contact.html" class="border-btn">Get in Touch</a>
+                </div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+
+    <!-- START Main Banner -->
+    <section class="main-banner tool-specific-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 align-self-center wow fadeIn">
+                    <div class="main_banner_content">
+                        <h1>Free QR Code Generator</h1>
+                        <h4>Create Custom QR Codes for URLs, Text, WiFi, and More</h4>
+                        <div class="ba_shape">
+                            <svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bashape_1"><img src="../assets/img/shapes/banner-shape1.svg" alt="decorative shape"></div>
+        <div class="bashape_2"><img src="../assets/img/shapes/star-1.svg" alt="decorative shape"></div>
+        <div class="bashape_3"><img src="../assets/img/shapes/star-2.svg" alt="decorative shape"></div>
+    </section>
+    <!-- END Main Banner -->
+
+    <!-- START Tool Content -->
+    <section class="tools-content section-padding">
+        <div class="container">
+            <!-- QR Code Generator Tool Section -->
+            <div class="row mt-0">
+                <div class="col-md-8">
+                    <div class="tool-container card">
+                        <div class="card-body">
+                            <p class="lead mb-4">Enter your data below to generate a QR code. Customize colors, size, and download your QR code as a PNG or SVG image.</p>
+
+                            <div class="form-group mb-3">
+                                <label for="qrDataType" class="form-label">Select Data Type:</label>
+                                <select id="qrDataType" class="form-select">
+                                    <option value="url" selected>URL / Link</option>
+                                    <option value="text">Plain Text</option>
+                                    <option value="email">Email Address</option>
+                                    <option value="phone">Phone Number</option>
+                                    <option value="sms">SMS</option>
+                                    <option value="wifi">WiFi Network</option>
+                                </select>
+                            </div>
+
+                            <div id="qrInputsContainer">
+                                <!-- Dynamic inputs based on qrDataType will go here -->
+                                <div class="form-group mb-3" data-type="url">
+                                    <label for="qrUrl" class="form-label">Website URL (e.g., https://example.com):</label>
+                                    <input type="url" id="qrUrl" class="form-control qr-data-input" placeholder="https://example.com">
+                                </div>
+                            </div>
+
+                            <h3 class="h5 mt-4">Customization Options:</h3>
+                            <div class="row qr-options mb-3">
+                                <div class="col-md-6 mb-2">
+                                    <label for="qrFgColor">Foreground Color:</label>
+                                    <input type="color" id="qrFgColor" value="#000000">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="qrBgColor">Background Color:</label>
+                                    <input type="color" id="qrBgColor" value="#ffffff">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="qrSize">Size (px):</label>
+                                    <input type="number" id="qrSize" class="form-control d-inline-block" style="width: 100px;" value="256" min="50" max="1000">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="qrErrorCorrection">Error Correction:</label>
+                                    <select id="qrErrorCorrection" class="form-select d-inline-block" style="width: auto;">
+                                        <option value="L">Low (L)</option>
+                                        <option value="M" selected>Medium (M)</option>
+                                        <option value="Q">Quartile (Q)</option>
+                                        <option value="H">High (H)</option>
+                                    </select>
+                                </div>
+                            </div>
+                             <button id="generateQrBtn" class="btn btn-primary me-2">Generate QR Code</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h3 class="h5 mb-3">Your QR Code:</h3>
+                            <div id="qrcodeCanvasContainer" class="mb-3 d-flex justify-content-center align-items-center" style="min-height: 200px;">
+                                <!-- Canvas for QR code will be appended here -->
+                                <p class="text-muted" id="qrPlaceholderText">QR code will appear here.</p>
+                            </div>
+                            <button id="downloadPngBtn" class="btn btn-success me-2" style="display:none;">Download PNG</button>
+                            <button id="downloadSvgBtn" class="btn btn-info" style="display:none;">Download SVG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End QR Code Generator Tool Section -->
+
+            <!-- Additional Content Sections -->
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="tool-description card">
+                        <div class="card-body">
+                            <h2 class="h4">Generate Your QR Code Instantly</h2>
+                            <p>QR (Quick Response) codes are two-dimensional barcodes that can store various types of information. Our free online generator makes it easy to create QR codes for your website, contact details, WiFi access, and much more.</p>
+
+                            <h2 class="h4 mt-4">What Can You Use QR Codes For?</h2>
+                            <ul>
+                                <li><strong>Website URLs:</strong> Direct users to your website or a specific landing page.</li>
+                                <li><strong>Contact Information (vCard):</strong> Share your contact details seamlessly. (Future feature)</li>
+                                <li><strong>Plain Text:</strong> Encode messages, notes, or any textual information.</li>
+                                <li><strong>Email Addresses:</strong> Allow users to quickly send an email.</li>
+                                <li><strong>Phone Numbers:</strong> Enable one-tap calling.</li>
+                                <li><strong>SMS Messages:</strong> Pre-fill an SMS message.</li>
+                                <li><strong>WiFi Network Access:</strong> Share your WiFi credentials easily (SSID, password, encryption type).</li>
+                                <li><strong>Event Promotion, Product Packaging, Business Cards, and much more!</strong></li>
+                            </ul>
+
+                            <h2 class="h4 mt-4">Features</h2>
+                            <ul>
+                                <li><strong>Multiple Data Types:</strong> Supports URLs, text, email, phone, SMS, and WiFi configurations.</li>
+                                <li><strong>Real-time Preview (on generate):</strong> See your QR code as you customize it.</li>
+                                <li><strong>Customization:</strong> Change foreground and background colors, and adjust size.</li>
+                                <li><strong>Error Correction Levels:</strong> Choose from Low, Medium, Quartile, or High error correction to ensure scannability even if the code is partially damaged.</li>
+                                <li><strong>Download as PNG/SVG:</strong> Get high-quality raster (PNG) or vector (SVG) images suitable for print and web.</li>
+                                <li><strong>Client-Side Generation:</strong> Fast and secure, all processing happens in your browser.</li>
+                            </ul>
+
+                            <h2 class="h4 mt-4">How to Create a QR Code</h2>
+                            <ol>
+                                <li>Select the type of data you want to encode (e.g., URL, Text, WiFi).</li>
+                                <li>Enter the required information in the fields provided.</li>
+                                <li>Customize the QR code's appearance (colors, size, error correction level) if desired.</li>
+                                <li>Click "Generate QR Code".</li>
+                                <li>Your QR code will appear on the right. You can then download it as a PNG or SVG file.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar card">
+                        <div class="card-body">
+                            <h3 class="h5">Related Tools</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="url-encoder-decoder.html">URL Encoder/Decoder</a></li>
+                                <!-- Add more related tools once they are created -->
+                            </ul>
+                            <hr>
+                            <h3 class="h5 mt-3">From Our Blog</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Creative Ways to Use QR Codes (Future Post)</a></li>
+                                <li><a href="#">QR Codes in Marketing: A Complete Guide (Future Post)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="faq-section card">
+                        <div class="card-body">
+                            <h2 class="h4 text-center mb-4">Frequently Asked Questions (QR Code Generator)</h2>
+                            <div class="accordion" id="faqAccordionQR">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqQRHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqQRCollapseOne" aria-expanded="false" aria-controls="faqQRCollapseOne">
+                                            Are the generated QR codes free to use?
+                                        </button>
+                                    </h3>
+                                    <div id="faqQRCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqQRHeadingOne" data-bs-parent="#faqAccordionQR">
+                                        <div class="accordion-body">
+                                            Yes, all QR codes generated with this tool are completely free for both personal and commercial use. There are no restrictions or watermarks.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqQRHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqQRCollapseTwo" aria-expanded="false" aria-controls="faqQRCollapseTwo">
+                                            Do QR codes expire?
+                                        </button>
+                                    </h3>
+                                    <div id="faqQRCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqQRHeadingTwo" data-bs-parent="#faqAccordionQR">
+                                        <div class="accordion-body">
+                                            The QR code image itself does not expire. It will continue to work as long as the data it points to (like a website URL) is still active and accessible. If the underlying data (e.g., the webpage) is removed, the QR code will no longer function as intended.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqQRHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqQRCollapseThree" aria-expanded="false" aria-controls="faqQRCollapseThree">
+                                            Can I customize the QR code design?
+                                        </button>
+                                    </h3>
+                                    <div id="faqQRCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqQRHeadingThree" data-bs-parent="#faqAccordionQR">
+                                        <div class="accordion-body">
+                                            Yes, you can customize the foreground (dots) and background colors of your QR code. You can also adjust its size and choose an error correction level. More advanced design options like adding a logo might be considered for future updates.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Tool Content -->
+
+    <!-- Start Call To Action (Copied, paths adjusted) -->
+    <div class="container call-to-action text-center mb160" style="background-image: url(../assets/img/bg/newsletter.svg);">
+        <h2>Let's Start Creating together</h2>
+        <a href="../contact.html" class="border-btn-2">Hire Me</a>
+    </div>
+    <!-- End Call To Action -->
+
+    <!-- START FOOTER (Copied, paths adjusted) -->
+    <footer class="footer pt220">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Follow Me</h4>
+                            <ul class="socail-link">
+                                <li><a href="https://x.com/Sanjay18991236" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                <li><a href="https://www.instagram.com/sanjay_guthula" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                                <li><a href="https://linkedin.com/in/sanjayguthula" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget fcontact-info">
+                            <h4 class="fotter-title">Contact Info</h4>
+                            <p><a href="tel:+919000114476">+91 9000114476</a></p>
+                            <p><a href="mailto:sanjaykumarguthula@gmail.com">sanjaykumarguthula@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn" style="display:none;">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Newsletter</h4>
+                            <div class="newsletter-form">
+                                <form method="post" action="">
+                                    <input type="email" placeholder="Email Address">
+                                    <button type="submit"><img src="../assets/img/icons/arrow-newsletter.svg" alt=""></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">
+                            Copyright © 2024 Sanjay Guthula. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- Common JS (paths adjusted) -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
+    <script src="../assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.js"></script>
+    <script src="../assets/js/YouTubePopUp.jquery.js"></script>
+    <script src="../assets/js/yvpopup-active.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scrolltopcontrol.js"></script>
+    <script src="../assets/js/slick.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <!-- QR Code Generator Specific JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script> <!-- QRious library -->
+    <script src="../assets/js/qr-code-generator.js"></script>
+
+</body>
+</html>

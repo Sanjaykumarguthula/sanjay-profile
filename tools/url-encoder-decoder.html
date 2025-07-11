@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <title>URL Encoder & Decoder - Online Encode/Decode URLs</title>
+    <meta name="description" content="Free online tool to encode or decode URLs and strings. Easily convert special characters for web-safe URLs using percent-encoding.">
+    <meta name="keywords" content="url encoder, url decoder, encode url, decode url, percent encoding, uri encoder, uri decoder, developer tools, free tools">
+    <!-- Add canonical URL if applicable -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="URL Encoder & Decoder - Online Encode/Decode URLs">
+    <meta property="og:description" content="Free online tool to encode or decode URLs and strings. Easily convert special characters for web-safe URLs using percent-encoding.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="https://www.yourdomain.com/assets/img/og-image-url-encoder.png"> -->
+    <!-- <meta property="og:url" content="https://www.yourdomain.com/tools/url-encoder-decoder.html"> -->
+
+    <!-- Common CSS (paths adjusted for subdirectory) -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-simple-mobilemenu.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/YouTubePopUp.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="../assets/css/slick-theme.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body data-spy="scroll" data-offset="80">
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- START NAVBAR (Copied, paths adjusted) -->
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo">
+                        <a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a>
+                    </div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="current"><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center">
+                    <a href="../contact.html" class="border-btn">Get in Touch</a>
+                </div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+
+    <!-- START Main Banner -->
+    <section class="main-banner tool-specific-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 align-self-center wow fadeIn">
+                    <div class="main_banner_content">
+                        <h1>Free URL Encoder & Decoder Tool</h1>
+                        <h4>Encode or Decode URLs and Strings for Web Safety</h4>
+                        <div class="ba_shape">
+                            <svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bashape_1"><img src="../assets/img/shapes/banner-shape1.svg" alt="decorative shape"></div>
+        <div class="bashape_2"><img src="../assets/img/shapes/star-1.svg" alt="decorative shape"></div>
+        <div class="bashape_3"><img src="../assets/img/shapes/star-2.svg" alt="decorative shape"></div>
+    </section>
+    <!-- END Main Banner -->
+
+    <!-- START Tool Content -->
+    <section class="tools-content section-padding">
+        <div class="container">
+            <!-- URL Encoder/Decoder Tool Section -->
+            <div class="row mt-0">
+                <div class="col-12">
+                    <div class="tool-container card">
+                        <div class="card-body">
+                            <p class="lead mb-4">Paste your URL or string into the input area to encode or decode it. This tool uses `encodeURIComponent` and `decodeURIComponent` for robust handling of special characters.</p>
+
+                            <div class="form-group mb-3">
+                                <label for="urlInput" class="form-label">Input URL or String:</label>
+                                <textarea id="urlInput" class="form-control" rows="6" placeholder="e.g., https://example.com/search?q=hello world&param=value with spaces"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <button id="encodeBtn" class="btn btn-primary me-2">Encode</button>
+                                <button id="decodeBtn" class="btn btn-secondary me-2">Decode</button>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="urlOutput" class="form-label">Output:</label>
+                                <textarea id="urlOutput" class="form-control" rows="6" placeholder="Encoded or decoded output will appear here..." readonly></textarea>
+                            </div>
+
+                            <div>
+                                <button id="copyOutputBtn" class="btn btn-outline-primary me-2">Copy Output</button>
+                                <button id="clearBtn" class="btn btn-danger">Clear All</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End URL Encoder/Decoder Tool Section -->
+
+            <!-- Additional Content Sections -->
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="tool-description card">
+                        <div class="card-body">
+                            <h2 class="h4">Encode or Decode URLs Instantly</h2>
+                            <p>URL encoding, also known as percent-encoding, converts characters that are not allowed in URLs (like spaces, and special symbols) into a representation that is universally accepted by web browsers and servers. Decoding reverses this process.</p>
+
+                            <h2 class="h4 mt-4">What is URL Encoding?</h2>
+                            <p>URLs can only be transmitted over the Internet using the ASCII character-set. Since URLs often contain characters outside the ASCII set, the URL has to be converted into a valid ASCII format. URL encoding replaces unsafe ASCII characters with a "%" followed by two hexadecimal digits corresponding to the character's ASCII value. For example, a space character is encoded as `%20`.</p>
+                            <p>This tool uses `encodeURIComponent()` which encodes special characters, including those with special meaning in URLs (e.g., `:`, `/`, `?`, `&`, `#`). This is generally what you want when encoding a string to be part of a URL query parameter.</p>
+
+                            <h2 class="h4 mt-4">How to Use This Tool</h2>
+                            <ol>
+                                <li>Paste the URL or string you want to process into the "Input URL or String" field.</li>
+                                <li>Click the "Encode" button to convert it to its URL-encoded form.</li>
+                                <li>Click the "Decode" button to convert a URL-encoded string back to its original form.</li>
+                                <li>The result will appear in the "Output" field.</li>
+                                <li>Use the "Copy Output" button to copy the result, or "Clear All" to reset both fields.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar card">
+                        <div class="card-body">
+                            <h3 class="h5">Related Developer Tools</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="json-validator-formatter.html">JSON Validator & Formatter</a></li>
+                                <li><a href="base64-encoder-decoder.html">Base64 Encoder/Decoder</a></li>
+                                <li><a href="qr-code-generator.html">QR Code Generator</a></li>
+                            </ul>
+                            <hr>
+                            <h3 class="h5 mt-3">From Our Blog</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Understanding URL Encoding (Future Post)</a></li>
+                                <li><a href="#">Best Practices for URL Structure (Future Post)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="faq-section card">
+                        <div class="card-body">
+                            <h2 class="h4 text-center mb-4">Frequently Asked Questions (URL Encoder/Decoder)</h2>
+                            <div class="accordion" id="faqAccordionUrl">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqUrlHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqUrlCollapseOne" aria-expanded="false" aria-controls="faqUrlCollapseOne">
+                                            Why do URLs need to be encoded?
+                                        </button>
+                                    </h3>
+                                    <div id="faqUrlCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqUrlHeadingOne" data-bs-parent="#faqAccordionUrl">
+                                        <div class="accordion-body">
+                                            URLs need to be encoded to ensure they are transmitted correctly and can be interpreted consistently across different systems. Certain characters (like spaces, question marks, ampersands, etc., when not used as delimiters) are not allowed or have special meanings in URLs. Encoding converts these characters into a safe format (percent-encoding) that prevents misinterpretation or errors.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqUrlHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqUrlCollapseTwo" aria-expanded="false" aria-controls="faqUrlCollapseTwo">
+                                            What's the difference between `encodeURI` and `encodeURIComponent`?
+                                        </button>
+                                    </h3>
+                                    <div id="faqUrlCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqUrlHeadingTwo" data-bs-parent="#faqAccordionUrl">
+                                        <div class="accordion-body">
+                                            `encodeURI()` is used to encode a full URI (Uniform Resource Identifier). It does not encode characters that have special meaning for URLs, such as `:`, `/`, `?`, `&`, `=`, `#`. <br>
+                                            `encodeURIComponent()` is used to encode a component of a URI, such as a query string parameter. It encodes all characters that have special meaning, making it suitable for ensuring that data passed in a URL is not misinterpreted. This tool primarily uses `encodeURIComponent()` for encoding as it's generally safer for individual string components.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqUrlHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqUrlCollapseThree" aria-expanded="false" aria-controls="faqUrlCollapseThree">
+                                            Is this tool safe for sensitive data?
+                                        </button>
+                                    </h3>
+                                    <div id="faqUrlCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqUrlHeadingThree" data-bs-parent="#faqAccordionUrl">
+                                        <div class="accordion-body">
+                                            All encoding and decoding operations are performed client-side, meaning the data you enter is processed in your browser and not sent to our servers. However, be mindful that if you are encoding sensitive information that will become part of a URL, that URL might be logged by browsers, servers, or proxies. The encoding itself doesn't encrypt the data, it only makes it URL-safe.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Tool Content -->
+
+    <!-- Start Call To Action (Copied, paths adjusted) -->
+    <div class="container call-to-action text-center mb160" style="background-image: url(../assets/img/bg/newsletter.svg);">
+        <h2>Let's Start Creating together</h2>
+        <a href="../contact.html" class="border-btn-2">Hire Me</a>
+    </div>
+    <!-- End Call To Action -->
+
+    <!-- START FOOTER (Copied, paths adjusted) -->
+    <footer class="footer pt220">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Follow Me</h4>
+                            <ul class="socail-link">
+                                <li><a href="https://x.com/Sanjay18991236" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                <li><a href="https://www.instagram.com/sanjay_guthula" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                                <li><a href="https://linkedin.com/in/sanjayguthula" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget fcontact-info">
+                            <h4 class="fotter-title">Contact Info</h4>
+                            <p><a href="tel:+919000114476">+91 9000114476</a></p>
+                            <p><a href="mailto:sanjaykumarguthula@gmail.com">sanjaykumarguthula@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn" style="display:none;">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Newsletter</h4>
+                            <div class="newsletter-form">
+                                <form method="post" action="">
+                                    <input type="email" placeholder="Email Address">
+                                    <button type="submit"><img src="../assets/img/icons/arrow-newsletter.svg" alt=""></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">
+                            Copyright © 2024 Sanjay Guthula. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- Common JS (paths adjusted) -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
+    <script src="../assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.js"></script>
+    <script src="../assets/js/YouTubePopUp.jquery.js"></script>
+    <script src="../assets/js/yvpopup-active.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scrolltopcontrol.js"></script>
+    <script src="../assets/js/slick.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <!-- URL Encoder/Decoder Specific JS -->
+    <script src="../assets/js/url-encoder-decoder.js"></script>
+
+</body>
+</html>
