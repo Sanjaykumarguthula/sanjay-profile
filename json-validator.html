@@ -6,9 +6,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- SITE TITLE -->
-		<title>Free Tools - Sanjay Guthula</title>
+		<title>JSON Validator & Formatter - Sanjay Guthula</title>
 		<!-- Latest Bootstrap min CSS -->
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<!-- Google Font -->
@@ -76,7 +75,7 @@
 
 					<ul class="mobile_menu">
 						<li><a href="index.html">Home</a></li>
-                        <li><a href="tools.html">Free Tools</a></li>
+                        <li class="current"><a href="tools.html">Free Tools</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="games.html">Games</a></li>
 						<li><a href="contact.html">Contact</a></li>
@@ -92,8 +91,8 @@
 				<div class="row">
 					<div class="col-xl-8 align-self-center wow fadeIn">
 						<div class="main_banner_content">
-							<span>Free Tools</span>
-							<h4>Explore Useful Tools & Resources</h4>
+							<span>Free Tools / Developer Tools</span>
+							<h4>JSON Validator & Formatter</h4>
 							<div class="ba_shape">
 								<svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
 							</div>
@@ -101,40 +100,47 @@
 					</div><!-- End Col -->
 				</div>
 			</div>
-
 			<div class="bashape_1">
 				<img src="assets/img/shapes/banner-shape1.svg" alt="shape">
 			</div>
-
 			<div class="bashape_2">
 				<img src="assets/img/shapes/star-1.svg" alt="shape">
 			</div>
-
 			<div class="bashape_3">
 				<img src="assets/img/shapes/star-2.svg" alt="shape">
 			</div>
-
 		</section>
 		<!-- END Main Banner -->
 
 		<!-- START Tools Content -->
 		<section class="tools-content section-padding">
 			<div class="container">
-				<!-- Search Bar -->
-				<div class="row mb-4">
-					<div class="col-md-8 offset-md-2">
-						<div class="input-group">
-							<input type="text" id="toolSearchInput" class="form-control" placeholder="Search for tools by name or category (e.g., SEO, Text)...">
-							<button class="btn btn-outline-secondary" type="button" id="clearSearchBtn">Clear Search</button>
+				<!-- JSON Validator Tool Section -->
+				<div id="jsonValidatorToolSection" class="row mt-5">
+					<div class="col-12">
+						<div class="tool-container card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-center mb-3">
+									<h4 class="card-title">JSON Validator & Formatter</h4>
+									<a href="tools.html" class="btn btn-sm btn-outline-secondary back-to-tools-btn">Back to Tools List</a>
+								</div>
+								<p>Paste your JSON data below to validate and format it.</p>
+								<div class="form-group">
+									<textarea id="jsonInputArea" class="form-control" rows="10" placeholder="Enter JSON here..."></textarea>
+								</div>
+								<button id="validateJsonBtn" class="btn btn-primary mt-3 mb-3">Validate & Format JSON</button>
+								<div id="jsonResultArea" class="mt-3">
+									<!-- Validation messages will appear here -->
+								</div>
+								<div id="formattedJsonContainer" class="mt-3" style="display: none;">
+									<h5>Formatted JSON:</h5>
+									<pre id="formattedJsonOutput" class="bg-light p-3 border rounded"></pre>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- Tool Cards Grid -->
-				<div id="toolCardsContainer" class="row">
-					<!-- Tool cards will be dynamically inserted here by JavaScript -->
-					<!-- Implemented tool sections (Word Counter, JSON Validator, SEO Meta Tag Checker) are now removed from here and exist on their own pages. -->
-				</div>
+				<!-- End JSON Validator Tool Section -->
 			</div>
 		</section>
 		<!-- END Tools Content -->

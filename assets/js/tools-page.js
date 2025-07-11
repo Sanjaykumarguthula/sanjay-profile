@@ -134,12 +134,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const cardElement = document.createElement('div');
             cardElement.className = 'tool-card'; // Use the CSS class we defined
 
+            const toolPageName = tool.id ? tool.id.replace(/ToolSection$/, '.html').toLowerCase() : `${tool.name.toLowerCase().replace(/\s+/g, '-')}.html`;
+            const isImplemented = ['word-counter.html', 'json-validator.html', 'seo-meta-tag-checker.html'].includes(toolPageName);
+            const targetUrl = isImplemented ? toolPageName : (tool.url && tool.url.startsWith("#") ? 'coming-soon.html' : tool.url || 'coming-soon.html');
+
+
             cardElement.innerHTML = `
                 <h5>${tool.name}</h5>
                 <p>${tool.description}</p>
-                <button data-tool-id="${tool.id || tool.name.toLowerCase().replace(/\s+/g, '-')}" class="btn btn-use-now">Use Now</button>
+                <a href="${targetUrl}" class="btn btn-use-now">Use Now</a>
             `;
-            // Removed direct href, will handle navigation via JS
 
             cardWrapper.appendChild(cardElement);
             toolCardsContainer.appendChild(cardWrapper);
@@ -147,13 +151,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initial display of all tools
-    if (toolCardsContainer && typeof toolsData !== 'undefined') {
+    if (toolCardsContainer && typeof toolsData !== 'undefined' && document.getElementById('toolCardsContainer')) { // Ensure this runs only on tools.html
         displayTools(toolsData);
     }
 
     // The filterTools function (defined above) will work by showing/hiding these generated cards.
 
-    // --- Word Counter Logic ---
+    // --- Word Counter Logic (and other tool specific logic) ---
+    // This logic should now only run if the relevant elements for each tool are present on the page.
+    // The existing `if (element)` checks before adding event listeners are good.
+
     const wordCounterInput = document.getElementById('wordCounterInput');
     const wordCountOutput = document.getElementById('wordCountOutput');
     const charCountOutput = document.getElementById('charCountOutput');
@@ -224,63 +231,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // --- End Word Counter Logic ---
 
-    // --- Tool Navigation Logic ---
-    const allToolSections = document.querySelectorAll('.tool-content .row[id$="ToolSection"]'); // Selects all tool sections based on ID pattern
-    const backToToolsBtns = document.querySelectorAll('.back-to-tools-btn'); // Select all back buttons by class
+    // --- Tool Navigation Logic (Primarily for "Back to Tools" buttons on individual tool pages) ---
+    // The old logic for showing/hiding sections on tools.html is no longer needed here.
+    // The "Use Now" buttons on tools.html are now direct links.
 
-    function showToolSection(toolIdToShow) {
-        // Hide tool cards container and search bar
-        if (toolCardsContainer) toolCardsContainer.style.display = 'none';
-        if (searchInput) searchInput.closest('.row').style.display = 'none';
-
-        // Hide all tool sections
-        allToolSections.forEach(section => {
-            section.style.display = 'none';
-        });
-
-        // Show the selected tool section
-        const sectionToShow = document.getElementById(toolIdToShow);
-        if (sectionToShow) {
-            sectionToShow.style.display = 'block'; // Or 'flex' if it's a flex container (Bootstrap row)
-        } else {
-            console.warn(`Tool section with ID "${toolIdToShow}" not found.`);
-            showToolsList(); // Fallback to tools list if section not found
-        }
-    }
-
-    function showToolsList() {
-        // Hide all tool sections
-        allToolSections.forEach(section => {
-            section.style.display = 'none';
-        });
-
-        // Show tool cards container and search bar
-        if (toolCardsContainer) toolCardsContainer.style.display = 'flex'; // Bootstrap .row is display:flex
-        if (searchInput) searchInput.closest('.row').style.display = 'flex';
-    }
-
-    // Event listener for "Use Now" buttons (delegated from the container)
-    if (toolCardsContainer) {
-        toolCardsContainer.addEventListener('click', function(event) {
-            const target = event.target;
-            if (target.classList.contains('btn-use-now')) {
-                const toolId = target.getAttribute('data-tool-id');
-                if (toolId) {
-                    const toolDataEntry = toolsData.find(t => t.id === toolId || t.name.toLowerCase().replace(/\s+/g, '-') === toolId);
-                    if (toolDataEntry && document.getElementById(toolId)) { // Check if an implemented section exists
-                        showToolSection(toolId);
-                    } else if (toolId) { // If toolId exists but no section, it's a placeholder for an unimplemented tool
-                        window.location.href = 'coming-soon.html';
-                    }
-                }
-            }
-        });
-    }
-
-    // Event listener for all "Back to Tools" buttons
+    const backToToolsBtns = document.querySelectorAll('.back-to-tools-btn');
     if (backToToolsBtns) {
         backToToolsBtns.forEach(btn => {
-            btn.addEventListener('click', showToolsList);
+            // Ensure these are actual links <a> or handle navigation if they are <button>
+            // Assuming they are <a> tags as per the change in individual tool HTML files:
+            // No specific JS needed if they are <a href="tools.html">...</a>
+            // If they were buttons and we needed JS-based navigation:
+            // btn.addEventListener('click', function() {
+            //     window.location.href = 'tools.html';
+            // });
         });
     }
     // --- End Tool Navigation Logic ---
