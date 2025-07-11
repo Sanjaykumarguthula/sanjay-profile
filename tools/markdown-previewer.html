@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <title>Free Markdown Previewer - Real-time Online Editor (MD to HTML)</title>
+    <meta name="description" content="Write and preview Markdown online in real-time. Our free editor converts your Markdown syntax to HTML instantly. Supports common Markdown features.">
+    <meta name="keywords" content="markdown previewer, markdown editor, online markdown, md to html, real-time markdown, free markdown tool, developer tools, writing tools">
+    <!-- Add canonical URL if applicable -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Markdown Previewer - Real-time Online Editor (MD to HTML)">
+    <meta property="og:description" content="Write and preview Markdown online in real-time. Our free editor converts your Markdown syntax to HTML instantly. Supports common Markdown features.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="https://www.yourdomain.com/assets/img/og-image-markdown-previewer.png"> -->
+    <!-- <meta property="og:url" content="https://www.yourdomain.com/tools/markdown-previewer.html"> -->
+
+    <!-- Common CSS (paths adjusted for subdirectory) -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/jquery-simple-mobilemenu.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/YouTubePopUp.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="../assets/css/slick-theme.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Custom CSS for Markdown Previewer -->
+    <style>
+        .markdown-editor-area, .markdown-preview-area {
+            height: 500px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            overflow-y: auto;
+            font-family: monospace;
+        }
+        .markdown-preview-area {
+            background-color: #f8f9fa;
+            font-family: sans-serif; /* Reset for preview */
+        }
+        .markdown-preview-area h1, .markdown-preview-area h2, .markdown-preview-area h3, .markdown-preview-area h4, .markdown-preview-area h5, .markdown-preview-area h6 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        .markdown-preview-area p { margin-bottom: 1em; }
+        .markdown-preview-area ul, .markdown-preview-area ol { margin-bottom: 1em; padding-left: 2em; }
+        .markdown-preview-area blockquote {
+            border-left: 5px solid #eee;
+            padding-left: 1em;
+            margin-left: 0;
+            color: #666;
+        }
+        .markdown-preview-area pre {
+            background-color: #2d2d2d;
+            color: #ccc;
+            padding: 1em;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        .markdown-preview-area code:not(pre code) {
+            background-color: #f0f0f0;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+        .markdown-preview-area img { max-width: 100%; height: auto; }
+    </style>
+</head>
+
+<body data-spy="scroll" data-offset="80">
+
+    <!-- START PRELOADER -->
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- START NAVBAR (Copied, paths adjusted) -->
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo">
+                        <a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a>
+                    </div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li class="current"><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center">
+                    <a href="../contact.html" class="border-btn">Get in Touch</a>
+                </div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+
+    <!-- START Main Banner -->
+    <section class="main-banner tool-specific-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 align-self-center wow fadeIn">
+                    <div class="main_banner_content">
+                        <h1>Online Markdown Editor & Previewer</h1>
+                        <h4>Write Markdown and See Real-time HTML Output Side-by-Side</h4>
+                        <div class="ba_shape">
+                            <svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bashape_1"><img src="../assets/img/shapes/banner-shape1.svg" alt="decorative shape"></div>
+        <div class="bashape_2"><img src="../assets/img/shapes/star-1.svg" alt="decorative shape"></div>
+        <div class="bashape_3"><img src="../assets/img/shapes/star-2.svg" alt="decorative shape"></div>
+    </section>
+    <!-- END Main Banner -->
+
+    <!-- START Tool Content -->
+    <section class="tools-content section-padding">
+        <div class="container-fluid"> <!-- Use container-fluid for wider layout -->
+            <!-- Markdown Previewer Tool Section -->
+            <div class="row mt-0">
+                <div class="col-12">
+                    <div class="tool-container card">
+                        <div class="card-body">
+                            <p class="lead mb-4">Type your Markdown text in the left panel, and see the HTML preview instantly on the right. Common Markdown syntax is supported.</p>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <h3 class="h5">Markdown Input:</h3>
+                                    <textarea id="markdownInput" class="form-control markdown-editor-area" placeholder="## Start typing your Markdown here...
+
+- List item 1
+- List item 2
+
+[This is a link](https://example.com)
+
+**Bold text** and *italic text*.
+
+`Inline code`
+
+```javascript
+function hello() {
+  console.log('Hello, Markdown!');
+}
+```
+"></textarea>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <h3 class="h5">HTML Preview:</h3>
+                                    <div id="htmlPreview" class="markdown-preview-area">
+                                        <!-- Real-time HTML preview will appear here -->
+                                        <p class="text-muted">HTML preview will appear here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button id="clearMarkdownBtn" class="btn btn-danger me-2">Clear Input</button>
+                                <button id="copyHtmlBtn" class="btn btn-outline-primary">Copy HTML Output</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Markdown Previewer Tool Section -->
+
+            <!-- Additional Content Sections -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto"> <!-- Centering content for standard container width -->
+                    <div class="tool-description card">
+                        <div class="card-body">
+                            <h2 class="h4">Real-Time Markdown Editing</h2>
+                            <p>Our online Markdown previewer provides a simple and efficient way to write and verify your Markdown syntax. As you type in the editor panel, the corresponding HTML output is rendered in real-time in the preview panel.</p>
+
+                            <h2 class="h4 mt-4">Supported Markdown Syntax (Common Features)</h2>
+                            <ul>
+                                <li>Headings (H1 to H6 using `#` syntax)</li>
+                                <li>Bold (`**text**` or `__text__`) and Italic (`*text*` or `_text_`)</li>
+                                <li>Strikethrough (`~~text~~`)</li>
+                                <li>Ordered Lists (`1. Item`) and Unordered Lists (`- Item` or `* Item`)</li>
+                                <li>Links (`[Link Text](URL)`) and Images (`![Alt Text](Image URL)`)</li>
+                                <li>Blockquotes (`> Quoted text`)</li>
+                                <li>Inline Code (``code``) and Code Blocks (```language ... ```)</li>
+                                <li>Horizontal Rules (`---` or `***`)</li>
+                                <!-- Add more if the chosen library supports them by default, e.g., Tables -->
+                            </ul>
+
+                            <h2 class="h4 mt-4">How to Use the Markdown Previewer</h2>
+                            <ol>
+                                <li>Start typing your Markdown content in the "Markdown Input" panel on the left.</li>
+                                <li>As you type, the "HTML Preview" panel on the right will update automatically to show how your Markdown will be rendered.</li>
+                                <li>Use the "Clear Input" button to empty the Markdown editor.</li>
+                                <li>Use the "Copy HTML Output" button to copy the generated HTML code to your clipboard.</li>
+                            </ol>
+
+                            <h2 class="h4 mt-4">What is Markdown?</h2>
+                            <p>Markdown is a lightweight markup language with plain-text-formatting syntax. It's designed so that it can be converted to HTML and many other formats. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mx-auto"> <!-- Centering content for standard container width -->
+                    <div class="sidebar card mt-lg-0 mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">Related Developer Tools</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="text-case-converter.html">Text Case Converter</a></li>
+                                <li><a href="base64-encoder-decoder.html">Base64 Encoder/Decoder</a></li>
+                            </ul>
+                            <hr>
+                            <h3 class="h5 mt-3">From Our Blog</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Getting Started with Markdown (Future Post)</a></li>
+                                <li><a href="#">Advanced Markdown Tips & Tricks (Future Post)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto"> <!-- Centering content for standard container width -->
+                    <div class="faq-section card">
+                        <div class="card-body">
+                            <h2 class="h4 text-center mb-4">Frequently Asked Questions (Markdown Previewer)</h2>
+                            <div class="accordion" id="faqAccordionMd">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqMdHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqMdCollapseOne" aria-expanded="false" aria-controls="faqMdCollapseOne">
+                                            Can I export the HTML?
+                                        </button>
+                                    </h3>
+                                    <div id="faqMdCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqMdHeadingOne" data-bs-parent="#faqAccordionMd">
+                                        <div class="accordion-body">
+                                            Yes, you can use the "Copy HTML Output" button to copy the generated HTML code. You can then paste this HTML into your own files or systems.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqMdHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqMdCollapseTwo" aria-expanded="false" aria-controls="faqMdCollapseTwo">
+                                            What version of Markdown is supported?
+                                        </button>
+                                    </h3>
+                                    <div id="faqMdCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqMdHeadingTwo" data-bs-parent="#faqAccordionMd">
+                                        <div class="accordion-body">
+                                            This tool uses a popular JavaScript library (like Marked.js or Showdown.js) that generally supports CommonMark specifications along with some elements of GitHub Flavored Markdown (GFM), such as fenced code blocks and strikethrough. For specific syntax details, refer to standard Markdown documentation.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqMdHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqMdCollapseThree" aria-expanded="false" aria-controls="faqMdCollapseThree">
+                                        Is my Markdown content saved?
+                                        </button>
+                                    </h3>
+                                    <div id="faqMdCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqMdHeadingThree" data-bs-parent="#faqAccordionMd">
+                                        <div class="accordion-body">
+                                            No, your Markdown content is processed entirely in your browser (client-side). It is not sent to or stored on our servers. If you refresh the page or close your browser, the content will be lost unless you save it locally.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Tool Content -->
+
+    <!-- Start Call To Action (Copied, paths adjusted) -->
+    <div class="container call-to-action text-center mb160" style="background-image: url(../assets/img/bg/newsletter.svg);">
+        <h2>Let's Start Creating together</h2>
+        <a href="../contact.html" class="border-btn-2">Hire Me</a>
+    </div>
+    <!-- End Call To Action -->
+
+    <!-- START FOOTER (Copied, paths adjusted) -->
+    <footer class="footer pt220">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Follow Me</h4>
+                            <ul class="socail-link">
+                                <li><a href="https://x.com/Sanjay18991236" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                <li><a href="https://www.instagram.com/sanjay_guthula" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                                <li><a href="https://linkedin.com/in/sanjayguthula" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
+                        <div class="footer-widget fcontact-info">
+                            <h4 class="fotter-title">Contact Info</h4>
+                            <p><a href="tel:+919000114476">+91 9000114476</a></p>
+                            <p><a href="mailto:sanjaykumarguthula@gmail.com">sanjaykumarguthula@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn" style="display:none;">
+                        <div class="footer-widget">
+                            <h4 class="fotter-title">Newsletter</h4>
+                            <div class="newsletter-form">
+                                <form method="post" action="">
+                                    <input type="email" placeholder="Email Address">
+                                    <button type="submit"><img src="../assets/img/icons/arrow-newsletter.svg" alt=""></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">
+                            Copyright © 2024 Sanjay Guthula. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- Common JS (paths adjusted) -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
+    <script src="../assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.js"></script>
+    <script src="../assets/js/YouTubePopUp.jquery.js"></script>
+    <script src="../assets/js/yvpopup-active.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scrolltopcontrol.js"></script>
+    <script src="../assets/js/slick.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <!-- Markdown Previewer Specific JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- Marked.js library -->
+    <script src="../assets/js/markdown-previewer.js"></script>
+
+</body>
+</html>
