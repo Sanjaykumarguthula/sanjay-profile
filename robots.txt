@@ -1,0 +1,7 @@
+# Allow all user-agents to crawl the entire site.
+User-agent: *
+Disallow:
+
+# Point to the sitemap file for better indexing.
+# Make sure to replace "https://sanjayguthula.com" with the actual domain.
+Sitemap: https://sanjayguthula.com/sitemap.xml
