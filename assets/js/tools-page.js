@@ -4,75 +4,75 @@ const toolsData = [
         name: "Word Counter",
         category: "Text Analysis",
         description: "Counts words and characters in text input. Useful for marketers and writers.",
-        url: "tools/word-counter.html"
+        url: "tools/word-counter"
     },
     {
         // id: "jsonValidatorToolSection", // No longer needed
         name: "JSON Validator",
         category: "Developer Tools",
         description: "Validates and formats JSON input. Great for developers.",
-        url: "tools/json-validator-formatter.html"
+        url: "tools/json-validator-formatter"
     },
     {
         name: "Image Compressor",
         category: "Web Optimization",
         description: "Compresses images client-side. Useful for web optimization.",
-        url: "tools/image-compressor.html"
+        url: "tools/image-compressor"
     },
     {
         // id: "seoMetaTagCheckerToolSection", // No longer needed
         name: "SEO Meta Tag Checker",
         category: "SEO",
         description: "Analyzes a page's HTML meta tags. Client-side analysis.",
-        url: "tools/seo-meta-tag-checker.html"
+        url: "tools/seo-meta-tag-checker"
     },
     {
         name: "Color Palette Generator",
         category: "Design",
         description: "Creates color schemes from a base color. For designers.",
-        url: "tools/color-palette-generator.html"
+        url: "tools/color-palette-generator"
     },
     {
         name: "QR Code Generator",
         category: "Utilities",
         description: "Generates QR codes from URLs or text. Marketing-friendly.",
-        url: "tools/qr-code-generator.html"
+        url: "tools/qr-code-generator"
     },
     {
         name: "Text Case Converter",
         category: "Text Manipulation",
         description: "Converts text to upper, lower, or title case. Content editing.",
-        url: "tools/text-case-converter.html"
+        url: "tools/text-case-converter"
     },
     {
         name: "Password Generator",
         category: "Security",
         description: "Creates secure, random passwords. Security-focused.",
-        url: "tools/password-generator.html"
+        url: "tools/password-generator"
     },
     {
         name: "URL Encoder/Decoder",
         category: "Developer Tools",
         description: "Encodes or decodes URLs. Developer utility.",
-        url: "tools/url-encoder-decoder.html"
+        url: "tools/url-encoder-decoder"
     },
     {
         name: "Markdown Previewer",
         category: "Developer Tools",
         description: "Converts Markdown to HTML in real-time. For writers/developers.",
-        url: "tools/markdown-previewer.html"
+        url: "tools/markdown-previewer"
     },
     {
         name: "Base64 Encoder/Decoder",
         category: "Developer Tools",
         description: "Encodes or decodes Base64 strings. Developer tool.",
-        url: "tools/base64-encoder-decoder.html"
+        url: "tools/base64-encoder-decoder"
     },
     {
         name: "Sitemap Generator",
         category: "SEO",
         description: "Creates a basic XML sitemap from a list of URLs. SEO tool.",
-        url: "tools/sitemap-generator.html"
+        url: "tools/sitemap-generator"
     }
 ];
 
