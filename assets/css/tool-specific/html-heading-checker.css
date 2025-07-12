@@ -1,0 +1,92 @@
+/* assets/css/tool-specific/html-heading-checker.css */
+
+.heading-tree {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 200px;
+    max-height: 400px; /* Make it scrollable if too long */
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+}
+
+.heading-tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.heading-tree li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Connector lines for the tree */
+.heading-tree li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid #ccc;
+    height: 100%;
+}
+.heading-tree li:last-child::before {
+    height: 12px; /* Shorter line for last item */
+}
+.heading-tree li::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    border-top: 1px solid #ccc;
+    width: 20px;
+}
+
+
+.heading-tag {
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: white;
+    margin-right: 10px;
+}
+.heading-tag.h1 { background-color: #0d6efd; }
+.heading-tag.h2 { background-color: #6f42c1; }
+.heading-tag.h3 { background-color: #198754; }
+.heading-tag.h4 { background-color: #fd7e14; }
+.heading-tag.h5 { background-color: #6c757d; }
+.heading-tag.h6 { background-color: #495057; }
+
+.heading-text {
+    color: #333;
+}
+
+.heading-error {
+    color: #dc3545; /* Red for errors */
+    font-weight: bold;
+    margin-left: 10px;
+    font-style: italic;
+}
+
+#analysisSummary ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#analysisSummary li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+#analysisSummary li.summary-good {
+    background-color: #d1e7dd; /* Light green */
+    color: #0f5132;
+}
+#analysisSummary li.summary-bad {
+    background-color: #f8d7da; /* Light red */
+    color: #842029;
+}
+#analysisSummary li i {
+    margin-right: 8px;
+}

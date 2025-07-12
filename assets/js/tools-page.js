@@ -1,79 +1,20 @@
 const toolsData = [
-    {
-        // id: "wordCounterToolSection", // No longer needed, page is separate
-        name: "Word Counter",
-        category: "Text Analysis",
-        description: "Counts words and characters in text input. Useful for marketers and writers.",
-        url: "tools/word-counter"
-    },
-    {
-        // id: "jsonValidatorToolSection", // No longer needed
-        name: "JSON Validator",
-        category: "Developer Tools",
-        description: "Validates and formats JSON input. Great for developers.",
-        url: "tools/json-validator-formatter"
-    },
-    {
-        name: "Image Compressor",
-        category: "Web Optimization",
-        description: "Compresses images client-side. Useful for web optimization.",
-        url: "tools/image-compressor"
-    },
-    {
-        // id: "seoMetaTagCheckerToolSection", // No longer needed
-        name: "SEO Meta Tag Checker",
-        category: "SEO",
-        description: "Analyzes a page's HTML meta tags. Client-side analysis.",
-        url: "tools/seo-meta-tag-checker"
-    },
-    {
-        name: "Color Palette Generator",
-        category: "Design",
-        description: "Creates color schemes from a base color. For designers.",
-        url: "tools/color-palette-generator"
-    },
-    {
-        name: "QR Code Generator",
-        category: "Utilities",
-        description: "Generates QR codes from URLs or text. Marketing-friendly.",
-        url: "tools/qr-code-generator"
-    },
-    {
-        name: "Text Case Converter",
-        category: "Text Manipulation",
-        description: "Converts text to upper, lower, or title case. Content editing.",
-        url: "tools/text-case-converter"
-    },
-    {
-        name: "Password Generator",
-        category: "Security",
-        description: "Creates secure, random passwords. Security-focused.",
-        url: "tools/password-generator"
-    },
-    {
-        name: "URL Encoder/Decoder",
-        category: "Developer Tools",
-        description: "Encodes or decodes URLs. Developer utility.",
-        url: "tools/url-encoder-decoder"
-    },
-    {
-        name: "Markdown Previewer",
-        category: "Developer Tools",
-        description: "Converts Markdown to HTML in real-time. For writers/developers.",
-        url: "tools/markdown-previewer"
-    },
-    {
-        name: "Base64 Encoder/Decoder",
-        category: "Developer Tools",
-        description: "Encodes or decodes Base64 strings. Developer tool.",
-        url: "tools/base64-encoder-decoder"
-    },
-    {
-        name: "Sitemap Generator",
-        category: "SEO",
-        description: "Creates a basic XML sitemap from a list of URLs. SEO tool.",
-        url: "tools/sitemap-generator"
-    }
+    { name: "Word Counter", category: "Text Analysis", description: "Counts words and characters in text input.", url: "tools/word-counter", cardStyle: { backgroundColor: "#0d6efd", textColor: "#FFFFFF" } },
+    { name: "JSON Validator", category: "Developer Tools", description: "Validates and formats JSON input for developers.", url: "tools/json-validator-formatter", cardStyle: { backgroundColor: "#6f42c1", textColor: "#FFFFFF" } },
+    { name: "Image Compressor", category: "Web Optimization", description: "Compresses images client-side for web optimization.", url: "tools/image-compressor", cardStyle: { backgroundColor: "#d63384", textColor: "#FFFFFF" } },
+    { name: "SEO Meta Tag Checker", category: "SEO", description: "Analyzes a page's HTML meta tags for SEO.", url: "tools/seo-meta-tag-checker", cardStyle: { backgroundColor: "#198754", textColor: "#FFFFFF" } },
+    { name: "Color Palette Generator", category: "Design", description: "Creates color schemes from a base color.", url: "tools/color-palette-generator", cardStyle: { backgroundColor: "#fd7e14", textColor: "#FFFFFF" } },
+    { name: "QR Code Generator", category: "Utilities", description: "Generates QR codes from URLs or text.", url: "tools/qr-code-generator", cardStyle: { backgroundColor: "#20c997", textColor: "#FFFFFF" } },
+    { name: "Text Case Converter", category: "Text Manipulation", description: "Converts text to upper, lower, or title case.", url: "tools/text-case-converter", cardStyle: { backgroundColor: "#6c757d", textColor: "#FFFFFF" } },
+    { name: "Password Generator", category: "Security", description: "Creates secure, random passwords for security.", url: "tools/password-generator", cardStyle: { backgroundColor: "#dc3545", textColor: "#FFFFFF" } },
+    { name: "URL Encoder/Decoder", category: "Developer Tools", description: "Encodes or decodes URLs and strings.", url: "tools/url-encoder-decoder", cardStyle: { backgroundColor: "#343a40", textColor: "#FFFFFF" } },
+    { name: "Markdown Previewer", category: "Developer Tools", description: "Converts Markdown to HTML in real-time.", url: "tools/markdown-previewer", cardStyle: { backgroundColor: "#495057", textColor: "#FFFFFF" } },
+    { name: "Base64 Encoder/Decoder", category: "Developer Tools", description: "Encodes or decodes Base64 strings.", url: "tools/base64-encoder-decoder", cardStyle: { backgroundColor: "#0dcaf0", textColor: "#212529" } },
+    { name: "Sitemap Generator", category: "SEO", description: "Creates a basic XML sitemap from a list of URLs.", url: "tools/sitemap-generator", cardStyle: { backgroundColor: "#ffc107", textColor: "#212529" } },
+    { name: "SERP Snippet Preview", category: "SEO", description: "Preview your page's title and description on Google.", url: "tools/serp-snippet-preview", cardStyle: { backgroundColor: "#4285F4", textColor: "#FFFFFF" } },
+    { name: "HTML Heading Checker", category: "SEO", description: "Analyze H1-H6 heading structure of your page.", url: "tools/html-heading-checker", cardStyle: { backgroundColor: "#34A853", textColor: "#FFFFFF" } },
+    { name: "Keyword Density Checker", category: "SEO", description: "Analyze keyword frequency and density in your text.", url: "tools/keyword-density-checker", cardStyle: { backgroundColor: "#EA4335", textColor: "#FFFFFF" } },
+    { name: "SEO File Generator", category: "SEO", description: "Generate robots.txt and sitemap.xml files.", url: "tools/seo-file-generator", cardStyle: { backgroundColor: "#7856d7", textColor: "#FFFFFF" } }
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -114,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to generate and display tool cards
     function displayTools(tools) {
+        if (!toolCardsContainer) return;
         toolCardsContainer.innerHTML = ''; // Clear existing cards
 
         if (!tools || tools.length === 0) {
@@ -122,28 +64,61 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         tools.forEach(tool => {
-            // Create the outer wrapper for Bootstrap column and data attributes
             const cardWrapper = document.createElement('div');
-            // Applying Bootstrap column classes for responsive grid
-            // col-12 for mobile (1 column), col-md-6 for medium (2 columns), col-lg-4 for large (3 columns)
-            cardWrapper.className = 'col-12 col-md-6 col-lg-4 mb-4 tool-card-wrapper';
+            cardWrapper.className = 'col-12 col-md-6 col-lg-4 mb-4 d-flex align-items-stretch';
             cardWrapper.setAttribute('data-tool-name', tool.name);
             cardWrapper.setAttribute('data-tool-category', tool.category);
 
-            // Create the card element itself
-            const cardElement = document.createElement('div');
-            cardElement.className = 'tool-card'; // Use the CSS class we defined
+            const card = document.createElement('div');
+            card.className = 'card tool-card minimalist-card h-100 text-center shadow-sm';
 
-            cardElement.innerHTML = `
-                <h5>${tool.name}</h5>
-                <p>${tool.description}</p>
-                <a href="${tool.url}" class="btn btn-use-now">Use Now</a>
-            `;
-            // Button is now an anchor tag directly linking to the tool page
+            if (tool.cardStyle) {
+                card.style.backgroundColor = tool.cardStyle.backgroundColor || '#f8f9fa';
+                card.style.color = tool.cardStyle.textColor || '#212529';
+                if (tool.cardStyle.textColor === '#FFFFFF') {
+                    card.classList.add('text-white');
+                }
+            }
 
-            cardWrapper.appendChild(cardElement);
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body d-flex flex-column p-4';
+
+            const title = document.createElement('h3');
+            title.className = 'card-title tool-title mb-3';
+            title.textContent = tool.name;
+            cardBody.appendChild(title);
+
+            const description = document.createElement('p');
+            description.className = 'card-text tool-short-description flex-grow-1 small mb-3';
+            description.textContent = tool.description;
+            cardBody.appendChild(description);
+
+            const playButton = document.createElement('a');
+            playButton.href = tool.url;
+            playButton.className = 'btn mt-auto align-self-center stretched-link';
+
+            if (tool.cardStyle && isDarkColor(tool.cardStyle.backgroundColor)) {
+                playButton.classList.add('btn-light');
+            } else {
+                playButton.classList.add('btn-dark');
+            }
+            playButton.textContent = 'Use Tool';
+            cardBody.appendChild(playButton);
+
+            card.appendChild(cardBody);
+            cardWrapper.appendChild(card);
             toolCardsContainer.appendChild(cardWrapper);
         });
+    }
+
+    function isDarkColor(hexcolor){
+        if (!hexcolor || hexcolor.length < 4) return false;
+        hexcolor = hexcolor.replace("#", "");
+        var r = parseInt(hexcolor.substr(0,2),16);
+        var g = parseInt(hexcolor.substr(2,2),16);
+        var b = parseInt(hexcolor.substr(4,2),16);
+        var yiq = ((r*299)+(g*587)+(b*114))/1000;
+        return yiq < 128;
     }
 
     // Initial display of all tools

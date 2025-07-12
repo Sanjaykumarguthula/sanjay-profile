@@ -1,0 +1,44 @@
+/* assets/css/tool-specific/seo-file-generator.css */
+
+.nav-pills .nav-link {
+    font-weight: 500;
+}
+.nav-pills .nav-link.active {
+    background-color: #0d6efd;
+    box-shadow: 0 2px 5px rgba(13, 110, 253, 0.4);
+}
+
+.tab-content {
+    border: 1px solid #dee2e6;
+    border-top: none;
+    padding: 1.5rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.output-area {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #212529; /* Dark background for code */
+    color: #f8f9fa; /* Light text */
+    border: 1px solid #495057;
+    font-size: 0.9rem;
+}
+
+#sitemapResultContainer .output-area {
+    min-height: 250px; /* Taller area for sitemap */
+}
+
+#robots-generator h5 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem !important;
+}
+
+#robots-generator .form-label {
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .tab-content {
+        padding: 1rem;
+    }
+}

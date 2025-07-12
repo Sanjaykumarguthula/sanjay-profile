@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="tool-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>robots.txt & sitemap.xml Generator</title>
+    <meta name="description" content="Easily generate robots.txt and sitemap.xml files for your website. Control web crawlers and list your URLs for better SEO indexing.">
+    <meta name="keywords" content="robots.txt generator, sitemap generator, xml sitemap, create sitemap, seo tools, free tools">
+
+    <meta property="og:title" content="Free robots.txt & sitemap.xml Generator">
+    <meta property="og:description" content="Easily generate robots.txt and sitemap.xml files for your website. Control web crawlers and list your URLs for better SEO indexing.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <link rel="stylesheet" href="../assets/css/tool-specific/seo-file-generator.css">
+</head>
+<body>
+    <div class="preloader"><span class="loader"></span></div>
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
+    </div>
+
+    <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>robots.txt & sitemap.xml Generator</h1>
+            <h4>Create essential SEO files for your website quickly and easily.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
+        <div class="container">
+            <div class="row">
+                <!-- Generator Tabs -->
+                <div class="col-12">
+                    <ul class="nav nav-pills mb-3" id="seoFileTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="robots-tab" data-bs-toggle="pill" data-bs-target="#robots-generator" type="button" role="tab" aria-controls="robots-generator" aria-selected="true">robots.txt Generator</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="sitemap-tab" data-bs-toggle="pill" data-bs-target="#sitemap-generator" type="button" role="tab" aria-controls="sitemap-generator" aria-selected="false">sitemap.xml Generator</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="seoFileTabContent">
+                        <!-- robots.txt Generator Panel -->
+                        <div class="tab-pane fade show active" id="robots-generator" role="tabpanel" aria-labelledby="robots-tab">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h5 class="mb-3">Default Rules</h5>
+                                            <div class="form-group mb-2">
+                                                <label class="form-label small">All Robots (User-agent: *)</label>
+                                                <select id="robotsDefault" class="form-select">
+                                                    <option value="allow" selected>Allow All</option>
+                                                    <option value="disallow">Disallow All</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                 <label for="sitemapUrlInput" class="form-label small">Sitemap URL (optional but recommended)</label>
+                                                 <input type="url" id="sitemapUrlInput" class="form-control" placeholder="https://example.com/sitemap.xml">
+                                            </div>
+                                            <h5 class="mb-3 mt-4">Custom Disallow Rules</h5>
+                                            <p class="small text-muted">Add directory paths to disallow (e.g., /admin/ or /private-images/). One per line.</p>
+                                            <textarea id="disallowPaths" class="form-control" rows="5" placeholder="/wp-admin/&#10;/cgi-bin/"></textarea>
+                                        </div>
+                                        <div class="col-lg-6 mt-4 mt-lg-0">
+                                            <h5 class="mb-3">Generated robots.txt</h5>
+                                            <textarea id="robotsOutput" class="form-control output-area" rows="12" readonly></textarea>
+                                            <button id="copyRobotsBtn" class="btn btn-secondary btn-sm mt-2"><i class='bx bx-copy'></i> Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- sitemap.xml Generator Panel -->
+                        <div class="tab-pane fade" id="sitemap-generator" role="tabpanel" aria-labelledby="sitemap-tab">
+                            <div class="card shadow-sm">
+                               <div class="card-body">
+                                    <p class="lead mb-3">Paste your website URLs (one per line) into the text area below to generate a simple XML sitemap.</p>
+                                    <div class="form-group mb-3">
+                                        <label for="urlListInputSitemap" class="form-label">Enter Your URLs:</label>
+                                        <textarea id="urlListInputSitemap" class="form-control" rows="10" placeholder="https://www.example.com/page1&#10;https://www.example.com/page2"></textarea>
+                                    </div>
+                                    <button id="generateSitemapBtn" class="btn btn-primary">Generate Sitemap</button>
+                                    <div class="form-group mt-4" id="sitemapResultContainer" style="display:none;">
+                                        <label for="sitemapOutput" class="form-label">Generated XML Sitemap:</label>
+                                        <textarea id="sitemapOutput" class="form-control output-area" rows="10" readonly></textarea>
+                                        <button id="copySitemapBtn" class="btn btn-secondary btn-sm mt-2 me-2"><i class='bx bx-copy'></i> Copy</button>
+                                        <button id="downloadSitemapBtn" class="btn btn-success btn-sm mt-2"><i class='bx bxs-download'></i> Download sitemap.xml</button>
+                                    </div>
+                                    <div id="sitemapError" class="alert alert-danger mt-3" style="display:none;"></div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/tool-specific/seo-file-generator.js"></script>
+</body>
+</html>
