@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="tool-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Density Checker - Analyze Keyword Frequency</title>
+    <meta name="description" content="Analyze your text's keyword density for free. Check the frequency of your main keywords and keyphrases to optimize your on-page SEO.">
+    <meta name="keywords" content="keyword density checker, keyword frequency, on-page seo, content analysis, seo tools">
+
+    <meta property="og:title" content="Keyword Density Checker - Analyze Keyword Frequency">
+    <meta property="og:description" content="Analyze your text's keyword density for free. Check the frequency of your main keywords and keyphrases to optimize your on-page SEO.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <link rel="stylesheet" href="../assets/css/tool-specific/keyword-density-checker.css">
+</head>
+<body>
+    <div class="preloader"><span class="loader"></span></div>
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
+    </div>
+
+    <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>Free Keyword Density Checker Tool</h1>
+            <h4>Analyze the keyword frequency and density of your text for on-page SEO.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="tool-container card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Paste Your Text Here</h3></div>
+                        <div class="card-body">
+                            <textarea id="textInputForDensity" class="form-control" rows="18" placeholder="Paste the full body of text you want to analyze..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="tool-container card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Keywords to Analyze</h3></div>
+                        <div class="card-body">
+                            <p class="small text-muted">Enter keywords or keyphrases, one per line.</p>
+                            <textarea id="keywordsInputForDensity" class="form-control" rows="10" placeholder="keyword one&#10;keyphrase two&#10;another keyword"></textarea>
+                            <div class="form-check form-switch mt-2">
+                                <input class="form-check-input" type="checkbox" id="ignoreCaseToggle" role="switch" checked>
+                                <label class="form-check-label small" for="ignoreCaseToggle">Ignore case (recommended)</label>
+                            </div>
+                            <button id="analyzeDensityBtn" class="btn btn-primary mt-3 w-100">Analyze Keyword Density</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="results-area card shadow-sm">
+                        <div class="card-header"><h3 class="h5 mb-0">Density Results</h3></div>
+                        <div class="card-body">
+                            <div id="densityResultsOutput">
+                                <p class="text-muted">Results will appear here after analysis.</p>
+                            </div>
+                        </div>
+                         <div class="card-footer small text-muted">
+                            Total Words in Text: <strong id="totalWordsCount">0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/tool-specific/keyword-density-checker.js"></script>
+</body>
+</html>

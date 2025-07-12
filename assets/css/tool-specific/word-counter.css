@@ -1,0 +1,51 @@
+/* assets/css/tool-specific/word-counter.css */
+
+.tool-page .tool-container .card-body {
+    padding: 2rem; /* More padding */
+}
+
+.tool-page .results-area {
+    background-color: #f8f9fa;
+}
+
+.tool-page .results-area .result-item {
+    padding: 1rem;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+.tool-page .results-area .row .col-md-4:last-child .result-item,
+.tool-page .results-area .row .col-6:nth-child(even) .result-item {
+    border-right: none;
+}
+
+.tool-page .results-area .count-value {
+    font-weight: 600;
+    color: #0d6efd; /* Blue for numbers */
+}
+
+.info-box {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+}
+.info-box .info-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+.info-box h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.info-box p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .tool-page .results-area .result-item {
+        border-right: none; /* Simplify borders on mobile */
+    }
+}

@@ -1,0 +1,43 @@
+/* assets/css/tool-specific/keyword-density-checker.css */
+
+.results-area .table {
+    margin-bottom: 0; /* Remove default bottom margin from table inside card */
+}
+
+.results-area th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.results-area td .progress {
+    height: 10px;
+    background-color: #e9ecef;
+}
+
+.density-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+.results-area .text-muted {
+    font-size: 0.9rem;
+}
+
+.card-footer strong {
+    color: #0d6efd; /* Blue for total words count */
+}
+
+@media (max-width: 576px) {
+    .tool-container .card-body, .results-area .card-body {
+        padding: 1rem;
+    }
+    textarea.form-control {
+        font-size: 0.9rem;
+    }
+    #analyzeDensityBtn {
+        font-size: 0.9rem;
+    }
+    .results-area th, .results-area td {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+}

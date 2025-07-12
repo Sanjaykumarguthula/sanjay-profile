@@ -1,334 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="tool-page">
 <head>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Validator & Formatter - Validate & Beautify JSON Online</title>
     <meta name="description" content="Validate, format, and beautify your JSON data instantly. Our free online tool helps debug JSON errors and makes your JSON human-readable.">
     <meta name="keywords" content="json validator, json formatter, json beautifier, json checker, validate json, format json, online json tool, free json tool, developer tools">
-    <!-- Add canonical URL if applicable -->
 
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="JSON Validator & Formatter - Validate & Beautify JSON Online">
     <meta property="og:description" content="Validate, format, and beautify your JSON data instantly. Our free online tool helps debug JSON errors and makes your JSON human-readable.">
     <meta property="og:type" content="website">
-    <!-- <meta property="og:image" content="https://www.yourdomain.com/assets/img/og-image-json-validator.png"> -->
-    <!-- <meta property="og:url" content="https://www.yourdomain.com/tools/json-validator-formatter.html"> -->
 
-    <!-- Common CSS (paths adjusted for subdirectory) -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../assets/css/line-awesome.css">
-    <link rel="stylesheet" href="../assets/fonts/fontawesome/fontawesome.css">
-    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../assets/owlcarousel/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../assets/css/jquery-simple-mobilemenu.css">
-    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="../assets/css/animate.css">
-    <link rel="stylesheet" href="../assets/css/YouTubePopUp.css">
-    <link rel="stylesheet" href="../assets/css/slick.css">
-    <link rel="stylesheet" href="../assets/css/slick-theme.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tool-specific/json-validator.css"> -->
 </head>
-
-<body data-spy="scroll" data-offset="80">
-
-    <!-- START PRELOADER -->
-    <div class="preloader">
-        <span class="loader"></span>
-    </div>
-    <!-- END PRELOADER -->
-
-    <!-- START NAVBAR (Copied from word-counter, paths adjusted) -->
+<body>
+    <div class="preloader"><span class="loader"></span></div>
     <div id="navigation" class="navbar-light bg-faded site-navigation">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-20 align-self-center">
-                    <div class="site-logo">
-                        <a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a>
-                    </div>
-                </div>
-                <div class="col-60 d-flex justify-content-center">
-                    <nav id="main-menu">
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li class="current"><a href="../tools">Free Tools</a></li>
-                            <li><a href="../blog">Blog</a></li>
-                            <li><a href="../games">Games</a></li>
-                            <li><a href="../contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-20 d-none d-xl-block text-end align-self-center">
-                    <a href="../contact" class="border-btn">Get in Touch</a>
-                </div>
-                <ul class="mobile_menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="../tools">Free Tools</a></li>
-                    <li><a href="../blog">Blog</a></li>
-                    <li><a href="../games">Games</a></li>
-                    <li><a href="../contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
     </div>
-    <!-- END NAVBAR -->
 
-    <!-- START Main Banner -->
     <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>Free Online JSON Validator & Formatter</h1>
+            <h4>Validate, Beautify, and Minify your JSON data with ease.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
         <div class="container">
             <div class="row">
-                <div class="col-xl-8 align-self-center wow fadeIn">
-                    <div class="main_banner_content">
-                        <h1>Free Online JSON Validator & Formatter</h1>
-                        <h4>Validate, Beautify, and Debug Your JSON Data with Ease</h4>
-                        <div class="ba_shape">
-                            <svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
+                <div class="col-lg-6 mb-4">
+                    <div class="tool-container card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Input JSON</h3></div>
+                        <div class="card-body">
+                            <textarea id="jsonInputArea" class="form-control" rows="15" placeholder="Enter or paste your JSON here..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="tool-container card shadow-sm h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h3 class="h5 mb-0">Output</h3>
+                            <button id="copyJsonOutputBtn" class="btn btn-sm btn-outline-secondary" disabled><i class='bx bx-copy'></i> Copy</button>
+                        </div>
+                        <div class="card-body">
+                            <pre id="formattedJsonOutput" class="bg-light p-3 border rounded h-100"></pre>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="bashape_1"><img src="../assets/img/shapes/banner-shape1.svg" alt="decorative shape"></div>
-        <div class="bashape_2"><img src="../assets/img/shapes/star-1.svg" alt="decorative shape"></div>
-        <div class="bashape_3"><img src="../assets/img/shapes/star-2.svg" alt="decorative shape"></div>
-    </section>
-    <!-- END Main Banner -->
-
-    <!-- START Tool Content -->
-    <section class="tools-content section-padding">
-        <div class="container">
-            <!-- JSON Validator Tool Section -->
-            <div class="row mt-0">
+            <div class="row">
                 <div class="col-12">
-                    <div class="tool-container card">
-                        <div class="card-body">
-                            <p class="lead mb-4">Paste your JSON data below to validate, format (pretty print), or minify it. Errors will be highlighted for easy debugging.</p>
-                            <div class="form-group mb-3">
-                                <textarea id="jsonInputArea" class="form-control" rows="12" placeholder="Enter or paste your JSON here..."></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <button id="validateJsonBtn" class="btn btn-primary me-2">Validate & Format JSON</button>
-                                <button id="minifyJsonBtn" class="btn btn-info me-2">Minify JSON</button>
-                                <button id="clearJsonBtn" class="btn btn-danger">Clear</button>
-                            </div>
-                            <div id="jsonResultArea" class="mt-3 alert" style="display: none;">
-                                <!-- Validation messages will appear here -->
-                            </div>
-                            <div id="formattedJsonContainer" class="mt-3" style="display: none;">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h3 class="h5">Formatted/Minified JSON:</h3>
-                                    <button id="copyJsonOutputBtn" class="btn btn-sm btn-outline-secondary">Copy to Clipboard</button>
-                                </div>
-                                <pre id="formattedJsonOutput" class="bg-light p-3 border rounded"></pre>
-                            </div>
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center">
+                            <button id="validateJsonBtn" class="btn btn-primary me-2"><i class='bx bx-check-double'></i> Validate & Format</button>
+                            <button id="minifyJsonBtn" class="btn btn-info me-2"><i class='bx bx-compress-alt'></i> Minify</button>
+                            <button id="clearJsonBtn" class="btn btn-danger"><i class='bx bx-trash'></i> Clear</button>
                         </div>
+                        <div id="jsonResultArea" class="card-footer" style="display: none;"></div>
                     </div>
                 </div>
             </div>
-            <!-- End JSON Validator Tool Section -->
-
-            <!-- Additional Content Sections -->
+             <!-- FAQ Section -->
             <div class="row mt-5">
-                <div class="col-lg-8">
-                    <div class="tool-description card">
+                <div class="col-lg-10 mx-auto">
+                     <div class="faq-section card">
                         <div class="card-body">
-                            <h2 class="h4">JSON Validator & Formatter Features</h2>
-                            <p>Our online JSON tool provides essential functionalities for developers working with JSON data. All operations are performed client-side for speed and security.</p>
-                            <ul>
-                                <li><strong>Instant JSON Validation:</strong> Quickly checks if your JSON structure is valid and reports errors with line numbers or context.</li>
-                                <li><strong>JSON Formatting (Pretty Print):</strong> Converts compact or messy JSON into a human-readable, indented format.</li>
-                                <li><strong>JSON Minification:</strong> Removes unnecessary whitespace and comments to reduce file size, useful for production environments.</li>
-                                <li><strong>Copy to Clipboard:</strong> Easily copy the validated, formatted, or minified JSON output.</li>
-                                <li><strong>Clear Interface:</strong> Simple input and output areas for straightforward usage.</li>
-                                <li><strong>Secure Client-Side Operations:</strong> Your JSON data is processed in your browser; no data is sent to our servers.</li>
-                            </ul>
-
-                            <h2 class="h4 mt-4">How to Use the JSON Tool</h2>
-                            <ol>
-                                <li>Paste your JSON data into the input area.</li>
-                                <li>Click "Validate & Format JSON" to check for errors and beautify the output.</li>
-                                <li>Click "Minify JSON" to get a compact version of your JSON.</li>
-                                <li>Any validation errors will be displayed clearly.</li>
-                                <li>The processed JSON will appear in the "Formatted/Minified JSON" section. Use the "Copy to Clipboard" button to grab the output.</li>
-                                <li>Click "Clear" to reset the input and output fields.</li>
-                            </ol>
-
-                            <h2 class="h4 mt-4">Common JSON Errors</h2>
-                            <p>Understanding common JSON errors can help you debug faster:</p>
-                            <ul>
-                                <li>Missing commas between elements.</li>
-                                <li>Trailing commas after the last element in an array or object.</li>
-                                <li>Keys not enclosed in double quotes.</li>
-                                <li>String values not enclosed in double quotes.</li>
-                                <li>Mismatched brackets `[]` or braces `{}`.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="sidebar card">
-                        <div class="card-body">
-                            <h3 class="h5">Related Developer Tools</h3>
-                            <ul class="list-unstyled">
-                                <li><a href="url-encoder-decoder">URL Encoder/Decoder</a></li>
-                                <li><a href="base64-encoder-decoder">Base64 Encoder/Decoder</a></li>
-                                <!-- Add more related tools once they are created -->
-                            </ul>
-                            <hr>
-                            <h3 class="h5 mt-3">From Our Blog</h3>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Understanding JSON: A Beginner's Guide (Future Post)</a></li>
-                                <li><a href="#">Working with APIs: JSON Best Practices (Future Post)</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="faq-section card">
-                        <div class="card-body">
-                            <h2 class="h4 text-center mb-4">Frequently Asked Questions (JSON Tool)</h2>
-                            <div class="accordion" id="faqAccordionJson">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="faqJsonHeadingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqJsonCollapseOne" aria-expanded="false" aria-controls="faqJsonCollapseOne">
-                                            What does "prettify JSON" mean?
-                                        </button>
-                                    </h3>
-                                    <div id="faqJsonCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqJsonHeadingOne" data-bs-parent="#faqAccordionJson">
-                                        <div class="accordion-body">
-                                            "Prettify JSON" (or "beautify JSON") means formatting the JSON data with proper indentation and line breaks. This makes it much easier for humans to read and understand the structure of the JSON, especially for complex or nested data.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="faqJsonHeadingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqJsonCollapseTwo" aria-expanded="false" aria-controls="faqJsonCollapseTwo">
-                                            Is my JSON data secure?
-                                        </button>
-                                    </h3>
-                                    <div id="faqJsonCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqJsonHeadingTwo" data-bs-parent="#faqAccordionJson">
-                                        <div class="accordion-body">
-                                            Yes, your JSON data is secure. All validation, formatting, and minification processes are performed entirely within your web browser (client-side). No data is transmitted to or stored on our servers.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="faqJsonHeadingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqJsonCollapseThree" aria-expanded="false" aria-controls="faqJsonCollapseThree">
-                                            Can this tool handle large JSON files?
-                                        </button>
-                                    </h3>
-                                    <div id="faqJsonCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqJsonHeadingThree" data-bs-parent="#faqAccordionJson">
-                                        <div class="accordion-body">
-                                            The tool can handle reasonably large JSON inputs. However, for extremely large files (many megabytes), browser performance might become a limiting factor as all processing occurs client-side. We recommend testing with your specific data.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <h2 class="h4 text-center mb-4">Frequently Asked Questions</h2>
+                             <div class="accordion" id="faqAccordion">
+                                 <div class="accordion-item"><h3 class="accordion-header" id="faqH1"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC1">What does "prettify JSON" mean?</button></h3><div id="faqC1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body small">"Prettify" or "Beautify" means formatting the JSON with proper indentation and line breaks, making it easy for humans to read.</div></div></div>
+                                 <div class="accordion-item"><h3 class="accordion-header" id="faqH2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2">Is my JSON data secure?</button></h3><div id="faqC2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body small">Yes. All processing is done in your browser (client-side). Your data is never sent to our servers.</div></div></div>
+                                 <div class="accordion-item"><h3 class="accordion-header" id="faqH3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC3">What is "Minify JSON"?</button></h3><div id="faqC3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body small">Minifying removes all unnecessary whitespace and line breaks from the JSON, making the file size smaller for faster transmission in applications.</div></div></div>
+                             </div>
+                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- END Tool Content -->
 
-    <!-- Start Call To Action (Copied, paths adjusted) -->
-    <div class="container call-to-action text-center mb160" style="background-image: url(../assets/img/bg/newsletter.svg);">
-        <h2>Let's Start Creating together</h2>
-        <a href="../contact" class="border-btn-2">Hire Me</a>
-    </div>
-    <!-- End Call To Action -->
-
-    <!-- START FOOTER (Copied, paths adjusted) -->
-    <footer class="footer pt220">
-        <div class="container">
-            <div class="footer-top">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
-                        <div class="footer-widget">
-                            <h4 class="fotter-title">Follow Me</h4>
-                            <ul class="socail-link">
-                                <li><a href="https://x.com/Sanjay18991236" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                                <li><a href="https://www.instagram.com/sanjay_guthula" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                                <li><a href="https://linkedin.com/in/sanjayguthula" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
-                        <div class="footer-widget fcontact-info">
-                            <h4 class="fotter-title">Contact Info</h4>
-                            <p><a href="tel:+919000114476">+91 9000114476</a></p>
-                            <p><a href="mailto:sanjaykumarguthula@gmail.com">sanjaykumarguthula@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn" style="display:none;">
-                        <div class="footer-widget">
-                            <h4 class="fotter-title">Newsletter</h4>
-                            <div class="newsletter-form">
-                                <form method="post" action="">
-                                    <input type="email" placeholder="Email Address">
-                                    <button type="submit"><img src="../assets/img/icons/arrow-newsletter.svg" alt=""></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom wow fadeIn">
-                <div class="row">
-                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
-                        <p class="copyright_text">
-                            Copyright © 2024 Sanjay Guthula. All rights reserved.
-                        </p>
-                    </div>
-                    <div class="col-xl-6 col-md-6 col-12 text-end">
-                        <div class="foot_menu">
-                            <ul>
-                                <li><a href="../tools">Free Tools</a></li>
-                                <li><a href="../blog">Blog</a></li>
-                                <li><a href="../contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
     </footer>
-    <!-- END FOOTER -->
 
-    <!-- Common JS (paths adjusted) -->
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
-    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/js/masonry.pkgd.min.js"></script>
-    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
-    <script src="../assets/owlcarousel/js/owl.carousel.min.js"></script>
-    <script src="../assets/js/waypoints.min.js"></script>
-    <script src="../assets/js/jquery.counterup.min.js"></script>
-    <script src="../assets/js/jquery.magnific-popup.js"></script>
-    <script src="../assets/js/YouTubePopUp.jquery.js"></script>
-    <script src="../assets/js/yvpopup-active.js"></script>
     <script src="../assets/js/wow.js"></script>
-    <script src="../assets/js/scrolltopcontrol.js"></script>
-    <script src="../assets/js/slick.js"></script>
     <script src="../assets/js/scripts.js"></script>
-    <!-- JSON Validator Specific JS -->
     <script src="../assets/js/json-validator.js"></script>
-
 </body>
 </html>

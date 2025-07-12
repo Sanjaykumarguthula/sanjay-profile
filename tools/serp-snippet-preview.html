@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="tool-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERP Snippet Preview Tool - Optimize for Google</title>
+    <meta name="description" content="Preview and optimize your Google search result snippet. Check your title and meta description length to avoid truncation and improve CTR.">
+    <meta name="keywords" content="serp preview tool, google snippet generator, meta description checker, title tag checker, seo tools, ctr optimization">
+
+    <meta property="og:title" content="SERP Snippet Preview Tool - Optimize for Google">
+    <meta property="og:description" content="Preview and optimize your Google search result snippet. Check your title and meta description length to avoid truncation and improve CTR.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <link rel="stylesheet" href="../assets/css/tool-specific/serp-snippet-preview.css">
+</head>
+<body>
+    <div class="preloader"><span class="loader"></span></div>
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
+    </div>
+
+    <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>Free SERP Snippet Preview Tool</h1>
+            <h4>Optimize your Title and Meta Description to improve your click-through rate.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
+        <div class="container">
+            <div class="row">
+                <!-- Input Area -->
+                <div class="col-lg-6 mb-4">
+                    <div class="tool-container card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Enter Your Page Details</h3></div>
+                        <div class="card-body">
+                            <div class="form-group mb-3">
+                                <label for="serpTitleInput" class="form-label">Title Tag</label>
+                                <input type="text" id="serpTitleInput" class="form-control" placeholder="Your Page Title">
+                                <div id="titleCounter" class="counter-feedback">Characters: 0 / 60 | Pixels: 0 / 580</div>
+                            </div>
+                             <div class="form-group mb-3">
+                                <label for="serpUrlInput" class="form-label">URL</label>
+                                <input type="text" id="serpUrlInput" class="form-control" placeholder="https://example.com/your-page-url">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="serpDescriptionInput" class="form-label">Meta Description</label>
+                                <textarea id="serpDescriptionInput" class="form-control" rows="4" placeholder="Your meta description goes here."></textarea>
+                                <div id="descriptionCounter" class="counter-feedback">Characters: 0 / 160 | Pixels: 0 / 920</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Preview Area -->
+                <div class="col-lg-6 mb-4">
+                     <div class="tool-container card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Live SERP Preview</h3></div>
+                        <div class="card-body">
+                            <div class="serp-preview-box">
+                                <div class="serp-url-container">
+                                    <span class="serp-favicon"><i class='bx bxs-planet'></i></span>
+                                    <div class="serp-url-text">
+                                        <span id="previewUrlHost">example.com</span>
+                                        <span id="previewUrlPath">/your-page-url</span>
+                                    </div>
+                                </div>
+                                <h3 class="serp-title" id="previewTitle">Your Page Title</h3>
+                                <p class="serp-description" id="previewDescription">Your meta description goes here.</p>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+             <!-- FAQ Section -->
+            <div class="row mt-4">
+                <div class="col-lg-10 mx-auto">
+                     <div class="faq-section card">
+                        <div class="card-body">
+                            <h2 class="h4 text-center mb-4">Frequently Asked Questions</h2>
+                             <div class="accordion" id="faqAccordion">
+                                 <div class="accordion-item"><h3 class="accordion-header" id="faqH1"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC1">What are pixels vs. characters for SEO titles?</button></h3><div id="faqC1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body small">Google allocates a fixed pixel width for titles in search results (around 580-600px). Some characters, like 'W', are wider than others, like 'i'. This tool measures both, but pixel width is the true limit to prevent truncation.</div></div></div>
+                                 <div class="accordion-item"><h3 class="accordion-header" id="faqH2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2">Why is my meta description not always shown by Google?</button></h3><div id="faqC2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body small">Google often rewrites meta descriptions to better match a user's specific query. However, a well-written, relevant meta description has a high chance of being used and can significantly improve click-through rates.</div></div></div>
+                                 <div class="accordion-item"><h3 class="accordion-header" id="faqH3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC3">Does this tool guarantee how my site will look?</button></h3><div id="faqC3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body small">No. This tool provides a close approximation based on current Google SERP layouts. Google frequently tests and changes its display, so the live result may vary slightly. This tool is for optimization and guidance.</div></div></div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/tool-specific/serp-snippet-preview.js"></script>
+</body>
+</html>

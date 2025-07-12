@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="tool-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading Tag Checker - Analyze H1-H6 Structure for SEO</title>
+    <meta name="description" content="Analyze your page's H1-H6 heading structure for SEO and accessibility. Check for multiple H1s, skipped levels, and other common issues.">
+    <meta name="keywords" content="heading checker, h1 checker, seo audit tool, heading structure, on-page seo, accessibility checker">
+
+    <meta property="og:title" content="Heading Tag Checker - Analyze H1-H6 Structure for SEO">
+    <meta property="og:description" content="Analyze your page's H1-H6 heading structure for SEO and accessibility. Check for multiple H1s, skipped levels, and other common issues.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <link rel="stylesheet" href="../assets/css/tool-specific/html-heading-checker.css">
+</head>
+<body>
+    <div class="preloader"><span class="loader"></span></div>
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
+    </div>
+
+    <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>HTML Heading Structure Checker</h1>
+            <h4>Analyze your heading tags (H1-H6) for SEO and accessibility best practices.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tool-container card shadow-sm mb-4">
+                        <div class="card-header"><h3 class="h5 mb-0">Paste Your HTML Source Code</h3></div>
+                        <div class="card-body">
+                            <textarea id="htmlInputForHeadings" class="form-control" rows="10" placeholder="Paste your full HTML source code here..."></textarea>
+                            <button id="analyzeHeadingsBtn" class="btn btn-primary mt-3">Analyze Headings</button>
+                            <button id="clearHtmlBtn" class="btn btn-secondary mt-3">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="results-area card shadow-sm">
+                        <div class="card-header"><h3 class="h5 mb-0">Heading Structure Tree</h3></div>
+                        <div class="card-body">
+                            <div id="headingTreeOutput" class="heading-tree">
+                                <p class="text-muted">Analysis results will appear here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="sidebar card shadow-sm">
+                        <div class="card-header"><h3 class="h5 mb-0">Analysis Summary</h3></div>
+                        <div id="analysisSummary" class="card-body">
+                             <p class="text-muted">Summary will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/tool-specific/html-heading-checker.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* assets/css/tools-style.css */
+
+/* Styling for the main tools.html banner */
+.tools-banner .main_banner_content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+}
+.tools-banner .main_banner_content h4 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+}
+.tools-banner {
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC); /* Example blue gradient */
+    padding: 100px 0;
+}
+
+/* Main tools listing section */
+.tools-content h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.tools-content p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Minimalist Tool Card Styling (Shared with game cards, but scoped to .tool-card) */
+.tool-card.minimalist-card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-card.minimalist-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card.minimalist-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.75rem;
+}
+
+.tool-card.minimalist-card .tool-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+.tool-card.minimalist-card.text-white .tool-title {
+    color: #fff !important;
+}
+.tool-card.minimalist-card:not(.text-white) .tool-title {
+    color: #333 !important;
+}
+
+.tool-card.minimalist-card .tool-short-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+.tool-card.minimalist-card.text-white .tool-short-description {
+    color: rgba(255,255,255,0.85) !important;
+}
+.tool-card.minimalist-card:not(.text-white) .tool-short-description {
+    color: #555 !important;
+}
+
+.tool-card.minimalist-card .btn {
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.tool-card.minimalist-card .btn:hover {
+    transform: scale(1.05);
+}
+
+/* General styles for individual tool pages (can be enhanced in tool-specific CSS) */
+.tool-page .tool-specific-banner {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+.tool-page .tool-specific-banner h1 {
+    font-size: 2.8rem;
+    color: #333;
+}
+.tool-page .tool-specific-banner h4 {
+    font-size: 1.3rem;
+    color: #555;
+}
+.tool-page .tool-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+.tool-page .sidebar .card {
+     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 576px) {
+    .tool-card.minimalist-card .tool-title {
+        font-size: 1.4rem;
+    }
+    .tools-banner .main_banner_content h1 {
+        font-size: 2.5rem;
+    }
+     .tools-banner .main_banner_content h4 {
+        font-size: 1.2rem;
+    }
+}
