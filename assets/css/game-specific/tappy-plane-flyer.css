@@ -1,0 +1,87 @@
+/* assets/css/game-specific/tappy-plane-flyer.css */
+
+.tappy-plane-body { /* Specific body styles if needed for this game page */
+    /* background-color: #87CEEB; */ /* Sky blue, but canvas handles its own bg */
+    overflow: hidden; /* Prevent scrollbars if canvas is edge-to-edge */
+}
+
+.tappy-plane-banner {
+    background: linear-gradient(to bottom, #87CEEB 0%, #ADD8E6 100%); /* Sky gradient */
+}
+.tappy-plane-banner h1, .tappy-plane-banner h4 {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.tappy-plane-game-container .card-body {
+    /* The canvas will fill this, ensure no extra padding if canvas is edge-to-edge */
+    padding: 0 !important;
+}
+
+#tappyPlaneCanvas {
+    border: 2px solid #333; /* Optional border */
+    background-color: #87CEEB; /* Sky blue, set by JS too */
+    display: block; /* Remove extra space below canvas */
+    max-width: 100%; /* Make it responsive */
+    /* Height and width are set by JS, but this ensures it doesn't overflow container */
+    /* aspect-ratio: 2 / 3; */ /* Example if you want to enforce aspect ratio via CSS for the container */
+}
+
+.tappy-game-stats {
+    background-color: rgba(0,0,0,0.1); /* Semi-transparent overlay for stats */
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #333;
+    position: absolute; /* Position over the canvas */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5; /* Above canvas, below messages */
+    padding: 5px 15px;
+    border-radius: 5px;
+    width: auto; /* Fit content */
+    border: none; /* Remove card-header border */
+}
+
+.tappy-message-screen {
+    /* General styles in games-style.css */
+}
+.tappy-message-screen .message-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+.tappy-message-screen h3 {
+    font-size: 2rem;
+    color: #dc3545; /* Red for game over */
+}
+
+.start-tappy-screen {
+    /* General styles in games-style.css */
+    background-color: rgba(0,0,0,0.3); /* Slightly darker overlay for start */
+}
+.start-tappy-screen p {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+
+@media (max-width: 576px) {
+    .tappy-plane-banner h1 { font-size: 2rem; }
+    .tappy-plane-banner h4 { font-size: 1rem; }
+
+    #tappyPlaneCanvas {
+        /* JS should handle sizing, but ensure it fits viewport width if needed */
+        /* e.g., width: 100vw; height: 100vh; if going fullscreen on mobile */
+    }
+    .tappy-game-stats {
+        font-size: 0.9rem;
+        padding: 3px 10px;
+    }
+    .tappy-message-screen h3 { font-size: 1.5rem; }
+    .start-tappy-screen p { font-size: 1.2rem; }
+    .start-tappy-screen button, .tappy-message-screen button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}

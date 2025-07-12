@@ -1,0 +1,109 @@
+/* assets/css/game-specific/wordguesser-challenge.css */
+
+.game-container .card-header.game-header {
+    background-color: #563d7c; /* Purple theme for Hangman */
+    color: white;
+    font-size: 1.1rem;
+}
+
+.hangman-drawing-area {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 260px; /* Ensure space for canvas */
+}
+#hangmanCanvas {
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.word-display-container {
+    letter-spacing: 0.5em; /* Space out the letters/blanks */
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1.5rem !important;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    min-height: 50px; /* Ensure it doesn't collapse */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alphabet-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px; /* Gap between buttons */
+}
+.alphabet-btn {
+    width: 40px; /* Square buttons */
+    height: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0; /* Remove padding to fit text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alphabet-btn:disabled {
+    opacity: 0.6;
+}
+.alphabet-btn.btn-success { /* Correct guess */
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: white !important;
+}
+.alphabet-btn.btn-danger { /* Incorrect guess */
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+}
+
+
+.hangman-message-screen {
+    /* General styles in games-style.css */
+}
+.hangman-message-screen h3 {
+    font-size: 1.8rem;
+}
+.hangman-message-screen strong { /* For the correct word display */
+    font-family: 'Courier New', Courier, monospace;
+    color: #0d6efd; /* Blue for correct word */
+}
+
+.card-footer #newWordBtn {
+    /* Custom styling for new word button if needed */
+}
+.card-footer #categorySelector { /* If using category selector */
+    /* Styles for category dropdown */
+}
+
+@media (max-width: 576px) {
+    .alphabet-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    .word-display-container {
+        font-size: 1.2rem; /* Adjust for smaller screens */
+        letter-spacing: 0.3em;
+    }
+    .game-container .card-header.game-header {
+        font-size: 0.9rem;
+        flex-direction: column;
+    }
+    .game-container .card-header.game-header span {
+        margin-bottom: 5px;
+    }
+    #hangmanCanvas {
+        width: 180px; /* Slightly smaller canvas */
+        height: 225px;
+    }
+     .hangman-drawing-area {
+        min-height: 235px;
+    }
+}

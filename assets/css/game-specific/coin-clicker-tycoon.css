@@ -1,0 +1,126 @@
+/* assets/css/game-specific/coin-clicker-tycoon.css */
+
+.game-page { /* Overall page for clicker might have a specific theme */
+    /* background-color: #f0e68c;  Khaki - money like? */
+}
+
+/* Main Click Area Card */
+.col-md-5 .card .card-body h2.display-4 { /* Coin Count */
+    font-weight: 700;
+    color: #b8860b; /* DarkGoldenRod */
+    margin-bottom: 0.25rem;
+}
+.col-md-5 .card .card-body p.text-muted { /* CPS and CPC text */
+    font-size: 0.9rem;
+    margin-bottom: 0.1rem;
+}
+.main-click-button {
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+.main-click-button:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.main-click-button i.bx {
+    margin-right: 8px;
+    animation: coinSpin 2s infinite linear; /* Subtle spin for coin icon */
+}
+
+@keyframes coinSpin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+#clickEffectContainer {
+    position: fixed; /* Or absolute relative to a game wrapper */
+    pointer-events: none; /* So it doesn't interfere with clicks */
+    z-index: 100; /* Above other elements */
+    width: 0; /* Occupy no space */
+    height: 0;
+}
+.click-effect {
+    position: absolute;
+    color: #DAA520; /* Goldenrod */
+    font-weight: bold;
+    font-size: 1.2rem;
+    opacity: 1;
+    animation: floatUp 1s ease-out forwards;
+    white-space: nowrap;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
+}
+
+
+/* Upgrades Store */
+.upgrades-store-body {
+    max-height: 400px; /* Or adjust as needed */
+    overflow-y: auto;
+    background-color: #fdfaf6; /* Creamy background for store */
+    padding: 1rem !important;
+}
+.upgrade-item.card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.upgrade-item.card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.upgrade-item .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #5a3e2b; /* Brownish color for titles */
+}
+.upgrade-item .upgrade-cost {
+    color: #b8860b; /* DarkGoldenRod for cost */
+}
+.upgrade-item .btn-success:disabled {
+    background-color: #a3cfbb; /* Lighter green when disabled */
+    border-color: #a3cfbb;
+}
+
+/* Game Controls Card */
+.col-md-5 .card.mt-3 .card-header { /* Game Controls Header */
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #e9ecef;
+}
+#saveStatus {
+    min-height: 1.2em; /* Prevent layout shift when text appears */
+    font-style: italic;
+    color: #0d6efd;
+}
+
+
+@media (max-width: 768px) {
+    .upgrades-store-body {
+        max-height: 300px; /* Shorter scroll area on mobile */
+    }
+    .main-click-button {
+        font-size: 1.3rem;
+        padding: 12px 18px;
+    }
+    .col-md-5 .card .card-body h2.display-4 {
+        font-size: 2.5rem; /* Slightly smaller coin display */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Stack click area and upgrades on smallest screens if not already by Bootstrap */
+    .col-md-5, .col-md-7 {
+        margin-bottom: 1rem; /* Add space between stacked sections */
+    }
+    .upgradesContainer .col { /* Ensure single column for upgrades on xs */
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

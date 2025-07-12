@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Free Typing Speed Test - Check Your WPM & Accuracy | Typing Ace</title>
+    <meta name="description" content="Test and improve your typing speed and accuracy with Typing Ace! Free online typing test with WPM calculation and practice passages.">
+    <meta name="keywords" content="typing test, typing speed test, wpm test, free typing test, online typing practice, improve typing speed, html5 games, educational games">
+
+    <meta property="og:title" content="Free Typing Speed Test - Check Your WPM & Accuracy | Typing Ace">
+    <meta property="og:description" content="Test and improve your typing speed and accuracy with Typing Ace! Free online typing test with WPM calculation and practice passages.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/typing-ace-test.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/typing-ace-og-image.png"> --> <!-- OG Image for Typing Ace -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/typing-ace-test.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>Typing Ace - Test & Improve Your Typing Speed Online</h1>
+            <h4>Practice typing, measure your Words Per Minute (WPM), and track your accuracy.</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="game-container card shadow-sm">
+                        <div class="card-header game-header d-flex flex-wrap justify-content-around align-items-center">
+                            <div>Time: <span id="timerDisplayTyping">60</span>s</div>
+                            <div class="mt-2 mt-sm-0">WPM: <span id="wpmDisplay">0</span></div>
+                            <div class="mt-2 mt-sm-0">CPM: <span id="cpmDisplay">0</span></div>
+                            <div class="mt-2 mt-sm-0">Accuracy: <span id="accuracyDisplay">100</span>%</div>
+                            <div class="mt-2 mt-sm-0">
+                                <label for="testDurationSelect" class="form-label-sm me-1">Duration:</label>
+                                <select id="testDurationSelect" class="form-select form-select-sm d-inline-block w-auto">
+                                    <option value="30">30s</option>
+                                    <option value="60" selected>60s</option>
+                                    <option value="120">120s</option>
+                                    <option value="custom">Custom Passage</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body game-body p-3 p-sm-4">
+                            <div id="textToTypeContainer" class="text-to-type-container p-3 border rounded mb-3">
+                                <!-- Text passage will be loaded here by JavaScript -->
+                                <p class="placeholder-text">Loading text passage...</p>
+                            </div>
+                            <textarea id="typingInputArea" class="form-control typing-input-area" rows="5" placeholder="Start typing here when the test begins..." disabled></textarea>
+                            <div id="typingTestResultScreen" class="typing-test-results" style="display:none;">
+                                <h3>Test Complete!</h3>
+                                <p>Your WPM: <strong id="resultWPM">0</strong></p>
+                                <p>Your Accuracy: <strong id="resultAccuracy">0%</strong></p>
+                                <p>Correct Characters: <strong id="resultCorrectChars">0</strong></p>
+                                <p>Incorrect Characters: <strong id="resultIncorrectChars">0</strong></p>
+                                <button id="restartTypingTestBtn" class="btn btn-primary mt-3">Try Another Passage</button>
+                            </div>
+                        </div>
+                         <div class="card-footer text-center">
+                             <button id="startTypingTestBtn" class="btn btn-success btn-lg">Start Test</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Use Typing Ace</h2>
+                            <ol>
+                                <li>Select your desired test duration (e.g., 30s, 60s, 120s) or choose "Custom Passage" for a specific text.</li>
+                                <li>Click the "Start Test" button. A text passage will appear.</li>
+                                <li>As soon as you start typing in the input area below the passage, the timer will begin.</li>
+                                <li>Type the provided text as accurately and quickly as you can.</li>
+                                <li>The text you type will be compared to the source text. Correctly typed characters/words will be highlighted (or errors will be shown).</li>
+                                <li>Once the timer runs out, or you complete the custom passage, your results – Words Per Minute (WPM), Characters Per Minute (CPM), and Accuracy – will be displayed.</li>
+                                <li>Click "Try Another Passage" or "Start Test" again to practice more.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Features of Our Typing Test</h2>
+                            <ul>
+                                <li>Measure your typing speed in Words Per Minute (WPM) and Characters Per Minute (CPM).</li>
+                                <li>Calculate your typing accuracy percentage.</li>
+                                <li>Multiple test duration options and sample text passages.</li>
+                                <li>Real-time feedback as you type (current WPM, errors - TBD).</li>
+                                <li>Clear results summary upon completion.</li>
+                                <li>Helps improve typing speed and accuracy through practice.</li>
+                                <li>Clean and user-friendly interface.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Typing Test)</h2>
+                            <div class="accordion" id="faqAccordionTyping">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqTypingHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTypingCollapseOne" aria-expanded="false" aria-controls="faqTypingCollapseOne">
+                                            How is Words Per Minute (WPM) calculated?
+                                        </button>
+                                    </h3>
+                                    <div id="faqTypingCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqTypingHeadingOne" data-bs-parent="#faqAccordionTyping">
+                                        <div class="accordion-body">
+                                            WPM is typically calculated by taking the number of correctly typed words and dividing it by the time taken in minutes. A "word" is often standardized to 5 characters (including spaces). So, `(Total Characters Typed / 5) / Time in Minutes = WPM`. Adjustments for errors might also be included in some calculations.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqTypingHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTypingCollapseTwo" aria-expanded="false" aria-controls="faqTypingCollapseTwo">
+                                            Can I practice with different texts or languages?
+                                        </button>
+                                    </h3>
+                                    <div id="faqTypingCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTypingHeadingTwo" data-bs-parent="#faqAccordionTyping">
+                                        <div class="accordion-body">
+                                            This version will provide a variety of English text passages. Support for different languages or custom user-provided text could be a feature for future enhancements.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqTypingHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTypingCollapseThree" aria-expanded="false" aria-controls="faqTypingCollapseThree">
+                                            Does this tool track my progress over time?
+                                        </button>
+                                    </h3>
+                                    <div id="faqTypingCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqTypingHeadingThree" data-bs-parent="#faqAccordionTyping">
+                                        <div class="accordion-body">
+                                            Currently, the test provides results for each session. Saving and tracking progress over time (e.g., using browser local storage to show a graph of your WPM) is a potential feature for future development.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">Skill-Based Games</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="wordguesser-challenge.html">WordGuesser (Hangman)</a></li>
+                                <!-- Add other skill games -->
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/typing-ace-test.js"></script>
+</body>
+</html>

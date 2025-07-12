@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+
+    <title>Tappy Plane - Free Flappy Bird Style Arcade Game | Sanjay Guthula</title>
+    <meta name="description" content="Play Tappy Plane, a fun and challenging Flappy Bird style game online for free! Tap to fly the plane through the obstacles and get the highest score.">
+    <meta name="keywords" content="flappy bird game, tappy plane, online flappy bird, free arcade games, tapping game, html5 games, mobile games">
+
+    <meta property="og:title" content="Tappy Plane - Free Flappy Bird Style Arcade Game | Sanjay Guthula">
+    <meta property="og:description" content="Play Tappy Plane, a fun and challenging Flappy Bird style game online for free! Tap to fly the plane through the obstacles and get the highest score.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/tappy-plane-flyer.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/tappy-plane-og-image.png"> --> <!-- OG Image for Tappy Plane -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/tappy-plane-flyer.css">
+</head>
+<body class="game-page tappy-plane-body">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner tappy-plane-banner">
+        <div class="container text-center">
+            <h1>Tappy Plane Flyer - Free Online Flappy Bird Style Game</h1>
+            <h4>Tap to fly, dodge the pipes, and see how far you can go!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-10">
+                    <div class="game-container card shadow-sm text-center tappy-plane-game-container">
+                        <div id="tappyGameStats" class="card-header game-header tappy-game-stats">
+                            Score: <span id="tappyScoreDisplay">0</span>
+                            <span id="tappyHighScoreArea" style="display:none;" class="ms-3">Best: <span id="tappyHighScoreDisplay">0</span></span>
+                        </div>
+                        <div class="card-body game-body p-0 position-relative overflow-hidden">
+                            <canvas id="tappyPlaneCanvas" width="320" height="480"></canvas>
+                            <div id="tappyMessageScreen" class="tappy-message-screen" style="display:none;">
+                                <div class="message-content">
+                                    <h3 id="tappyGameMessageText">Game Over!</h3>
+                                    <p>Score: <span id="tappyFinalScore">0</span></p>
+                                    <button id="restartTappyPlaneBtn" class="btn btn-primary mt-2">Play Again</button>
+                                </div>
+                            </div>
+                            <div id="startTappyPlaneScreen" class="start-tappy-screen">
+                                <p class="h5">Tap or Click to Fly</p>
+                                <button id="startTappyPlaneBtn" class="btn btn-success btn-lg mt-2">Start Game</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Tappy Plane</h2>
+                            <ol>
+                                <li>Click the "Start Game" button or tap/click anywhere on the game screen to begin.</li>
+                                <li>The plane will start moving forward automatically.</li>
+                                <li><strong>Tap or click</strong> anywhere on the game screen (or press the <strong>Spacebar</strong> or <strong>Up Arrow</strong> key) to make the plane flap its wings and fly upwards briefly.</li>
+                                <li>Gravity will constantly pull the plane downwards. You need to time your taps to keep the plane airborne.</li>
+                                <li>Navigate the plane through the gaps in the oncoming pipes. Do not hit the pipes, the ground, or the top of the screen.</li>
+                                <li>You score one point for each pair of pipes you successfully pass through.</li>
+                                <li>The game ends if the plane collides with any obstacle.</li>
+                                <li>Try to achieve the highest score possible!</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Simple one-touch / one-click gameplay, inspired by Flappy Bird.</li>
+                                <li>Challenging and addictive obstacle avoidance.</li>
+                                <li>Score tracking to compete against yourself.</li>
+                                <li>(Optional) High score saving using browser's local storage.</li>
+                                <li>Clean visuals and smooth animations.</li>
+                                <li>Responsive design for play on various devices.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Tappy Plane)</h2>
+                            <div class="accordion" id="faqAccordionTappyPlane">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqTPHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTPCollapseOne" aria-expanded="false" aria-controls="faqTPCollapseOne">
+                                            How do I make the plane fly?
+                                        </button>
+                                    </h3>
+                                    <div id="faqTPCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqTPHeadingOne" data-bs-parent="#faqAccordionTappyPlane">
+                                        <div class="accordion-body">
+                                            Simply tap or click anywhere on the game screen. You can also use the Spacebar or the Up Arrow key on your keyboard. Each tap gives the plane a small upward boost.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqTPHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTPCollapseTwo" aria-expanded="false" aria-controls="faqTPCollapseTwo">
+                                            What's the goal of the game?
+                                        </button>
+                                    </h3>
+                                    <div id="faqTPCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTPHeadingTwo" data-bs-parent="#faqAccordionTappyPlane">
+                                        <div class="accordion-body">
+                                            The goal is to fly the plane for as long as possible by navigating it through the gaps in the pipes. Each set of pipes you pass successfully earns you a point. The main objective is to achieve the highest score you can.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqTPHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTPCollapseThree" aria-expanded="false" aria-controls="faqTPCollapseThree">
+                                            Is there an end to Tappy Plane?
+                                        </button>
+                                    </h3>
+                                    <div id="faqTPCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqTPHeadingThree" data-bs-parent="#faqAccordionTappyPlane">
+                                        <div class="accordion-body">
+                                            Tappy Plane is an endless flyer style game. There isn't a predefined end; the challenge comes from trying to beat your own high score and lasting as long as possible against the increasingly tricky (or just relentless) obstacles.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">Quick Reflex Games</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="tap-the-target-game.html">Tap-the-Target</a></li>
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/tappy-plane-flyer.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* assets/css/game-specific/tap-the-target-game.css */
+
+.game-container .card-header.game-header {
+    background-color: #20c997; /* Teal theme for Tap-the-Target */
+    color: white;
+    font-size: 1.1rem;
+}
+
+.tap-target-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* For 3x3 grid */
+    grid-template-rows: repeat(3, 1fr);    /* For 3x3 grid */
+    gap: 10px;
+    padding: 10px;
+    background-color: #343a40; /* Dark background for contrast */
+    border-radius: 5px;
+    width: 100%;
+    max-width: 360px; /* Adjust based on cell size preference */
+    aspect-ratio: 1 / 1; /* Keep it square */
+    margin: 0 auto; /* Center it */
+}
+
+.tap-target-cell {
+    background-color: #495057; /* Dark grey for empty spots */
+    border-radius: 50%; /* Circular spots */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+.tap-target-cell:hover:not(.active-target) { /* Subtle hover on empty cells */
+    background-color: #5a6268;
+}
+
+.tap-target-cell.active-target {
+    background-color: #ffc107; /* Yellow for active target */
+    animation: popIn 0.2s ease-out;
+}
+.tap-target-cell.active-target i.bxs-bullseye {
+    color: #212529; /* Dark icon on yellow */
+    animation: pulseIcon 0.8s infinite alternate;
+}
+.tap-target-cell i.bx-check-circle { /* Hit feedback icon */
+    color: #198754; /* Green check */
+}
+
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+@keyframes pulseIcon {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+
+.tap-target-message-screen {
+    /* General styles in games-style.css */
+}
+.tap-target-message-screen .message-content {
+    /* Specifics if needed */
+}
+.start-tap-target-screen button {
+    /* General styles in games-style.css */
+}
+
+
+@media (max-width: 576px) {
+    .tap-target-grid {
+        max-width: 90vw; /* Ensure grid fits smaller screens */
+        gap: 8px;
+        padding: 8px;
+    }
+    .tap-target-cell.active-target i.bxs-bullseye,
+    .tap-target-cell i.bx-check-circle {
+        font-size: 2.5rem; /* Adjust icon size if cells are smaller */
+    }
+     .game-container .card-header.game-header {
+        font-size: 0.9rem;
+        flex-direction: column;
+    }
+    .game-container .card-header.game-header > div {
+        margin-bottom: 5px;
+    }
+}

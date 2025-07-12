@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Connect 4: Four-in-a-Row - Free Online Strategy Board Game</title>
+    <meta name="description" content="Play Four-in-a-Row Connect, the classic Connect 4 strategy game, online for free! Challenge a friend or a simple AI.">
+    <meta name="keywords" content="connect 4 game, four in a row, online connect 4, free strategy games, 2 player board games, html5 games, logic games">
+
+    <meta property="og:title" content="Connect 4: Four-in-a-Row - Free Online Strategy Board Game">
+    <meta property="og:description" content="Play Four-in-a-Row Connect, the classic Connect 4 strategy game, online for free! Challenge a friend or a simple AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/four-in-a-row-connect.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/connect4-og-image.png"> --> <!-- OG Image for Connect 4 -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/four-in-a-row-connect.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>Four-in-a-Row Connect - Play Free Connect 4 Game Online</h1>
+            <h4>Drop your discs and be the first to connect four horizontally, vertically, or diagonally!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="game-container card shadow-sm text-center">
+                        <div class="card-header game-header d-flex justify-content-between align-items-center">
+                            <div id="playerTurnDisplay">Player 1's Turn (Red)</div>
+                            <div class="game-mode-selector-connect4">
+                                <label for="gameModeConnect4" class="form-label-sm me-1">Mode:</label>
+                                <select id="gameModeConnect4" class="form-select form-select-sm d-inline-block w-auto">
+                                    <option value="2P" selected>2 Players</option>
+                                    <option value="AI">vs Computer (Easy)</option>
+                                </select>
+                            </div>
+                            <button id="restartConnect4Btn" class="btn btn-sm btn-primary">New Game</button>
+                        </div>
+                        <div class="card-body game-body p-2 p-sm-3 position-relative d-flex justify-content-center align-items-center">
+                            <div id="connect4BoardContainer">
+                                <canvas id="connect4Canvas" width="490" height="420"></canvas> <!-- 7 columns x 6 rows, 70px per cell -->
+                            </div>
+                             <div id="connect4MessageScreen" class="connect4-message-screen" style="display:none;">
+                                <div class="message-content">
+                                    <h3 id="connect4MessageText">Player 1 Wins!</h3>
+                                    <button id="playAgainConnect4Btn" class="btn btn-primary mt-2">Play Again</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Four-in-a-Row Connect</h2>
+                            <ol>
+                                <li>Select your game mode: "2 Players" to play against a friend on the same device, or "vs Computer" for a single-player challenge. Click "New Game" to start.</li>
+                                <li>The game is played on a 7-column, 6-row vertical grid.</li>
+                                <li>Players take turns dropping one of their colored discs (e.g., Red or Yellow) into one of the seven columns.</li>
+                                <li>To drop a disc, click or tap on the desired column at the top of the board (or on the column itself). The disc will fall to the lowest available empty space in that column.</li>
+                                <li>The objective is to be the first player to get four of your own colored discs in a line – either horizontally, vertically, or diagonally.</li>
+                                <li>If the entire grid is filled with discs and no player has achieved four in a row, the game is a draw.</li>
+                                <li>The current player's turn is indicated on the screen.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic Connect 4 (Four-in-a-Row) strategy gameplay.</li>
+                                <li>Two-player local mode.</li>
+                                <li>Single-player mode against a basic AI opponent.</li>
+                                <li>Clear visual representation of the game board and discs.</li>
+                                <li>Intuitive click/tap controls for dropping discs.</li>
+                                <li>Win detection for horizontal, vertical, and diagonal lines.</li>
+                                <li>Draw game detection.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Connect 4)</h2>
+                            <div class="accordion" id="faqAccordionConnect4">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqC4HeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC4CollapseOne" aria-expanded="false" aria-controls="faqC4CollapseOne">
+                                            How do I win the game?
+                                        </button>
+                                    </h3>
+                                    <div id="faqC4CollapseOne" class="accordion-collapse collapse" aria-labelledby="faqC4HeadingOne" data-bs-parent="#faqAccordionConnect4">
+                                        <div class="accordion-body">
+                                            You win by being the first player to connect four of your own colored discs in an unbroken line. This line can be horizontal (straight across), vertical (straight up and down), or diagonal.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqC4HeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC4CollapseTwo" aria-expanded="false" aria-controls="faqC4CollapseTwo">
+                                            Can I play against the computer?
+                                        </button>
+                                    </h3>
+                                    <div id="faqC4CollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqC4HeadingTwo" data-bs-parent="#faqAccordionConnect4">
+                                        <div class="accordion-body">
+                                            Yes, you can select the "vs Computer" mode. The AI opponent in this version is designed to be a straightforward challenge, good for learning the game or casual play.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqC4HeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC4CollapseThree" aria-expanded="false" aria-controls="faqC4CollapseThree">
+                                            What happens if the board fills up and no one has four in a row?
+                                        </button>
+                                    </h3>
+                                    <div id="faqC4CollapseThree" class="accordion-collapse collapse" aria-labelledby="faqC4HeadingThree" data-bs-parent="#faqAccordionConnect4">
+                                        <div class="accordion-body">
+                                            If all 42 spaces on the 7x6 grid are filled with discs and neither player has managed to connect four of their discs, the game results in a draw or a stalemate.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">Strategy Challenges</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="minesweeper-classic.html">Minesweeper Classic</a></li>
+                                <!-- Add other strategy games -->
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/four-in-a-row-connect.js"></script>
+</body>
+</html>

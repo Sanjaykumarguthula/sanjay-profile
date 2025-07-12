@@ -1,0 +1,107 @@
+/* assets/css/game-specific/typing-ace-test.css */
+
+.game-container .card-header.game-header {
+    background-color: #0dcaf0; /* Cyan theme for Typing Ace */
+    color: #212529;
+    font-size: 0.9rem; /* Smaller font for more stats */
+    font-weight: 500;
+}
+.game-container .card-header.game-header > div {
+    margin: 0 5px; /* Tighter spacing for stats */
+}
+.game-container .card-header.game-header .form-label-sm {
+    margin-bottom: 0; /* Align label with select */
+}
+
+.text-to-type-container {
+    font-family: 'Georgia', serif; /* More readable serif font for passages */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #495057;
+    min-height: 100px; /* Ensure it has some height even when empty */
+    max-height: 200px; /* Scroll if text is very long */
+    overflow-y: auto;
+    user-select: none; /* Prevent selecting the source text */
+}
+.text-to-type-container .placeholder-text {
+    color: #6c757d;
+    font-style: italic;
+}
+.text-to-type-container span.correct-char {
+    color: #198754; /* Green for correct */
+    /* background-color: #d1e7dd; */ /* Optional light green background */
+}
+.text-to-type-container span.incorrect-char {
+    color: #dc3545; /* Red for incorrect */
+    background-color: #f8d7da; /* Light red background */
+    text-decoration: underline wavy red;
+}
+.text-to-type-container span.current-char-pending { /* For the char under cursor before typed */
+    background-color: #cfe2ff; /* Light blue to indicate current position */
+    border-bottom: 2px solid #0d6efd;
+}
+
+
+.typing-input-area {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    /* Match the text-to-type container for better alignment feeling */
+}
+.typing-input-area:disabled {
+    background-color: #e9ecef; /* Grey out when disabled */
+}
+
+.typing-test-results {
+    /* General styles in games-style.css if using .game-message-overlay structure */
+    /* If it's a distinct section as per HTML: */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+.typing-test-results h3 {
+    color: #0d6efd; /* Blue for results title */
+    margin-bottom: 15px;
+}
+.typing-test-results p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+.typing-test-results strong {
+    color: #343a40;
+}
+
+.card-footer #startTypingTestBtn {
+    /* General button styles are fine, specific if needed */
+}
+
+@media (max-width: 768px) {
+    .game-container .card-header.game-header {
+        flex-direction: column; /* Stack stats */
+    }
+    .game-container .card-header.game-header > div {
+        margin-bottom: 8px;
+    }
+    .text-to-type-container, .typing-input-area {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-to-type-container, .typing-input-area {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .typing-test-results h3 {
+        font-size: 1.5rem;
+    }
+    .typing-test-results p {
+        font-size: 1rem;
+    }
+    .card-footer #startTypingTestBtn {
+        width: 100%;
+    }
+}

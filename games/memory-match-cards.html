@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Memory Match - Free Online Concentration & Matching Game | Sanjay Guthula</title>
+    <meta name="description" content="Test your memory with Memory Match Cards! A free online concentration game. Flip cards, find pairs, and clear the board. Fun for all ages.">
+    <meta name="keywords" content="memory game, concentration game, matching game, card matching, free puzzle games, brain games, html5 games">
+
+    <meta property="og:title" content="Memory Match - Free Online Concentration & Matching Game | Sanjay Guthula">
+    <meta property="og:description" content="Test your memory with Memory Match Cards! A free online concentration game. Flip cards, find pairs, and clear the board. Fun for all ages.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/memory-match-cards.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/memory-match-og-image.png"> --> <!-- OG Image for Memory Match -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/memory-match-cards.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                 <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>Memory Match Cards - Free Online Concentration Game</h1>
+            <h4>Flip the cards, find the pairs, and test your memory skills!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="game-container card shadow-sm text-center">
+                        <div class="card-header game-header d-flex justify-content-between align-items-center">
+                            <div>Turns: <span id="turnsDisplay">0</span></div>
+                            <div class="difficulty-selector-memory">
+                                <label for="difficultyMemory" class="form-label me-2 small">Difficulty:</label>
+                                <select id="difficultyMemory" class="form-select form-select-sm d-inline-block w-auto">
+                                    <option value="easy" selected>Easy (4x3)</option>
+                                    <option value="medium">Medium (4x4)</option>
+                                    <option value="hard">Hard (5x4)</option>
+                                    <option value="expert">Expert (6x5)</option>
+                                </select>
+                            </div>
+                            <button id="restartMemoryGameBtn" class="btn btn-sm btn-primary">New Game</button>
+                        </div>
+                        <div class="card-body game-body p-2 p-sm-3 d-flex justify-content-center align-items-center">
+                            <div id="memoryGameGrid" class="memory-game-grid">
+                                <!-- Cards will be generated by JavaScript -->
+                            </div>
+                        </div>
+                        <div id="winMessageMemory" class="win-message-memory" style="display:none;">
+                            <h3>Congratulations! You found all pairs!</h3>
+                            <p>Total Turns: <span id="finalTurnsMemory">0</span></p>
+                            <button class="btn btn-success" id="playAgainMemoryBtn">Play Again?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Memory Match</h2>
+                            <ol>
+                                <li>Select your desired difficulty level. This will determine the number of cards on the board.</li>
+                                <li>Click "New Game" or change the difficulty to start. The cards will be shuffled and laid face down.</li>
+                                <li>Click on a card to flip it over and reveal its image or symbol.</li>
+                                <li>Then, click on a second card to flip it over.</li>
+                                <li>If the two cards match, they will remain face up (or be removed from the board, depending on the game's visual style).</li>
+                                <li>If the two cards do not match, they will flip back face down after a brief moment. Try to remember what was on each card and where it was.</li>
+                                <li>Continue flipping pairs of cards until you have successfully matched all pairs on the board.</li>
+                                <li>The game tracks the number of turns you take. Try to find all pairs in the fewest turns possible!</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic concentration card matching gameplay.</li>
+                                <li>Multiple difficulty levels to challenge your memory.</li>
+                                <li>Tracks the number of turns taken.</li>
+                                <li>Clean and engaging card designs (themes can be varied).</li>
+                                <li>Simple click-to-play interface, suitable for all ages.</li>
+                                <li>Helps improve memory and concentration skills.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Memory Game)</h2>
+                            <div class="accordion" id="faqAccordionMemory">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqMemoryHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqMemoryCollapseOne" aria-expanded="false" aria-controls="faqMemoryCollapseOne">
+                                            How many cards can I flip at a time?
+                                        </button>
+                                    </h3>
+                                    <div id="faqMemoryCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqMemoryHeadingOne" data-bs-parent="#faqAccordionMemory">
+                                        <div class="accordion-body">
+                                            You can flip two cards per turn. After flipping the second card, the game will check if they are a match.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqMemoryHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqMemoryCollapseTwo" aria-expanded="false" aria-controls="faqMemoryCollapseTwo">
+                                            Does the game have different themes or card sets?
+                                        </button>
+                                    </h3>
+                                    <div id="faqMemoryCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqMemoryHeadingTwo" data-bs-parent="#faqAccordionMemory">
+                                        <div class="accordion-body">
+                                            This version uses a default set of symbols or images. Future enhancements could include selectable themes for the card faces to add variety!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqMemoryHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqMemoryCollapseThree" aria-expanded="false" aria-controls="faqMemoryCollapseThree">
+                                            Is there a timer in this memory game?
+                                        </button>
+                                    </h3>
+                                    <div id="faqMemoryCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqMemoryHeadingThree" data-bs-parent="#faqAccordionMemory">
+                                        <div class="accordion-body">
+                                            This version focuses on tracking the number of turns taken to complete the game. A timer could be a potential feature for future updates if desired.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">More Puzzle Fun</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="minesweeper-classic.html">Minesweeper Classic</a></li>
+                                <li><a href="numbermerge-challenge.html">NumberMerge (2048)</a></li>
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/memory-match-cards.js"></script>
+</body>
+</html>

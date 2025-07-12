@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>BrickBuster Retro - Free Breakout/Arkanoid Style Game Online</title>
+    <meta name="description" content="Play BrickBuster Retro, a free online Breakout-style game! Control the paddle, break bricks, and catch power-ups. Classic arcade action.">
+    <meta name="keywords" content="breakout game, arkanoid game, brick buster, online breakout, free arcade games, retro games, html5 games">
+
+    <meta property="og:title" content="BrickBuster Retro - Free Breakout/Arkanoid Style Game Online">
+    <meta property="og:description" content="Play BrickBuster Retro, a free online Breakout-style game! Control the paddle, break bricks, and catch power-ups. Classic arcade action.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/brickbuster-retro.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/brickbuster-og-image.png"> --> <!-- OG Image for BrickBuster -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/brickbuster-retro.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                 <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>BrickBuster Retro - Free Online Breakout Game</h1>
+            <h4>Break all the bricks with your paddle and ball. Classic arcade fun!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10"> <!-- Adjust width as needed -->
+                    <div class="game-container card shadow-sm text-center">
+                        <div class="card-header game-header">
+                            <span class="me-3">Score: <span id="scoreDisplay">0</span></span>
+                            <span class="me-3">Level: <span id="levelDisplay">1</span></span>
+                            <span>Lives: <span id="livesDisplay">3</span></span>
+                        </div>
+                        <div class="card-body game-body p-1 p-sm-2">
+                            <canvas id="brickBusterCanvas" width="480" height="500" class="mx-auto d-block border"></canvas> <!-- Example canvas size -->
+                            <div id="brickBusterMessageScreen" class="brickbuster-message-screen" style="display:none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.7); color: white; padding: 20px; border-radius: 10px;">
+                                <h5 id="brickBusterMessageText">Game Over!</h5>
+                                <p>Final Score: <span id="finalBrickScore">0</span></p>
+                                <button id="restartBrickBusterBtn" class="btn btn-primary mt-2">Play Again</button>
+                            </div>
+                             <div id="startBrickBusterScreen" class="start-game-screen text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                <button id="startBrickBusterBtn" class="btn btn-success btn-lg">Start Game</button>
+                            </div>
+                        </div>
+                         <div class="card-footer game-controls-info small">
+                           <p class="mb-0"><strong>Controls:</strong> Left/Right Arrow Keys or Mouse to move paddle. Click to launch ball.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play BrickBuster Retro</h2>
+                            <ol>
+                                <li>Click "Start Game" to begin. The ball will be attached to your paddle.</li>
+                                <li>Move your paddle left and right using the <strong>Arrow Keys</strong> or your <strong>Mouse</strong>.</li>
+                                <li>Click the <strong>Left Mouse Button</strong> (or press Spacebar - TBD) to launch the ball from the paddle.</li>
+                                <li>The objective is to break all the colored bricks at the top of the screen by hitting them with the ball.</li>
+                                <li>Don't let the ball fall below your paddle, or you will lose a life.</li>
+                                <li>Some bricks may drop power-ups when destroyed. Catch them with your paddle to activate special abilities (e.g., wider paddle, multiple balls, laser shots - features TBD).</li>
+                                <li>Clear all breakable bricks to advance to the next level.</li>
+                                <li>You have a limited number of lives. The game ends when you run out of lives.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic Breakout/Arkanoid style gameplay.</li>
+                                <li>Multiple levels with varying brick layouts.</li>
+                                <li>Paddle control via keyboard or mouse.</li>
+                                <li>Scoring system based on broken bricks.</li>
+                                <li>Life system.</li>
+                                <li>(Optional) Exciting power-ups to enhance gameplay.</li>
+                                <li>Engaging retro sound effects and visuals (to be designed).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (BrickBuster)</h2>
+                            <div class="accordion" id="faqAccordionBrickBuster">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBBHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBBCollapseOne" aria-expanded="false" aria-controls="faqBBCollapseOne">
+                                            How do I launch the ball?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBBCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqBBHeadingOne" data-bs-parent="#faqAccordionBrickBuster">
+                                        <div class="accordion-body">
+                                            After starting the game, the ball will be attached to your paddle. Click the left mouse button or press the Spacebar (specific control to be finalized during development) to launch the ball upwards.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBBHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBBCollapseTwo" aria-expanded="false" aria-controls="faqBBCollapseTwo">
+                                            What do different power-ups do?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBBCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqBBHeadingTwo" data-bs-parent="#faqAccordionBrickBuster">
+                                        <div class="accordion-body">
+                                            Power-ups are special items that can drop from broken bricks. Common power-ups might include making your paddle wider, giving you multiple balls, slowing down the ball, or even giving your paddle temporary lasers to break bricks! Specific power-ups will be detailed in the game.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBBHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBBCollapseThree" aria-expanded="false" aria-controls="faqBBCollapseThree">
+                                            How many levels are there?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBBCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqBBHeadingThree" data-bs-parent="#faqAccordionBrickBuster">
+                                        <div class="accordion-body">
+                                            The game is planned to have multiple levels with increasing difficulty and different brick patterns. The exact number of levels will be determined during development.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">More Arcade Action</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="snake.html">Snake Classic</a></li>
+                                <li><a href="pong-classic.html">Pong Classic</a></li>
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+             <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/brickbuster-retro.js"></script>
+</body>
+</html>

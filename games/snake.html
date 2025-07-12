@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Snake Game - Play Free Classic Snake Online | Sanjay Guthula</title>
+    <meta name="description" content="Play the classic Snake game online for free! Control the snake, eat the food, and grow as long as possible. Test your skills in this addictive arcade favorite.">
+    <meta name="keywords" content="snake game, classic snake, online snake, free snake game, arcade games, retro games, html5 games">
+
+    <meta property="og:title" content="Snake Game - Play Free Classic Snake Online | Sanjay Guthula">
+    <meta property="og:description" content="Play the classic Snake game online for free! Control the snake, eat the food, and grow as long as possible. Test your skills in this addictive arcade favorite.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/snake.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/snake-og-image.png"> --> <!-- OG Image for Snake -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/snake-game.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>Play Snake Online - Classic Arcade Game</h1>
+            <h4>Guide the growing snake, eat the fruit, and avoid collisions!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="game-container card shadow-sm">
+                        <div class="card-header game-header text-center">
+                            <span class="me-3">Score: <span id="scoreDisplay">0</span></span>
+                            <span id="highScoreDisplayArea" style="display:none;">High Score: <span id="highScoreDisplay">0</span></span>
+                        </div>
+                        <div class="card-body game-body">
+                            <canvas id="snakeGameCanvas" width="400" height="400" class="mx-auto d-block border"></canvas>
+                             <div id="gameOverMessage" class="game-over-message text-center mt-3" style="display:none;">
+                                <h5>Game Over!</h5>
+                                <p>Your Score: <span id="finalScore">0</span></p>
+                                <button id="restartGameBtn" class="btn btn-primary">Play Again</button>
+                            </div>
+                            <div id="startGameScreen" class="start-game-screen text-center mt-3">
+                                <button id="startGameBtn" class="btn btn-success btn-lg">Start Game</button>
+                            </div>
+                        </div>
+                        <div class="card-footer game-controls text-center p-3" id="mobileControls" style="display:none;">
+                            <p class="mb-2 small">Use Arrow Keys or On-Screen Controls</p>
+                            <button class="btn btn-secondary btn-control" id="upBtn"><i class='bx bx-up-arrow-alt'></i></button> <br>
+                            <button class="btn btn-secondary btn-control" id="leftBtn"><i class='bx bx-left-arrow-alt'></i></button>
+                            <button class="btn btn-secondary btn-control" id="downBtn"><i class='bx bx-down-arrow-alt'></i></button>
+                            <button class="btn btn-secondary btn-control" id="rightBtn"><i class='bx bx-right-arrow-alt'></i></button>
+                            <!-- Optional: Pause Button -->
+                            <!-- <button class="btn btn-warning ms-3" id="pauseGameBtn">Pause</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Snake</h2>
+                            <ol>
+                                <li>Click "Start Game" to begin.</li>
+                                <li>Use the <strong>Arrow Keys</strong> on your keyboard (Up, Down, Left, Right) to control the direction of the snake.</li>
+                                <li>On mobile devices, use the on-screen directional buttons that appear below the game.</li>
+                                <li>The objective is to eat the food (usually a red square or circle) that appears on the screen.</li>
+                                <li>Each time the snake eats food, it grows longer and you score points.</li>
+                                <li>Avoid colliding with the walls or the snake's own body. If a collision occurs, the game is over.</li>
+                                <li>Try to get the highest score possible!</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic, addictive Snake gameplay.</li>
+                                <li>Simple and intuitive controls (Keyboard and Touch).</li>
+                                <li>Score tracking.</li>
+                                <li>(Optional) High score saving using your browser's local storage.</li>
+                                <li>Responsive design for play on different screen sizes.</li>
+                            </ul>
+
+                            <h2 class="mt-4">Snake Game Tips & Tricks</h2>
+                            <ul>
+                                <li><strong>Plan Your Moves:</strong> Especially as the snake gets longer, think a few steps ahead to avoid getting trapped.</li>
+                                <li><strong>Use the Edges (Carefully):</strong> Sometimes running along an edge can help you manage a long snake, but be careful not to trap yourself.</li>
+                                <li><strong>Controlled Turns:</strong> Avoid making rapid, unnecessary turns which can lead to accidentally hitting yourself.</li>
+                                <li><strong>Patience is Key:</strong> Don't rush for the food if it puts you in a dangerous position.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Snake Game)</h2>
+                            <div class="accordion" id="faqAccordionSnake">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqSnakeHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSnakeCollapseOne" aria-expanded="false" aria-controls="faqSnakeCollapseOne">
+                                            How do I control the snake?
+                                        </button>
+                                    </h3>
+                                    <div id="faqSnakeCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqSnakeHeadingOne" data-bs-parent="#faqAccordionSnake">
+                                        <div class="accordion-body">
+                                            You can control the snake using the Arrow Keys (Up, Down, Left, Right) on your computer keyboard. If you are on a mobile device, on-screen directional buttons will be available below the game area.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqSnakeHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSnakeCollapseTwo" aria-expanded="false" aria-controls="faqSnakeCollapseTwo">
+                                            What happens if I hit the wall or the snake's tail?
+                                        </button>
+                                    </h3>
+                                    <div id="faqSnakeCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqSnakeHeadingTwo" data-bs-parent="#faqAccordionSnake">
+                                        <div class="accordion-body">
+                                            If the snake collides with any of the game boundaries (walls) or runs into its own body/tail, the game will end. You'll see your final score and an option to play again.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqSnakeHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSnakeCollapseThree" aria-expanded="false" aria-controls="faqSnakeCollapseThree">
+                                            Can I pause the Snake game?
+                                        </button>
+                                    </h3>
+                                    <div id="faqSnakeCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqSnakeHeadingThree" data-bs-parent="#faqAccordionSnake">
+                                        <div class="accordion-body">
+                                            This version of the game does not currently feature a pause button, but it's a common feature that might be added in the future! For now, the game is continuous once started.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">More Arcade Fun</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="pong-classic.html">Pong Classic</a></li>
+                                <li><a href="brickbuster-retro.html">BrickBuster Retro</a></li>
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100"> <!-- Adjusted padding for game pages -->
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Using bundle for Popper -->
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/snake-game.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* assets/css/game-specific/numbermerge-challenge.css */
+
+.game-container .card-header.game-header {
+    background-color: #bbada0; /* 2048 board background color */
+    color: #776e65; /* Dark text color */
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.game-container .card-header.game-header span {
+    background-color: #ccc0b3;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+.game-container .card-header.game-header button {
+    background-color: #8f7a66;
+    color: #f9f6f2;
+    border: none;
+}
+.game-container .card-header.game-header button:hover {
+    background-color: #776e65;
+}
+
+
+.game-board-2048 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px; /* Space between tiles */
+    background-color: #bbada0; /* Board background */
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%; /* Make it responsive within its container */
+    max-width: 400px; /* Max size of the board */
+    aspect-ratio: 1 / 1; /* Keep it square */
+    margin: 0 auto; /* Center it */
+    touch-action: none; /* Prevent scrolling while swiping on board */
+}
+
+.tile2048 {
+    background-color: #cdc1b4; /* Empty tile color */
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em; /* Default, will be adjusted by JS or more specific CSS */
+    font-weight: bold;
+    color: #776e65; /* Default text color for low numbers */
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out; /* For animations */
+}
+
+/* Tile value specific styles (JS will add these classes or inline styles) */
+/* Example for a few tiles, JS will handle applying these based on value */
+.tile2048.tile-2 { background-color: #eee4da; color: #776e65; }
+.tile2048.tile-4 { background-color: #ede0c8; color: #776e65; }
+.tile2048.tile-8 { background-color: #f2b179; color: #f9f6f2; }
+.tile2048.tile-16 { background-color: #f59563; color: #f9f6f2; }
+.tile2048.tile-32 { background-color: #f67c5f; color: #f9f6f2; }
+.tile2048.tile-64 { background-color: #f65e3b; color: #f9f6f2; }
+.tile2048.tile-128 { background-color: #edcf72; color: #f9f6f2; font-size: 1.8em; }
+.tile2048.tile-256 { background-color: #edcc61; color: #f9f6f2; font-size: 1.8em; }
+.tile2048.tile-512 { background-color: #edc850; color: #f9f6f2; font-size: 1.8em; }
+.tile2048.tile-1024 { background-color: #edc53f; color: #f9f6f2; font-size: 1.5em; }
+.tile2048.tile-2048 { background-color: #edc22e; color: #f9f6f2; font-size: 1.5em; }
+.tile2048.tile-4096 { background-color: #3c3a32; color: #f9f6f2; font-size: 1.5em; }
+/* Add more for higher numbers if needed */
+
+.game-over-screen-2048 {
+    /* General styles in games-style.css */
+}
+.game-over-screen-2048 .message-content {
+    background-color: rgba(238, 228, 218, 0.9); /* Semi-transparent board color */
+    color: #776e65;
+    padding: 30px;
+}
+.game-over-screen-2048 h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.game-over-screen-2048 button {
+    background-color: #8f7a66;
+    color: #f9f6f2;
+    border:none;
+}
+.game-over-screen-2048 button:hover {
+    background-color: #776e65;
+}
+
+
+.game-controls-info {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+}
+
+@media (max-width: 480px) {
+    .game-board-2048 {
+        gap: 8px;
+        padding: 8px;
+        max-width: 95vw; /* Ensure it fits */
+    }
+    .tile2048 {
+        font-size: 1.5em; /* Adjust font for smaller tiles */
+    }
+    .tile2048.tile-128, .tile2048.tile-256, .tile2048.tile-512 { font-size: 1.3em; }
+    .tile2048.tile-1024, .tile2048.tile-2048, .tile2048.tile-4096 { font-size: 1.1em; }
+
+    .game-container .card-header.game-header {
+        font-size: 0.9rem;
+        flex-wrap: wrap; /* Allow wrapping for score/best/button */
+    }
+     .game-container .card-header.game-header > span,
+     .game-container .card-header.game-header button {
+        margin-bottom: 5px;
+    }
+}
