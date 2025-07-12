@@ -1,0 +1,22 @@
+# Enable the rewrite engine
+RewriteEngine On
+
+# ----------------------------------------------------------------------
+# Rule 1: Redirect URLs with .html to extension-less URLs
+# ----------------------------------------------------------------------
+# If a request is made for a file that ends in .html...
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+# ...then permanently redirect the browser to the same URL without .html
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# ----------------------------------------------------------------------
+# Rule 2: Internally rewrite extension-less URLs to .html files
+# ----------------------------------------------------------------------
+# If the requested URI is not a file...
+RewriteCond %{REQUEST_FILENAME} !-f
+# ...and is not a directory...
+RewriteCond %{REQUEST_FILENAME} !-d
+# ...and a file with .html appended exists...
+RewriteCond %{REQUEST_FILENAME}.html -f
+# ...then internally serve the .html file.
+RewriteRule ^(.*)$ $1.html [L]

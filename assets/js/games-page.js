@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const playButton = document.createElement('a');
-            playButton.href = `games/${game.slug}.html`;
+            playButton.href = `games/${game.slug}`;
             playButton.className = 'btn btn-light mt-auto align-self-center stretched-link'; // Changed to btn-light for contrast on dark cards
              // Adjust button style based on card background for better contrast
             if (game.cardStyle && isDarkColor(game.cardStyle.backgroundColor)) {

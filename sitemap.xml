@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://sanjayguthula.com/index.html</loc>
+    <loc>https://sanjayguthula.com/</loc>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://sanjayguthula.com/tools.html</loc>
+    <loc>https://sanjayguthula.com/tools</loc>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://sanjayguthula.com/games.html</loc>
+    <loc>https://sanjayguthula.com/games</loc>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://sanjayguthula.com/blog.html</loc>
+    <loc>https://sanjayguthula.com/blog</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://sanjayguthula.com/contact.html</loc>
+    <loc>https://sanjayguthula.com/contact</loc>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://sanjayguthula.com/blog-ai-image-generators-2025.html</loc>
+    <loc>https://sanjayguthula.com/blog-ai-image-generators-2025</loc>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://sanjayguthula.com/blog-ai-voice-generators-2025.html</loc>
+    <loc>https://sanjayguthula.com/blog-ai-voice-generators-2025</loc>
     <priority>0.70</priority>
   </url>
 
   <!-- Tool Pages -->
-  <url><loc>https://sanjayguthula.com/tools/word-counter.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/json-validator-formatter.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/image-compressor.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/seo-meta-tag-checker.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/color-palette-generator.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/qr-code-generator.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/text-case-converter.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/password-generator.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/url-encoder-decoder.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/markdown-previewer.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/base64-encoder-decoder.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/tools/sitemap-generator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/word-counter</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/json-validator-formatter</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/image-compressor</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/seo-meta-tag-checker</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/color-palette-generator</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/qr-code-generator</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/text-case-converter</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/password-generator</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/url-encoder-decoder</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/markdown-previewer</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/base64-encoder-decoder</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/tools/sitemap-generator</loc><priority>0.80</priority></url>
 
   <!-- Game Pages -->
-  <url><loc>https://sanjayguthula.com/games/snake.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/blockfall-challenge.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/pong-classic.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/brickbuster-retro.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/minesweeper-classic.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/dot-gobbler-maze.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/numbermerge-challenge.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/tappy-plane-flyer.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/memory-match-cards.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/wordguesser-challenge.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/typing-ace-test.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/tap-the-target-game.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/pixel-jumper-adventure.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/four-in-a-row-connect.html</loc><priority>0.80</priority></url>
-  <url><loc>https://sanjayguthula.com/games/coin-clicker-tycoon.html</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/snake</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/blockfall-challenge</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/pong-classic</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/brickbuster-retro</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/minesweeper-classic</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/dot-gobbler-maze</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/numbermerge-challenge</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/tappy-plane-flyer</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/memory-match-cards</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/wordguesser-challenge</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/typing-ace-test</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/tap-the-target-game</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/pixel-jumper-adventure</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/four-in-a-row-connect</loc><priority>0.80</priority></url>
+  <url><loc>https://sanjayguthula.com/games/coin-clicker-tycoon</loc><priority>0.80</priority></url>
 </urlset>
