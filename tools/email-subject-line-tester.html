@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="tool-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Subject Line Tester - Improve Your Open Rates</title>
+    <meta name="description" content="Test your email subject lines for length, spam words, and mobile visibility. Improve your open rates with our free online tester.">
+    <meta name="keywords" content="subject line tester, email marketing, open rate, subject line preview, marketing tools, seo tools">
+
+    <meta property="og:title" content="Email Subject Line Tester - Improve Your Open Rates">
+    <meta property="og:description" content="Test your email subject lines for length, spam words, and mobile visibility. Improve your open rates with our free online tester.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <link rel="stylesheet" href="../assets/css/tool-specific/email-subject-line-tester.css">
+</head>
+<body>
+    <div class="preloader"><span class="loader"></span></div>
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
+    </div>
+
+    <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>Free Email Subject Line Tester & Previewer</h1>
+            <h4>Analyze your subject lines to improve open rates and avoid spam filters.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                     <div class="tool-container card shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="subjectLineInput" class="form-label h5">Enter Your Email Subject Line</label>
+                                <input type="text" id="subjectLineInput" class="form-control form-control-lg" placeholder="e.g., Big news! Our summer sale starts now...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Analysis Area -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Subject Line Analysis</h3></div>
+                        <div id="analysisOutput" class="card-body">
+                            <p class="text-muted">Analysis will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Preview Area -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Client Previews</h3></div>
+                        <div class="card-body">
+                            <div id="previewOutput">
+                                <div class="preview-item">
+                                    <div class="preview-header"><i class='bx bxl-gmail'></i> Desktop (Gmail)</div>
+                                    <div class="preview-subject" id="previewDesktop"></div>
+                                </div>
+                                <div class="preview-item">
+                                    <div class="preview-header"><i class='bx bxs-mobile'></i> Mobile (iPhone Mail)</div>
+                                    <div class="preview-subject" id="previewMobile"></div>
+                                </div>
+                                 <div class="preview-item">
+                                    <div class="preview-header"><i class='bx bxl-android' ></i> Mobile (Android/Gmail App)</div>
+                                    <div class="preview-subject" id="previewMobileAndroid"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/tool-specific/email-subject-line-tester.js"></script>
+</body>
+</html>

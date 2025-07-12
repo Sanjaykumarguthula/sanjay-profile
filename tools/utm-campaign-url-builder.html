@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="tool-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTM Campaign URL Builder - Free Google Analytics Link Tracker</title>
+    <meta name="description" content="Easily create campaign URLs with UTM parameters for Google Analytics tracking. Our free builder ensures your links are tagged correctly.">
+    <meta name="keywords" content="utm builder, utm generator, campaign url builder, google analytics, marketing tools, seo tools">
+
+    <meta property="og:title" content="UTM Campaign URL Builder - Free Google Analytics Link Tracker">
+    <meta property="og:description" content="Easily create campaign URLs with UTM parameters for Google Analytics tracking. Our free builder ensures your links are tagged correctly.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <link rel="stylesheet" href="../assets/css/tool-specific/utm-builder.css">
+</head>
+<body>
+    <div class="preloader"><span class="loader"></span></div>
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
+    </div>
+
+    <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>Free UTM Campaign URL Builder</h1>
+            <h4>Create properly formatted campaign URLs for Google Analytics tracking.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mb-4">
+                    <div class="tool-container card shadow-sm h-100">
+                        <div class="card-header"><h3 class="h5 mb-0">Campaign Parameters</h3></div>
+                        <div class="card-body">
+                            <div class="form-group mb-3">
+                                <label for="baseUrlInput" class="form-label">Website URL <span class="text-danger">*</span></label>
+                                <input type="url" id="baseUrlInput" class="form-control" placeholder="https://www.example.com/my-landing-page" required>
+                            </div>
+                             <div class="form-group mb-3">
+                                <label for="sourceInput" class="form-label">Campaign Source (utm_source) <span class="text-danger">*</span></label>
+                                <input type="text" id="sourceInput" class="form-control" placeholder="e.g. google, newsletter, facebook" required>
+                                <div class="form-text small">The referrer: (e.g. google, newsletter).</div>
+                            </div>
+                             <div class="form-group mb-3">
+                                <label for="mediumInput" class="form-label">Campaign Medium (utm_medium) <span class="text-danger">*</span></label>
+                                <input type="text" id="mediumInput" class="form-control" placeholder="e.g. cpc, banner, email" required>
+                                 <div class="form-text small">Marketing medium: (e.g. cpc, banner, email).</div>
+                            </div>
+                             <div class="form-group mb-3">
+                                <label for="campaignInput" class="form-label">Campaign Name (utm_campaign) <span class="text-danger">*</span></label>
+                                <input type="text" id="campaignInput" class="form-control" placeholder="e.g. summer_sale, product_launch" required>
+                                 <div class="form-text small">Product, promo code, or slogan (e.g. spring_sale).</div>
+                            </div>
+                             <div class="form-group mb-3">
+                                <label for="termInput" class="form-label">Campaign Term (utm_term)</label>
+                                <input type="text" id="termInput" class="form-control" placeholder="e.g. running+shoes (for paid keywords)">
+                                <div class="form-text small">Identify the paid keywords.</div>
+                            </div>
+                             <div class="form-group mb-3">
+                                <label for="contentInput" class="form-label">Campaign Content (utm_content)</label>
+                                <input type="text" id="contentInput" class="form-control" placeholder="e.g. logo_link, text_link (for A/B testing)">
+                                <div class="form-text small">Use to differentiate ads or links that point to the same URL.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 mb-4">
+                    <div class="results-area card shadow-sm h-100">
+                         <div class="card-header"><h3 class="h5 mb-0">Generated Campaign URL</h3></div>
+                         <div class="card-body">
+                            <p class="small text-muted">The generated URL will appear below. Copy and use it in your marketing campaigns.</p>
+                            <textarea id="generatedUrlOutput" class="form-control output-area" rows="8" readonly></textarea>
+                            <button id="copyUrlBtn" class="btn btn-secondary btn-sm mt-2" disabled><i class='bx bx-copy'></i> Copy URL</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/tool-specific/utm-builder.js"></script>
+</body>
+</html>

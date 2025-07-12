@@ -1,0 +1,54 @@
+/* assets/css/tool-specific/email-subject-line-tester.css */
+
+#subjectLineInput {
+    font-size: 1.25rem;
+}
+
+#analysisOutput ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#analysisOutput li {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+#analysisOutput li:last-child {
+    border-bottom: none;
+}
+#analysisOutput li i.bx {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+#analysisOutput li.good i { color: #198754; }
+#analysisOutput li.warning i { color: #ffc107; }
+#analysisOutput li.bad i { color: #dc3545; }
+
+.preview-item {
+    margin-bottom: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+}
+.preview-header {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.preview-header i {
+    font-size: 1.1rem;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.preview-subject {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #212529;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* This is key for the preview */
+}

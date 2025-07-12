@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="tool-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google & Facebook Ad Preview Tool - Check Ad Copy</title>
+    <meta name="description" content="Preview your Google & Facebook ad copy in real-time. Check headline and description lengths to craft the perfect ad without truncation.">
+    <meta name="keywords" content="ad preview tool, google ads preview, facebook ad preview, ppc tools, marketing tools, ad copy generator">
+
+    <meta property="og:title" content="Google & Facebook Ad Preview Tool - Check Ad Copy">
+    <meta property="og:description" content="Preview your Google & Facebook ad copy in real-time. Check headline and description lengths to craft the perfect ad without truncation.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tools-style.css">
+    <link rel="stylesheet" href="../assets/css/tool-specific/ad-copy-previewer.css">
+</head>
+<body>
+    <div class="preloader"><span class="loader"></span></div>
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid"><div class="row"><div class="col-20 align-self-center"><div class="site-logo"><a href="/"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div></div><div class="col-60 d-flex justify-content-center"><nav id="main-menu"><ul><li><a href="/">Home</a></li><li class="current"><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></nav></div><div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact" class="border-btn">Get in Touch</a></div><ul class="mobile_menu"><li><a href="/">Home</a></li><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../games">Games</a></li><li><a href="../contact">Contact</a></li></ul></div></div>
+    </div>
+
+    <section class="main-banner tool-specific-banner">
+        <div class="container text-center">
+            <h1>PPC Ad Headline & Description Previewer</h1>
+            <h4>Craft the perfect ad copy for Google and Facebook and see how it looks live.</h4>
+        </div>
+    </section>
+
+    <section class="tools-content section-padding tool-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills mb-3 justify-content-center" id="adPreviewTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="google-ads-tab" data-bs-toggle="pill" data-bs-target="#google-ads-panel" type="button" role="tab" aria-controls="google-ads-panel" aria-selected="true"><i class='bx bxl-google'></i> Google Ads</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="facebook-ads-tab" data-bs-toggle="pill" data-bs-target="#facebook-ads-panel" type="button" role="tab" aria-controls="facebook-ads-panel" aria-selected="false"><i class='bx bxl-facebook-square'></i> Facebook Ads</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="adPreviewTabContent">
+                        <!-- Google Ads Panel -->
+                        <div class="tab-pane fade show active" id="google-ads-panel" role="tabpanel" aria-labelledby="google-ads-tab">
+                            <div class="row">
+                                <div class="col-lg-6 mb-4">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-header"><h3 class="h5 mb-0">Google Ads - Input</h3></div>
+                                        <div class="card-body">
+                                            <div class="form-group mb-2"><label class="form-label small">Final URL</label><input type="text" id="gadsUrl" class="form-control form-control-sm" placeholder="example.com"></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Headline 1</label><input type="text" id="gadsH1" class="form-control form-control-sm" maxlength="30"><div class="char-counter">0/30</div></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Headline 2</label><input type="text" id="gadsH2" class="form-control form-control-sm" maxlength="30"><div class="char-counter">0/30</div></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Headline 3</label><input type="text" id="gadsH3" class="form-control form-control-sm" maxlength="30"><div class="char-counter">0/30</div></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Description 1</label><textarea id="gadsD1" class="form-control form-control-sm" rows="2" maxlength="90"></textarea><div class="char-counter">0/90</div></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Description 2</label><textarea id="gadsD2" class="form-control form-control-sm" rows="2" maxlength="90"></textarea><div class="char-counter">0/90</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-4">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-header"><h3 class="h5 mb-0">Google Ads - Preview</h3></div>
+                                        <div class="card-body">
+                                            <div class="google-ad-preview">
+                                                <div class="gads-url-line"><span class="gads-ad-badge">Ad</span> <span id="gadsUrlPreview">example.com</span></div>
+                                                <div class="gads-headline" id="gadsHeadlinePreview">Headline 1 | Headline 2 | Headline 3</div>
+                                                <div class="gads-description" id="gadsDescriptionPreview">Description 1. Description 2.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Facebook Ads Panel -->
+                        <div class="tab-pane fade" id="facebook-ads-panel" role="tabpanel" aria-labelledby="facebook-ads-tab">
+                             <div class="row">
+                                <div class="col-lg-6 mb-4">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-header"><h3 class="h5 mb-0">Facebook Ads - Input</h3></div>
+                                        <div class="card-body">
+                                            <div class="form-group mb-2"><label class="form-label small">Page Name</label><input type="text" id="fbPageName" class="form-control form-control-sm" value="Your Page Name"></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Primary Text</label><textarea id="fbPrimaryText" class="form-control form-control-sm" rows="4" maxlength="125"></textarea><div class="char-counter">0/125 (Recommended)</div></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Headline</label><input type="text" id="fbHeadline" class="form-control form-control-sm" maxlength="40"><div class="char-counter">0/40</div></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Description</label><input type="text" id="fbDescription" class="form-control form-control-sm" maxlength="30"><div class="char-counter">0/30</div></div>
+                                            <div class="form-group mb-2"><label class="form-label small">Website URL</label><input type="text" id="fbUrl" class="form-control form-control-sm" placeholder="example.com"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-4">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-header"><h3 class="h5 mb-0">Facebook Ads - Preview</h3></div>
+                                        <div class="card-body">
+                                            <div class="facebook-ad-preview">
+                                                <div class="fb-header">
+                                                    <div class="fb-profile-pic"></div>
+                                                    <div class="fb-page-name" id="fbPageNamePreview">Your Page Name</div>
+                                                </div>
+                                                <div class="fb-primary-text" id="fbPrimaryTextPreview">Your primary ad text will appear here. It's the main body of your ad.</div>
+                                                <div class="fb-image-placeholder">Your Ad Creative (Image/Video)</div>
+                                                <div class="fb-link-info">
+                                                    <div class="fb-url" id="fbUrlPreview">example.com</div>
+                                                    <div class="fb-headline" id="fbHeadlinePreview">Your Compelling Headline</div>
+                                                    <div class="fb-description" id="fbDescriptionPreview">A short, punchy description.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container"><div class="footer-bottom wow fadeIn"><div class="row"><div class="col-xl-6 col-md-6 col-12 align-self-center text-start"><p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p></div><div class="col-xl-6 col-md-6 col-12 text-end"><div class="foot_menu"><ul><li><a href="../tools">Free Tools</a></li><li><a href="../blog">Blog</a></li><li><a href="../contact">Contact</a></li></ul></div></div></div></div></div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/tool-specific/ad-copy-previewer.js"></script>
+</body>
+</html>
