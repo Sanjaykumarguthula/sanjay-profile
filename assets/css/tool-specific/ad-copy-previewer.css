@@ -1,0 +1,134 @@
+/* assets/css/tool-specific/ad-copy-previewer.css */
+
+.nav-pills .nav-link {
+    font-weight: 500;
+}
+.nav-pills .nav-link i {
+    margin-right: 5px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+.nav-pills .nav-link.active {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tab-content {
+    border: 1px solid #dee2e6;
+    border-top: none;
+    padding: 1.5rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+    background-color: #f8f9fa;
+}
+
+.char-counter {
+    font-size: 0.75rem;
+    color: #6c757d;
+    text-align: right;
+}
+.char-counter.danger {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Google Ad Preview */
+.google-ad-preview {
+    font-family: Arial, sans-serif;
+    border: 1px solid #dfe1e5;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    max-width: 100%;
+}
+.gads-ad-badge {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 1px 3px;
+    border: 1px solid #333;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+.gads-url-line {
+    font-size: 14px;
+    color: #202124;
+    margin-bottom: 4px;
+}
+.gads-headline {
+    font-size: 20px;
+    color: #1a0dab;
+    line-height: 1.3;
+    margin-bottom: 3px;
+    word-wrap: break-word;
+}
+.gads-description {
+    font-size: 14px;
+    color: #4d5156;
+    line-height: 1.57;
+    word-wrap: break-word;
+}
+
+/* Facebook Ad Preview */
+.facebook-ad-preview {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 1px solid #dddfe2;
+    background-color: #ffffff;
+    border-radius: 3px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.fb-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+.fb-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 8px;
+}
+.fb-page-name {
+    font-weight: bold;
+    color: #050505;
+}
+.fb-primary-text {
+    padding: 0 12px 12px 12px;
+    font-size: 15px;
+    line-height: 1.33;
+    color: #050505;
+    white-space: pre-wrap; /* Preserve line breaks */
+    word-wrap: break-word;
+}
+.fb-image-placeholder {
+    width: 100%;
+    height: 262px; /* Approx 1.91:1 ratio for 500px width */
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #65676b;
+    font-size: 14px;
+}
+.fb-link-info {
+    padding: 10px 12px;
+    background-color: #f0f2f5;
+    border-top: 1px solid #dddfe2;
+}
+.fb-url {
+    font-size: 12px;
+    color: #65676b;
+    text-transform: uppercase;
+}
+.fb-headline {
+    font-size: 17px;
+    font-weight: bold;
+    color: #050505;
+    margin-top: 4px;
+    word-wrap: break-word;
+}
+.fb-description {
+    font-size: 15px;
+    color: #65676b;
+    margin-top: 3px;
+    word-wrap: break-word;
+}

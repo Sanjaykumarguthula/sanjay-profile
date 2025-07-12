@@ -1,0 +1,26 @@
+/* assets/css/tool-specific/utm-builder.css */
+
+.tool-container .form-label .text-danger {
+    font-size: 0.9em;
+    margin-left: 2px;
+}
+
+.tool-container .form-text {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.results-area .output-area {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e9ecef;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    min-height: 200px;
+}
+
+.results-area #copyUrlBtn {
+    /* General button styles are fine, specific if needed */
+}
+.results-area #copyUrlBtn:disabled {
+    cursor: not-allowed;
+}
