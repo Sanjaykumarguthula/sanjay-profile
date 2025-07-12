@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>BlockFall Challenge - Play Free Tetris-like Puzzle Game Online</title>
+    <meta name="description" content="Test your puzzle skills with BlockFall Challenge, a free online Tetris-style game. Rotate and drop blocks to clear lines and score high! Addictive and fun.">
+    <meta name="keywords" content="tetris game, block puzzle, falling blocks, puzzle games, online tetris, free puzzle games, blockfall, html5 games">
+
+    <meta property="og:title" content="BlockFall Challenge - Play Free Tetris-like Puzzle Game Online">
+    <meta property="og:description" content="Test your puzzle skills with BlockFall Challenge, a free online Tetris-style game. Rotate and drop blocks to clear lines and score high! Addictive and fun.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/blockfall-challenge.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/blockfall-og-image.png"> --> <!-- OG Image for BlockFall -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/blockfall-challenge.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>BlockFall Challenge - Free Online Falling Block Puzzle Game</h1>
+            <h4>Rotate, drop, and clear lines in this addictive Tetris-style classic!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8"> <!-- Main game area -->
+                    <div class="game-container card shadow-sm text-center">
+                        <div class="card-header game-header">
+                            <span class="me-3">Score: <span id="scoreDisplay">0</span></span>
+                            <span class="me-3">Level: <span id="levelDisplay">1</span></span>
+                            <span>Lines: <span id="linesDisplay">0</span></span>
+                        </div>
+                        <div class="card-body game-body p-2 p-sm-3">
+                            <canvas id="blockFallCanvas" width="300" height="600" class="mx-auto d-block border"></canvas>
+                            <div id="gameOverMessage" class="game-over-message text-center mt-3" style="display:none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px;">
+                                <h5>Game Over!</h5>
+                                <p>Final Score: <span id="finalScore">0</span></p>
+                                <button id="restartGameBtn" class="btn btn-primary">Play Again</button>
+                            </div>
+                             <div id="startGameScreen" class="start-game-screen text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                <button id="startGameBtn" class="btn btn-success btn-lg">Start Game</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4 mt-lg-0"> <!-- Side panel for next piece, hold, etc. -->
+                    <div class="game-side-panel card shadow-sm mb-3">
+                        <div class="card-header text-center">Next Piece</div>
+                        <div class="card-body text-center">
+                            <canvas id="nextPieceCanvas" width="120" height="120"></canvas>
+                        </div>
+                    </div>
+                     <div class="game-side-panel card shadow-sm mb-3" id="holdPieceContainer" style="display:none;"> <!-- Optional Hold Piece -->
+                        <div class="card-header text-center">Hold (C)</div>
+                        <div class="card-body text-center">
+                            <canvas id="holdPieceCanvas" width="120" height="120"></canvas>
+                        </div>
+                    </div>
+                    <div class="game-controls-info card shadow-sm">
+                        <div class="card-header text-center">Controls</div>
+                        <div class="card-body small">
+                            <p><strong>Keyboard:</strong></p>
+                            <ul>
+                                <li><strong>Left/Right Arrows:</strong> Move piece</li>
+                                <li><strong>Up Arrow / X:</strong> Rotate Clockwise</li>
+                                <li><strong>Z / Ctrl:</strong> Rotate Counter-Clockwise</li>
+                                <li><strong>Down Arrow:</strong> Soft Drop</li>
+                                <li><strong>Spacebar:</strong> Hard Drop</li>
+                                <li><strong>C:</strong> Hold Piece (Optional)</li>
+                                <li><strong>P:</strong> Pause/Resume</li>
+                            </ul>
+                             <p class="mt-2"><strong>Touch (Mobile):</strong> On-screen buttons will appear.</p>
+                        </div>
+                    </div>
+                     <div id="mobileControls" class="mt-3 text-center" style="display:none;">
+                        <button class="btn btn-secondary m-1" id="mRotateLeftBtn"><i class='bx bx-rotate-left'></i></button>
+                        <button class="btn btn-secondary m-1" id="mRotateRightBtn"><i class='bx bx-rotate-right'></i></button><br>
+                        <button class="btn btn-secondary m-1" id="mLeftBtn"><i class='bx bx-left-arrow-alt'></i></button>
+                        <button class="btn btn-secondary m-1" id="mRightBtn"><i class='bx bx-right-arrow-alt'></i></button><br>
+                        <button class="btn btn-secondary m-1" id="mSoftDropBtn"><i class='bx bx-down-arrow-alt'></i></button>
+                        <button class="btn btn-primary m-1" id="mHardDropBtn">DROP</button>
+                        <!-- <button class="btn btn-info m-1" id="mHoldBtn">HOLD</button> -->
+                    </div>
+                     <button id="pauseGameBtn" class="btn btn-warning w-100 mt-3">Pause</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play BlockFall Challenge</h2>
+                            <ol>
+                                <li>Click "Start Game" to begin. New blocks (tetrominoes) will start falling from the top.</li>
+                                <li>Use the <strong>Arrow Keys</strong> to move the falling block left or right.</li>
+                                <li>Press the <strong>Up Arrow</strong> (or X key) to rotate the block clockwise. Use Z or Ctrl for counter-clockwise rotation.</li>
+                                <li>Press the <strong>Down Arrow</strong> to make the block fall faster (soft drop).</li>
+                                <li>Press the <strong>Spacebar</strong> to make the block drop instantly to the bottom (hard drop).</li>
+                                <li>Complete horizontal lines with no gaps to clear them from the board and score points.</li>
+                                <li>Clearing multiple lines at once (e.g., 2, 3, or 4 lines - a "BlockFall" or "Tetris") scores significantly more points.</li>
+                                <li>The game ends if the blocks stack up to the top of the playing field.</li>
+                                <li>The game speeds up as you clear more lines and advance levels.</li>
+                                <li>(Optional) Use the 'C' key to swap the current piece with a 'Held' piece. You can only hold one piece at a time.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic addictive falling block puzzle gameplay.</li>
+                                <li>Seven different tetromino shapes.</li>
+                                <li>Smooth controls for piece manipulation (move, rotate, soft/hard drop).</li>
+                                <li>Scoring system that rewards multi-line clears.</li>
+                                <li>Increasing levels and game speed for a progressive challenge.</li>
+                                <li>"Next Piece" preview to help you plan ahead.</li>
+                                <li>(Optional) "Hold Piece" functionality for strategic play.</li>
+                                <li>Pause and Resume functionality.</li>
+                            </ul>
+
+                            <h2 class="mt-4">Tips for High Scores in BlockFall Challenge</h2>
+                            <ul>
+                                <li><strong>Plan Ahead:</strong> Always look at the "Next Piece" preview to decide where your current piece should go.</li>
+                                <li><strong>Build Flat:</strong> Try to keep your stack as flat as possible, avoiding holes.</li>
+                                <li><strong>Aim for Tetrises:</strong> Clearing four lines at once (a "Tetris" or "BlockFall") gives the most points. Try to leave a single column open for the I-shape (long bar).</li>
+                                <li><strong>Use Soft Drop:</strong> Speed up piece descent with soft drop to score more points and play faster, but be careful not to make mistakes.</li>
+                                <li><strong>Don't Panic:</strong> When the stack gets high or the speed increases, stay calm and focus on making good placements.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (BlockFall)</h2>
+                            <div class="accordion" id="faqAccordionBlockFall">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBFHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBFCollapseOne" aria-expanded="false" aria-controls="faqBFCollapseOne">
+                                            How do I rotate the blocks?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBFCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqBFHeadingOne" data-bs-parent="#faqAccordionBlockFall">
+                                        <div class="accordion-body">
+                                            Use the Up Arrow key or 'X' key to rotate the current block clockwise. Use the 'Z' key or 'Ctrl' key for counter-clockwise rotation. On mobile, dedicated rotate buttons will be available.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBFHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBFCollapseTwo" aria-expanded="false" aria-controls="faqBFCollapseTwo">
+                                            What is a "BlockFall" or "Tetris"?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBFCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqBFHeadingTwo" data-bs-parent="#faqAccordionBlockFall">
+                                        <div class="accordion-body">
+                                            A "BlockFall" (often referred to as a "Tetris" in the original game) is when you clear four horizontal lines simultaneously. This is typically achieved using the long, straight I-shaped block and scores the highest number of points for a single move.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqBFHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBFCollapseThree" aria-expanded="false" aria-controls="faqBFCollapseThree">
+                                            How do I get a higher score?
+                                        </button>
+                                    </h3>
+                                    <div id="faqBFCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqBFHeadingThree" data-bs-parent="#faqAccordionBlockFall">
+                                        <div class="accordion-body">
+                                            To get a higher score, focus on clearing multiple lines at once, especially four lines (BlockFall/Tetris). Also, try to play at higher levels where the points per line are often increased. Using soft drop can also add to your score. Avoid leaving gaps in your stack.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">More Puzzle Fun</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="numbermerge-challenge.html">NumberMerge (2048)</a></li>
+                                <li><a href="minesweeper-classic.html">Minesweeper Classic</a></li>
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+             <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/blockfall-challenge.js"></script>
+</body>
+</html>

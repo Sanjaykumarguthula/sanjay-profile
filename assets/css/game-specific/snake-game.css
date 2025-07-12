@@ -1,0 +1,68 @@
+/* assets/css/game-specific/snake-game.css */
+
+.game-page.game-snake body { /* Example if you want to change body bg for this game */
+    /* background-color: #333; */
+}
+
+#snakeGameCanvas {
+    border: 2px solid #333;
+    background-color: #f0f0f0; /* Light background for the game area */
+    max-width: 100%; /* Ensure responsiveness */
+    height: auto;   /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1; /* Keep it square if width is set via JS based on container */
+}
+
+.game-container .card-header.game-header {
+    font-size: 1.2rem;
+    background-color: #4CAF50; /* Green theme for snake */
+    color: white;
+}
+
+.game-over-message h5 {
+    font-size: 1.8rem;
+    color: #dc3545; /* Red for game over */
+}
+
+.start-game-screen button,
+.game-over-message button {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+}
+
+/* Mobile Controls for Snake */
+#mobileControls {
+    padding: 10px;
+    background-color: #e9ecef;
+    border-top: 1px solid #dee2e6;
+}
+#mobileControls .btn-control {
+    width: 60px; /* Fixed size for D-pad like buttons */
+    height: 60px;
+    font-size: 1.8rem; /* Larger icons */
+    margin: 5px !important;
+}
+#mobileControls br { display: block; margin-bottom: 5px; } /* Ensure line breaks */
+#mobileControls #upBtn { margin-left: 70px; /* Center top button */ }
+#mobileControls #downBtn { margin-left: 70px; /* Center bottom button */ }
+
+/* Ensure canvas is hidden when start/game over screens are shown */
+#startGameScreen ~ #snakeGameCanvas,
+#gameOverMessage ~ #snakeGameCanvas {
+    /* This logic is handled by JS display none/block, CSS rule not strictly needed if JS does it */
+}
+
+@media (max-width: 576px) {
+    #snakeGameCanvas {
+        width: 90vw !important; /* Let JS set specific pixel width/height for consistency */
+        height: 90vw !important; /* But ensure it fits viewport */
+    }
+     .game-container .card-header.game-header {
+        font-size: 1rem;
+    }
+    #mobileControls .btn-control {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    #mobileControls #upBtn, #mobileControls #downBtn { margin-left: 60px; }
+}

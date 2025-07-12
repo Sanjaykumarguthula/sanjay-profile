@@ -1,0 +1,106 @@
+/* assets/css/game-specific/pixel-jumper-adventure.css */
+
+.pixel-jumper-body {
+    /* background-color: #e0f7fa; */ /* Light sky blue, but canvas has its own */
+}
+
+.pixel-jumper-banner {
+    background: linear-gradient(to bottom, #54a0ff, #87CEEB); /* Sky blue gradient */
+}
+.pixel-jumper-banner h1, .pixel-jumper-banner h4 {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.pixel-jumper-game-container .card-body {
+    padding: 0 !important; /* Canvas might fill this */
+}
+
+#pixelJumperCanvas {
+    border: 2px solid #333;
+    background-color: #e0f7fa; /* Light blue sky background */
+    display: block; /* Remove extra space */
+    max-width: 100%;
+    /* aspect-ratio set by width/height attributes, or handled by JS */
+}
+
+.pixel-jumper-stats {
+    background-color: rgba(0,0,0,0.15);
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Position top-left for platformer stats */
+    z-index: 5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    width: auto;
+}
+.pixel-jumper-stats span { margin-right: 15px; }
+
+
+.pixel-jumper-message-screen {
+    /* General styles from games-style.css */
+}
+.pixel-jumper-message-screen .message-content {
+    /* Specifics if needed */
+}
+.start-pixel-jumper-screen {
+    /* General styles from games-style.css */
+}
+.start-pixel-jumper-screen p {
+    font-size: 1.2rem;
+    color: #333; /* Text on light overlay */
+}
+
+#mobileControlsPixelJumper {
+    background-color: #f0f0f0; /* Light grey for controls background */
+    padding: 8px !important;
+    border-top: 1px solid #ccc;
+}
+#mobileControlsPixelJumper .btn-control {
+    width: 65px;
+    height: 50px;
+    font-size: 1rem; /* Text for jump button */
+}
+#mobileControlsPixelJumper .btn-control i {
+    font-size: 1.5rem; /* Icon size for arrows */
+}
+#mobileControlsPixelJumper #pjJumpBtn { /* Make jump button more prominent */
+    width: auto; /* Auto width for text */
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #28a745; /* Green jump button */
+    color: white;
+    border-color: #1e7e34;
+}
+#mobileControlsPixelJumper #pjJumpBtn:hover {
+    background-color: #1e7e34;
+}
+
+
+@media (max-width: 768px) {
+    .pixel-jumper-stats {
+        position: relative; /* Static position within card header on mobile */
+        top: auto; left: auto;
+        transform: none;
+        background-color: #17a2b8; /* Info color, or match header */
+        border-radius: 0;
+        text-align: center;
+        padding: 0.5rem;
+    }
+    .pixel-jumper-stats span { margin-right: 10px; font-size: 0.9rem;}
+}
+
+@media (max-width: 576px) {
+    .pixel-jumper-banner h1 { font-size: 1.8rem; }
+    .pixel-jumper-banner h4 { font-size: 1rem; }
+    #mobileControlsPixelJumper .btn-control {
+        width: 55px;
+        height: 45px;
+    }
+    #mobileControlsPixelJumper .btn-control i { font-size: 1.3rem; }
+    #mobileControlsPixelJumper #pjJumpBtn { padding: 0.4rem 0.8rem; }
+}

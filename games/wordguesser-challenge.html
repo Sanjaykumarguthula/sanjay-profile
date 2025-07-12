@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Hangman WordGuesser - Free Online Word Puzzle Game | Sanjay Guthula</title>
+    <meta name="description" content="Play the classic Hangman word game online for free with WordGuesser Challenge! Guess letters, solve the word, and save the stickman.">
+    <meta name="keywords" content="hangman game, word guess game, online hangman, free word games, puzzle games, vocabulary games, html5 games">
+
+    <meta property="og:title" content="Hangman WordGuesser - Free Online Word Puzzle Game | Sanjay Guthula">
+    <meta property="og:description" content="Play the classic Hangman word game online for free with WordGuesser Challenge! Guess letters, solve the word, and save the stickman.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/wordguesser-challenge.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/wordguesser-og-image.png"> --> <!-- OG Image for Hangman -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/wordguesser-challenge.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>WordGuesser Challenge - Play Free Online Hangman Game</h1>
+            <h4>Guess the hidden word one letter at a time. Don't let the stickman hang!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="game-container card shadow-sm text-center">
+                        <div class="card-header game-header">
+                            <span id="categoryDisplay" class="me-3">Category: General</span>
+                            <span>Incorrect Guesses: <span id="incorrectGuessesDisplay">0</span> / <span id="maxIncorrectGuesses">6</span></span>
+                        </div>
+                        <div class="card-body game-body p-2 p-sm-3">
+                            <div class="hangman-drawing-area mb-3">
+                                <canvas id="hangmanCanvas" width="200" height="250" class="border"></canvas>
+                            </div>
+                            <div id="wordDisplayContainer" class="word-display-container mb-3 h3">
+                                <!-- Word blanks will be generated by JavaScript -->
+                            </div>
+                            <div id="alphabetButtonsContainer" class="alphabet-buttons-container mb-3">
+                                <!-- Alphabet buttons will be generated by JavaScript -->
+                            </div>
+                             <div id="hangmanMessageScreen" class="hangman-message-screen" style="display:none;">
+                                <h3 id="hangmanMessageText">You Win!</h3>
+                                <p>The word was: <strong id="correctWordDisplay"></strong></p>
+                                <button id="playHangmanAgainBtn" class="btn btn-primary mt-2">Play New Word</button>
+                            </div>
+                        </div>
+                         <div class="card-footer text-center">
+                             <button id="newWordBtn" class="btn btn-info">Get New Word</button>
+                             <!-- Optional: Category selector -->
+                             <!--
+                             <select id="categorySelector" class="form-select form-select-sm d-inline-block w-auto ms-2">
+                                 <option value="general">General</option>
+                                 <option value="animals">Animals</option>
+                                 <option value="countries">Countries</option>
+                             </select>
+                             -->
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play WordGuesser (Hangman)</h2>
+                            <ol>
+                                <li>A secret word is chosen, and you see a series of blank spaces representing its letters.</li>
+                                <li>Guess letters one at a time by clicking on the alphabet buttons provided.</li>
+                                <li>If your guessed letter is in the word, all occurrences of that letter will be revealed in the blank spaces.</li>
+                                <li>If your guessed letter is not in the word, a part of the hangman figure will be drawn.</li>
+                                <li>You have a limited number of incorrect guesses (usually 6, corresponding to drawing the full hangman).</li>
+                                <li>The objective is to guess all the letters in the word before the hangman figure is completed.</li>
+                                <li>If you guess the word correctly, you win! If the hangman is fully drawn, you lose, and the word will be revealed.</li>
+                                <li>Click "Get New Word" or "Play New Word" to start a new game.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic Hangman word-guessing gameplay.</li>
+                                <li>Visual feedback with the drawing of the hangman figure.</li>
+                                <li>Clear display of the hidden word and guessed letters.</li>
+                                <li>Interactive alphabet buttons for letter selection.</li>
+                                <li>Tracks incorrect guesses.</li>
+                                <li>(Optional) Different word categories to choose from.</li>
+                                <li>Fun way to test your vocabulary and spelling skills.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Hangman)</h2>
+                            <div class="accordion" id="faqAccordionHangman">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqHMHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqHMCollapseOne" aria-expanded="false" aria-controls="faqHMCollapseOne">
+                                            How many incorrect guesses do I get?
+                                        </button>
+                                    </h3>
+                                    <div id="faqHMCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHMHeadingOne" data-bs-parent="#faqAccordionHangman">
+                                        <div class="accordion-body">
+                                            Typically, you get 6 incorrect guesses before the hangman figure is complete and you lose the game. The number of incorrect guesses remaining is usually displayed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqHMHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqHMCollapseTwo" aria-expanded="false" aria-controls="faqHMCollapseTwo">
+                                            Are there different word categories?
+                                        </button>
+                                    </h3>
+                                    <div id="faqHMCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHMHeadingTwo" data-bs-parent="#faqAccordionHangman">
+                                        <div class="accordion-body">
+                                            This version primarily uses a general list of words. Some Hangman games offer categories (like animals, countries, food) to make guessing more specific. This could be a feature added in the future.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqHMHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqHMCollapseThree" aria-expanded="false" aria-controls="faqHMCollapseThree">
+                                            Can I use the keyboard to guess letters?
+                                        </button>
+                                    </h3>
+                                    <div id="faqHMCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHMHeadingThree" data-bs-parent="#faqAccordionHangman">
+                                        <div class="accordion-body">
+                                            Currently, letter guessing is done by clicking the on-screen alphabet buttons. Keyboard input for guessing letters is a potential enhancement for future versions.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">More Word Puzzles</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="typing-ace-test.html">Typing Ace Test</a></li>
+                                <!-- Add other word games if any -->
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/wordguesser-challenge.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* assets/css/game-specific/dot-gobbler-maze.css */
+
+#dotGobblerCanvas {
+    border: 2px solid #FFD700; /* Gold border, Pac-Man theme */
+    background-color: #000000; /* Black background for the maze */
+    max-width: 100%;
+    /* aspect-ratio will be determined by canvas width/height attributes */
+}
+
+.game-container .card-header.game-header {
+    background-color: #333; /* Dark header for Pac-Man */
+    color: #FFD700; /* Gold text */
+    font-size: 1.1rem;
+    font-family: 'Rajdhani', sans-serif; /* Arcade font */
+}
+.game-container .card-header.game-header span {
+    margin: 0 10px;
+}
+
+.game-message-overlay .message-content { /* For Game Over / Win messages */
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #FFD700;
+    border: 2px solid #FFD700;
+}
+.game-message-overlay h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+}
+.game-message-overlay p {
+    font-size: 1.2rem;
+}
+
+.start-game-screen button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    font-family: 'Rajdhani', sans-serif;
+}
+.start-game-screen button:hover {
+    background-color: #e6c300;
+}
+
+/* Mobile Controls for Dot Gobbler */
+#mobileControlsDotGobbler {
+    padding: 10px;
+    background-color: #1a1a1a; /* Dark background for controls */
+    border-top: 1px solid #333;
+}
+#mobileControlsDotGobbler .btn-control {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+    margin: 4px !important;
+    background-color: #444;
+    border-color: #555;
+    color: #FFD700;
+}
+#mobileControlsDotGobbler .btn-control:hover {
+    background-color: #555;
+}
+#mobileControlsDotGobbler br { display: block; margin-bottom: 3px; }
+
+
+@media (max-width: 576px) {
+    #dotGobblerCanvas {
+        /* JS should handle canvas sizing based on TILE_SIZE and maze dimensions */
+        /* This ensures it fits if the container becomes very small */
+    }
+    .game-container .card-header.game-header {
+        font-size: 0.9rem;
+    }
+     #mobileControlsDotGobbler .btn-control {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+    .game-message-overlay h3 {
+        font-size: 1.5rem;
+    }
+    .game-message-overlay p {
+        font-size: 1rem;
+    }
+}

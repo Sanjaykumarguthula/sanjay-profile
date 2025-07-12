@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Coin Clicker Tycoon - Addictive Free Idle & Clicker Game Online</title>
+    <meta name="description" content="Become a Coin Clicker Tycoon! Click to earn coins, buy upgrades, and grow your fortune in this free online idle and clicker game.">
+    <meta name="keywords" content="clicker game, idle game, tycoon game, online clicker, free idle games, incremental games, html5 games">
+
+    <meta property="og:title" content="Coin Clicker Tycoon - Addictive Free Idle & Clicker Game Online">
+    <meta property="og:description" content="Become a Coin Clicker Tycoon! Click to earn coins, buy upgrades, and grow your fortune in this free online idle and clicker game.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/coin-clicker-tycoon.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/coin-clicker-og-image.png"> --> <!-- OG Image for Coin Clicker -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/coin-clicker-tycoon.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>Coin Clicker Tycoon - Free Online Idle & Clicker Game</h1>
+            <h4>Click your way to riches! Buy upgrades and watch your empire grow.</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Main Click Area -->
+                <div class="col-md-5 col-lg-4 text-center mb-4 mb-md-0">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h2 class="display-4"><span id="coinCountDisplay">0</span> Coins</h2>
+                            <p class="text-muted mb-2">Coins per second: <span id="cpsDisplay">0</span></p>
+                            <p class="text-muted">Coins per click: <span id="cpcDisplay">1</span></p>
+                            <button id="mainClickButton" class="btn btn-warning btn-lg main-click-button mt-3">
+                                <i class='bx bxs-coin bx-lg'></i> Click for Coins!
+                            </button>
+                            <div id="clickEffectContainer"></div>
+                        </div>
+                    </div>
+                     <div class="card shadow-sm mt-3">
+                        <div class="card-header">Game Controls</div>
+                        <div class="card-body">
+                            <button id="saveGameBtn" class="btn btn-info btn-sm me-2">Save Progress</button>
+                            <button id="loadGameBtn" class="btn btn-secondary btn-sm me-2">Load Progress</button>
+                            <button id="resetGameBtn" class="btn btn-danger btn-sm">Reset Game</button>
+                            <p id="saveStatus" class="small mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upgrades Area -->
+                <div class="col-md-7 col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header text-center">
+                            <h3>Upgrades Store</h3>
+                        </div>
+                        <div class="card-body upgrades-store-body">
+                            <div id="upgradesContainer" class="row row-cols-1 row-cols-lg-2 g-3">
+                                <!-- Upgrades will be dynamically inserted here by JavaScript -->
+                                <p class="text-muted placeholder-upgrades">Upgrades will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Coin Clicker Tycoon</h2>
+                            <ol>
+                                <li><strong>Start Clicking:</strong> Click the large "Click for Coins!" button to earn your first coins. Each click earns you a base amount.</li>
+                                <li><strong>Buy Upgrades:</strong> As you accumulate coins, you can purchase upgrades from the "Upgrades Store". There are two main types of upgrades:
+                                    <ul>
+                                        <li><strong>Click Upgrades:</strong> These increase the number of coins you earn per click.</li>
+                                        <li><strong>Automatic Upgrades (Generators):</strong> These automatically generate coins for you every second, even when you're not clicking.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Increase Your Income:</strong> Purchase more upgrades and more powerful versions of them to significantly boost your coins per click (CPC) and coins per second (CPS).</li>
+                                <li><strong>Grow Your Empire:</strong> Watch your coin count soar as you strategically invest in upgrades. The goal is to earn as many coins as possible and become a true Coin Clicker Tycoon!</li>
+                                <li><strong>Save/Load Progress:</strong> Use the "Save Progress" button to store your game state in your browser's local storage. Use "Load Progress" to resume. "Reset Game" will start you over from scratch.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic addictive clicker/idle game mechanics.</li>
+                                <li>Manual coin generation through clicking.</li>
+                                <li>Automated coin generation through purchasable upgrades.</li>
+                                <li>Multiple types of upgrades that increase click power and idle income.</li>
+                                <li>Dynamic display of coin count, coins per click (CPC), and coins per second (CPS).</li>
+                                <li>Ability to save and load game progress using browser local storage.</li>
+                                <li>Simple, satisfying gameplay loop.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Clicker Game)</h2>
+                            <div class="accordion" id="faqAccordionClicker">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqClickerHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqClickerCollapseOne" aria-expanded="false" aria-controls="faqClickerCollapseOne">
+                                            How do I earn coins faster?
+                                        </button>
+                                    </h3>
+                                    <div id="faqClickerCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqClickerHeadingOne" data-bs-parent="#faqAccordionClicker">
+                                        <div class="accordion-body">
+                                            To earn coins faster, you should invest in upgrades. Prioritize upgrades that give you a good return on investment. Early on, increasing your "coins per click" can be very effective. Later, "coins per second" upgrades (generators) will become crucial for passive income. Keep buying more and better upgrades!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqClickerHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqClickerCollapseTwo" aria-expanded="false" aria-controls="faqClickerCollapseTwo">
+                                            What kind of upgrades can I buy?
+                                        </button>
+                                    </h3>
+                                    <div id="faqClickerCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqClickerHeadingTwo" data-bs-parent="#faqAccordionClicker">
+                                        <div class="accordion-body">
+                                            There are typically two main types: upgrades that make your manual clicks more valuable (e.g., "Stronger Finger," "Power Glove") and upgrades that generate coins automatically over time (e.g., "Coin Printer," "Gold Mine"). Each upgrade will show its cost and how much it improves your earnings.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqClickerHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqClickerCollapseThree" aria-expanded="false" aria-controls="faqClickerCollapseThree">
+                                            Does the game save my progress?
+                                        </button>
+                                    </h3>
+                                    <div id="faqClickerCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqClickerHeadingThree" data-bs-parent="#faqAccordionClicker">
+                                        <div class="accordion-body">
+                                            Yes! This game features a manual save/load system. Click the "Save Progress" button to store your current game state in your browser's local storage. When you return, click "Load Progress" to pick up where you left off. Be aware that clearing your browser's cache or local storage might erase your saved game.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">Casual Fun</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="tappy-plane-flyer.html">Tappy Plane Flyer</a></li>
+                                <!-- Add other casual games -->
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/coin-clicker-tycoon.js"></script>
+</body>
+</html>

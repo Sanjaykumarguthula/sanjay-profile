@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Dot Gobbler - Free Online Pac-Man Style Arcade Game | Sanjay Guthula</title>
+    <meta name="description" content="Play Dot Gobbler, a fun and free Pac-Man style arcade game online. Eat dots, avoid ghosts, and clear the maze!">
+    <meta name="keywords" content="pacman game, dot gobbler, online pacman, free arcade games, maze games, retro games, html5 games">
+
+    <meta property="og:title" content="Dot Gobbler - Free Online Pac-Man Style Arcade Game | Sanjay Guthula">
+    <meta property="og:description" content="Play Dot Gobbler, a fun and free Pac-Man style arcade game online. Eat dots, avoid ghosts, and clear the maze!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/dot-gobbler-maze.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/dot-gobbler-og-image.png"> --> <!-- OG Image for Dot Gobbler -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/dot-gobbler-maze.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>Dot Gobbler Maze - Free Online Pac-Man Style Game</h1>
+            <h4>Navigate the maze, eat all the dots, and watch out for ghosts!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10"> <!-- Adjust width as needed -->
+                    <div class="game-container card shadow-sm text-center">
+                        <div class="card-header game-header d-flex justify-content-between align-items-center">
+                            <span>Score: <span id="scoreDisplay">0</span></span>
+                            <span>Lives: <span id="livesDisplay">3</span></span>
+                        </div>
+                        <div class="card-body game-body p-1 p-sm-2 position-relative">
+                            <canvas id="dotGobblerCanvas" width="448" height="576" class="mx-auto d-block border"></canvas> <!-- Example canvas size, common for Pac-Man -->
+                            <div id="gameMessageScreen" class="game-message-overlay" style="display:none;">
+                                <div class="message-content">
+                                    <h3 id="gameMessageText">Game Over!</h3>
+                                    <p>Final Score: <span id="finalScoreMessage">0</span></p>
+                                    <button id="restartDotGobblerBtn" class="btn btn-primary mt-2">Play Again</button>
+                                </div>
+                            </div>
+                            <div id="startDotGobblerScreen" class="start-game-screen text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                <button id="startDotGobblerBtn" class="btn btn-success btn-lg">Start Game</button>
+                            </div>
+                        </div>
+                        <div class="card-footer game-controls text-center p-3" id="mobileControlsDotGobbler" style="display:none;">
+                            <p class="mb-2 small">Use Arrow Keys or On-Screen Controls</p>
+                            <button class="btn btn-secondary btn-control m-1" id="dgUpBtn"><i class='bx bx-up-arrow-alt'></i></button> <br>
+                            <button class="btn btn-secondary btn-control m-1" id="dgLeftBtn"><i class='bx bx-left-arrow-alt'></i></button>
+                            <button class="btn btn-secondary btn-control m-1" id="dgDownBtn"><i class='bx bx-down-arrow-alt'></i></button>
+                            <button class="btn btn-secondary btn-control m-1" id="dgRightBtn"><i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Dot Gobbler</h2>
+                            <ol>
+                                <li>Click "Start Game" to begin.</li>
+                                <li>Use the <strong>Arrow Keys</strong> on your keyboard (Up, Down, Left, Right) to guide your character through the maze.</li>
+                                <li>On mobile devices, use the on-screen directional buttons.</li>
+                                <li>Eat all the small dots in the maze to score points and advance (or complete the level).</li>
+                                <li>Avoid colliding with the ghosts! If a ghost catches you, you lose a life.</li>
+                                <li>Eat the larger "Power Pellets" to temporarily turn the ghosts blue. While they are blue, you can eat them for bonus points!</li>
+                                <li>The game ends when you lose all your lives or clear the maze (if single level).</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic Pac-Man inspired gameplay.</li>
+                                <li>Navigate a maze, collect dots, and avoid ghosts.</li>
+                                <li>Power Pellets to turn the tables on the ghosts.</li>
+                                <li>Score and life tracking.</li>
+                                <li>Simple, intuitive controls for keyboard and touch.</li>
+                                <li>(To be implemented) Multiple levels or increasing ghost difficulty.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Dot Gobbler)</h2>
+                            <div class="accordion" id="faqAccordionDotGobbler">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqDGHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDGCollapseOne" aria-expanded="false" aria-controls="faqDGCollapseOne">
+                                            How do I move my character?
+                                        </button>
+                                    </h3>
+                                    <div id="faqDGCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqDGHeadingOne" data-bs-parent="#faqAccordionDotGobbler">
+                                        <div class="accordion-body">
+                                            Use the Arrow Keys (Up, Down, Left, Right) on your keyboard. On mobile devices, on-screen directional buttons will appear. Your character will continue moving in the chosen direction until it hits a wall or you change direction.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqDGHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDGCollapseTwo" aria-expanded="false" aria-controls="faqDGCollapseTwo">
+                                            What do the big dots (Power Pellets) do?
+                                        </button>
+                                    </h3>
+                                    <div id="faqDGCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqDGHeadingTwo" data-bs-parent="#faqAccordionDotGobbler">
+                                        <div class="accordion-body">
+                                            Eating a Power Pellet will temporarily make the ghosts vulnerable. They will usually turn blue and flee from you. During this time, you can eat the ghosts for extra bonus points! Be quick, as the effect wears off.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqDGHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDGCollapseThree" aria-expanded="false" aria-controls="faqDGCollapseThree">
+                                            How many ghosts are there in this version?
+                                        </button>
+                                    </h3>
+                                    <div id="faqDGCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqDGHeadingThree" data-bs-parent="#faqAccordionDotGobbler">
+                                        <div class="accordion-body">
+                                            This simplified version, "Dot Gobbler," will feature 2 to 3 ghosts with basic movement patterns to provide a fun challenge.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">Classic Arcade Hits</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="snake.html">Snake Classic</a></li>
+                                <li><a href="pong-classic.html">Pong Classic</a></li>
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/dot-gobbler-maze.js"></script>
+</body>
+</html>

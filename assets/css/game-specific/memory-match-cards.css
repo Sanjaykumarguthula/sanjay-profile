@@ -1,0 +1,142 @@
+/* assets/css/game-specific/memory-match-cards.css */
+
+.game-container .card-header.game-header {
+    background-color: #6610f2; /* Purple theme for Memory Match */
+    color: white;
+}
+.difficulty-selector-memory label {
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+.difficulty-selector-memory .form-select-sm {
+    font-size: 0.875rem; /* Bootstrap's default */
+    padding: 0.25rem 0.5rem;
+}
+
+.memory-game-grid {
+    display: grid;
+    /* grid-template-columns set by JS */
+    gap: 10px;
+    padding: 10px;
+    background-color: #e9ecef; /* Light grey background for grid area */
+    border-radius: 5px;
+    margin: 0 auto; /* Center the grid */
+    max-width: 100%; /* Ensure responsiveness */
+    width: fit-content; /* Shrink to content size */
+}
+
+.memory-card {
+    aspect-ratio: 1 / 1; /* Square cards */
+    perspective: 1000px; /* For 3D flip effect */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    min-width: 60px; /* Minimum card size */
+    min-height: 60px;
+}
+
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.memory-card.flipped .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-front,
+.memory-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 2em; /* Default icon size, adjust as needed */
+}
+
+.memory-card-front {
+    background-color: #007bff; /* Blue card front */
+    color: white;
+    /* content: "?"; Or use a background image for card front */
+}
+.memory-card-front::after { /* Question mark or pattern */
+    content: '?';
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.memory-card-back {
+    background-color: #f8f9fa; /* Light background for card back */
+    color: #333;
+    transform: rotateY(180deg);
+}
+.memory-card-back i.bx { /* For BoxIcons */
+    font-size: 2.5em; /* Adjust based on card size */
+    line-height: 1;
+}
+
+.memory-card.matched .memory-card-inner {
+    /* Optional: Style for matched cards, e.g., reduced opacity or border */
+    opacity: 0.7;
+    box-shadow: 0 0 0 3px #28a745; /* Green border for matched */
+    transform: rotateY(180deg); /* Keep it flipped */
+}
+.memory-card.matched {
+    cursor: default;
+}
+
+
+.win-message-memory {
+    /* General styles in games-style.css */
+}
+.win-message-memory h3 {
+    font-size: 1.8rem;
+    color: #198754; /* Green for win */
+}
+
+@media (max-width: 768px) {
+    .memory-game-grid {
+        gap: 8px;
+    }
+    .memory-card-back i.bx {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .memory-game-grid {
+        gap: 5px;
+        padding: 5px;
+    }
+    .memory-card {
+        min-width: 45px;
+        min-height: 45px;
+    }
+    .memory-card-front::after {
+        font-size: 1.2em;
+    }
+    .memory-card-back i.bx {
+        font-size: 1.5em;
+    }
+    .game-container .card-header.game-header {
+        flex-direction: column;
+        font-size: 0.9rem;
+    }
+    .game-container .card-header.game-header > div {
+        margin-bottom: 5px;
+    }
+     .difficulty-selector-memory .form-select-sm {
+        width: 100%; /* Full width on small screens */
+    }
+}

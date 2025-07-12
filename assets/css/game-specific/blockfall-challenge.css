@@ -1,0 +1,92 @@
+/* assets/css/game-specific/blockfall-challenge.css */
+
+#blockFallCanvas {
+    border: 2px solid #333;
+    background-color: #222; /* Darker background for Tetris playfield */
+    max-width: 100%;
+    /* Height is set by JS, but ensure it scales down if container is too small */
+    max-height: 80vh;
+    aspect-ratio: 1 / 2; /* Typical Tetris ratio (10 wide, 20 high) */
+}
+
+.game-container .card-header.game-header {
+    background-color: #0d6efd; /* Blue theme for Tetris */
+    color: white;
+    font-size: 1rem;
+}
+
+.game-side-panel .card-header {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background-color: #6c757d;
+    color: white;
+}
+.game-side-panel .card-body {
+    padding: 0.5rem;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#nextPieceCanvas, #holdPieceCanvas { /* Ensure these are styled if they are canvases */
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+}
+
+
+.game-controls-info .card-header {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+.game-controls-info .card-body ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+}
+.game-controls-info .card-body li {
+    margin-bottom: 0.2rem;
+}
+
+
+#mobileControls button { /* General style for mobile buttons */
+    font-size: 0.8rem; /* Smaller text if needed */
+    padding: 0.4rem 0.6rem;
+}
+#mobileControls .bx { /* Icon size */
+    font-size: 1.2rem;
+}
+#mobileControls #mHardDropBtn {
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .game-area-section .row > [class*="col-"] {
+        /* Stack game area and side panel on smaller screens */
+    }
+    #blockFallCanvas {
+        width: 100%; /* Ensure it fits */
+        /* Height will adjust due to aspect-ratio or JS */
+    }
+    .game-side-panel, .game-controls-info {
+        margin-top: 1rem; /* Add space when stacked */
+    }
+    #nextPieceCanvas, #holdPieceCanvas {
+        width: 80px; /* Smaller preview on mobile */
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .game-container .card-header.game-header {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+    .game-container .card-header.game-header span {
+        margin-right: 0.5rem !important; /* Reduce spacing */
+    }
+    #mobileControls {
+        display: flex !important; /* Ensure it's flex if hidden by default by JS */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

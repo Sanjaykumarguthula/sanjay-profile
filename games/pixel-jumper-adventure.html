@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+
+    <title>Pixel Jumper Adventure - Play Free Simple Platformer Game Online</title>
+    <meta name="description" content="Embark on a Pixel Jumper Adventure! A free and fun simple online platform game. Jump, avoid obstacles, and reach the goal.">
+    <meta name="keywords" content="platformer game, jump game, online platformer, free arcade games, pixel games, html5 games, adventure games">
+
+    <meta property="og:title" content="Pixel Jumper Adventure - Play Free Simple Platformer Game Online">
+    <meta property="og:description" content="Embark on a Pixel Jumper Adventure! A free and fun simple online platform game. Jump, avoid obstacles, and reach the goal.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/pixel-jumper-adventure.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/pixel-jumper-og-image.png"> --> <!-- OG Image for Pixel Jumper -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/pixel-jumper-adventure.css">
+</head>
+<body class="game-page pixel-jumper-body">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner pixel-jumper-banner">
+        <div class="container text-center">
+            <h1>Pixel Jumper Adventure - Free Online Platform Game</h1>
+            <h4>Jump across platforms, dodge dangers, and reach the finish line!</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="game-container card shadow-sm text-center pixel-jumper-game-container">
+                        <div id="pixelJumperStats" class="card-header game-header pixel-jumper-stats">
+                            <span class="me-3">Score: <span id="pjScoreDisplay">0</span></span>
+                            <span class="me-3">Lives: <span id="pjLivesDisplay">3</span></span>
+                            <span>Level: <span id="pjLevelDisplay">1</span></span>
+                        </div>
+                        <div class="card-body game-body p-0 position-relative overflow-hidden">
+                            <canvas id="pixelJumperCanvas" width="640" height="480"></canvas>
+                            <div id="pixelJumperMessageScreen" class="pixel-jumper-message-screen" style="display:none;">
+                                <div class="message-content">
+                                    <h3 id="pixelJumperGameMessageText">Game Over!</h3>
+                                    <p>Score: <span id="pixelJumperFinalScore">0</span></p>
+                                    <button id="restartPixelJumperBtn" class="btn btn-primary mt-2">Play Again</button>
+                                </div>
+                            </div>
+                            <div id="startPixelJumperScreen" class="start-pixel-jumper-screen">
+                                <p class="h5">Use Arrow Keys to Move & Jump</p>
+                                <button id="startPixelJumperBtn" class="btn btn-success btn-lg mt-2">Start Adventure</button>
+                            </div>
+                        </div>
+                        <div id="mobileControlsPixelJumper" class="card-footer game-controls text-center p-2" style="display:none;">
+                            <button class="btn btn-secondary btn-control m-1" id="pjLeftBtn"><i class='bx bx-left-arrow-alt'></i></button>
+                            <button class="btn btn-secondary btn-control m-1" id="pjRightBtn"><i class='bx bx-right-arrow-alt'></i></button>
+                            <button class="btn btn-primary btn-control m-1" id="pjJumpBtn"><i class='bx bx-up-arrow-alt'></i> Jump</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Pixel Jumper Adventure</h2>
+                            <ol>
+                                <li>Click "Start Adventure" to begin your journey.</li>
+                                <li>Use the <strong>Left and Right Arrow Keys</strong> to move your character.</li>
+                                <li>Press the <strong>Up Arrow Key</strong> or <strong>Spacebar</strong> to make your character jump. The longer you hold it (up to a limit), the higher the jump might be (feature TBD).</li>
+                                <li>On mobile devices, use the on-screen directional and jump buttons.</li>
+                                <li>Navigate through the level by jumping on platforms and over gaps.</li>
+                                <li>Avoid obstacles and enemies (if any). Touching them might make you lose a life.</li>
+                                <li>(Optional) Collect coins or items scattered throughout the level for extra points.</li>
+                                <li>Reach the designated goal or exit point to complete the level.</li>
+                                <li>You have a limited number of lives. The game ends if you lose all your lives.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic platformer gameplay: run, jump, and explore.</li>
+                                <li>Simple and intuitive controls for keyboard and touch.</li>
+                                <li>Pixel art style for a retro feel.</li>
+                                <li>(To be implemented) Multiple short levels with increasing challenges.</li>
+                                <li>Score and life tracking.</li>
+                                <li>(Optional) Collectible items and simple enemies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Pixel Jumper)</h2>
+                            <div class="accordion" id="faqAccordionPixelJumper">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqPJHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPJCollapseOne" aria-expanded="false" aria-controls="faqPJCollapseOne">
+                                            How do I make the character jump?
+                                        </button>
+                                    </h3>
+                                    <div id="faqPJCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqPJHeadingOne" data-bs-parent="#faqAccordionPixelJumper">
+                                        <div class="accordion-body">
+                                            Press the Up Arrow key or the Spacebar on your keyboard. If you're on a mobile device, use the dedicated "Jump" button on the screen.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqPJHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPJCollapseTwo" aria-expanded="false" aria-controls="faqPJCollapseTwo">
+                                            Are there enemies in this game?
+                                        </button>
+                                    </h3>
+                                    <div id="faqPJCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqPJHeadingTwo" data-bs-parent="#faqAccordionPixelJumper">
+                                        <div class="accordion-body">
+                                            This simple platformer will focus primarily on navigating platforms and avoiding static or simple moving obstacles. Complex enemies might not be a core feature of this initial version to keep it lightweight and fun.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqPJHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPJCollapseThree" aria-expanded="false" aria-controls="faqPJCollapseThree">
+                                            How many levels are there?
+                                        </button>
+                                    </h3>
+                                    <div id="faqPJCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqPJHeadingThree" data-bs-parent="#faqAccordionPixelJumper">
+                                        <div class="accordion-body">
+                                            Pixel Jumper Adventure is planned to have a few short, distinct levels. The focus is on providing a fun, completable experience rather than an extensive campaign.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">More Adventures</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="dot-gobbler-maze.html">Dot Gobbler Maze</a></li>
+                                <!-- Add other adventure/action games -->
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/pixel-jumper-adventure.js"></script>
+</body>
+</html>

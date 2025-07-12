@@ -1,0 +1,53 @@
+/* assets/css/game-specific/brickbuster-retro.css */
+
+#brickBusterCanvas {
+    border: 2px solid #333;
+    background-color: #1a1a2e; /* Dark space blue/purple background */
+    max-width: 100%;
+    /* aspect-ratio: will be set by canvas width/height attributes for this game */
+}
+
+.game-container .card-header.game-header {
+    background-color: #e91e63; /* Vibrant pink for BrickBuster theme */
+    color: white;
+    font-size: 1.1rem;
+}
+
+.brickbuster-message-screen {
+    /* Inherits from .game-message-overlay in games-style.css */
+    /* Add specific overrides if needed */
+}
+.brickbuster-message-screen h5 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+.start-game-screen button { /* For the initial start button */
+    /* General styles in games-style.css, specific if needed */
+}
+
+.game-controls-info { /* If specific controls info box is added in HTML */
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Example of how bricks might be styled if they were DOM elements (though they are canvas here) */
+.brick {
+    /* background-color: #ffc107; */ /* Default color, overridden by JS */
+    /* border: 1px solid #333; */
+}
+
+@media (max-width: 576px) {
+    #brickBusterCanvas {
+        /* Adjust canvas size for smaller screens if needed, though JS usually handles this */
+        /* Consider reducing fixed width/height set in HTML if they cause overflow */
+    }
+    .game-container .card-header.game-header {
+        font-size: 1rem;
+        flex-direction: column; /* Stack score/lives/level */
+    }
+    .game-container .card-header.game-header span {
+        margin-bottom: 0.25rem;
+    }
+}

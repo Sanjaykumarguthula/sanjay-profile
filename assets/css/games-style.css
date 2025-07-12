@@ -1,0 +1,229 @@
+/* assets/css/games-style.css */
+
+/* Styling for the main games.html banner */
+.games-banner .main_banner_content h1 {
+    font-size: 3.5rem; /* Larger H1 for game hub */
+    color: #fff;
+}
+.games-banner .main_banner_content h4 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+}
+.games-banner {
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Example vibrant gradient */
+    /* Or use an abstract background image:
+    background-image: url('../img/games-banner-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    */
+    padding: 100px 0; /* Adjust padding */
+}
+
+/* Main games listing section */
+.games-content h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.games-content p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Minimalist Game Card Styling */
+.game-card.minimalist-card {
+    border: none; /* Remove default card border if desired */
+    border-radius: 15px; /* Softer rounded corners */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden; /* Ensure pseudo-elements or gradients don't overflow */
+    display: flex; /* Ensure card body stretches */
+    flex-direction: column;
+}
+
+.game-card.minimalist-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.game-card.minimalist-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom if content is short */
+    padding: 1.75rem; /* More padding */
+}
+
+.game-card.minimalist-card .game-title {
+    font-family: 'Rajdhani', sans-serif; /* Emphasize title font */
+    font-size: 1.6rem; /* Larger title */
+    font-weight: 700;
+    margin-bottom: 0.75rem; /* Space below title */
+}
+/* Ensure title color contrasts with potentially custom card background from JS */
+.game-card.minimalist-card.text-white .game-title {
+    color: #fff !important;
+}
+.game-card.minimalist-card:not(.text-white) .game-title {
+    color: #333 !important; /* Default dark title */
+}
+
+
+.game-card.minimalist-card .game-short-description {
+    font-size: 0.9rem; /* Slightly smaller description */
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+/* Ensure description color contrasts */
+.game-card.minimalist-card.text-white .game-short-description {
+    color: rgba(255,255,255,0.85) !important;
+}
+.game-card.minimalist-card:not(.text-white) .game-short-description {
+    color: #555 !important;
+}
+
+
+.game-card.minimalist-card .game-category-tags .badge {
+    font-size: 0.7rem;
+    padding: 0.3em 0.6em;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+.game-card.minimalist-card .btn { /* Play Now button */
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px; /* Pill shape */
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.game-card.minimalist-card .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for cards if needed beyond Bootstrap's grid */
+@media (max-width: 576px) {
+    .game-card.minimalist-card .game-title {
+        font-size: 1.4rem;
+    }
+    .games-banner .main_banner_content h1 {
+        font-size: 2.5rem;
+    }
+     .games-banner .main_banner_content h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* General styles for individual game pages */
+.game-page .game-banner { /* Banner on individual game page */
+    padding: 60px 0; /* Less padding than main games hub banner */
+    background: #f4f4f4; /* Default light background for individual game banners */
+}
+.game-page .game-banner h1 {
+    font-size: 2.8rem;
+    color: #333;
+}
+.game-page .game-banner h4 {
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.game-area-section .game-container {
+    background-color: #fff;
+    border-radius: 8px;
+    /* padding: 15px; */ /* Padding is often better on card-body */
+}
+.game-area-section .game-container .card-header.game-header {
+    background-color: #e9ecef;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.25rem;
+}
+.game-area-section .game-container .card-body.game-body {
+    /* Styles for the main game canvas/interaction area wrapper */
+    /* Ensure it's centered or laid out as needed */
+}
+.game-area-section .game-container .card-footer.game-controls,
+.game-area-section .game-container .card-footer.game-controls-info {
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+
+.game-info-section {
+    /* Styles for "How to Play", "Features", "FAQs" sections */
+}
+.game-info-section h2 {
+    margin-top:0; /* Reset margin if needed */
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+.game-info-section ol, .game-info-section ul {
+    padding-left: 1.5rem;
+}
+.game-info-section .faq-section .accordion-button {
+    font-weight: 500;
+}
+
+/* Ensure all game canvases are responsive by default if not handled by JS width/height */
+canvas[id$="Canvas"] { /* Selects all canvas elements with ID ending in "Canvas" */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio, but JS usually sets fixed height */
+    display: block; /* Remove extra space below canvas */
+}
+
+/* Mobile control buttons for games */
+.btn-control {
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem; /* Make icons larger */
+    margin: 0.2rem !important; /* Ensure spacing */
+}
+.btn-control i {
+    vertical-align: middle;
+}
+
+/* General message overlay for games (start, game over) */
+.game-message-overlay, .start-game-screen, .tappy-message-screen, .start-tappy-screen,
+.pixel-jumper-message-screen, .start-pixel-jumper-screen, .connect4-message-screen,
+.minesweeper-message-overlay, .hangman-message-screen, .typing-test-results,
+.game-over-screen-2048 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    z-index: 10; /* Ensure it's above canvas */
+    border-radius: inherit; /* Inherit parent card's border radius */
+}
+.message-content { /* For specific styling of the text box within overlay */
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.start-game-screen, .start-tappy-screen, .start-pixel-jumper-screen { /* Lighter overlay for start screens */
+     background-color: rgba(255, 255, 255, 0.8);
+}
+.start-game-screen p, .start-tappy-screen p, .start-pixel-jumper-screen p {
+    color: #333;
+}
+.start-game-screen button, .start-tappy-screen button, .start-pixel-jumper-screen button {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+}
+/* Specific to 2048 overlay for better contrast with tiles */
+.game-over-screen-2048 .message-content {
+    background-color: rgba(238, 228, 218, 0.85); /* Light tile background from 2048 */
+    color: #776e65; /* Dark text from 2048 */
+}
+
+
+/* Minimalist footer adjustment if needed */
+/* .footer.pt100.pb100 { padding-top: 60px; padding-bottom: 60px; } */
+
+```

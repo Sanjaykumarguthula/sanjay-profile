@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Pong Classic - Free Online 2 Player Retro Arcade Game | Sanjay Guthula</title>
+    <meta name="description" content="Play the timeless classic Pong online for free! Challenge a friend in 2-player mode or test your skills against the AI. Retro arcade fun.">
+    <meta name="keywords" content="pong game, classic pong, online pong, free pong game, 2 player games, retro games, arcade games, html5 games">
+
+    <meta property="og:title" content="Pong Classic - Free Online 2 Player Retro Arcade Game | Sanjay Guthula">
+    <meta property="og:description" content="Play the timeless classic Pong online for free! Challenge a friend in 2-player mode or test your skills against the AI. Retro arcade fun.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjayguthula.com/games/pong-classic.html"> <!-- Replace with actual URL -->
+    <!-- <meta property="og:image" content="https://sanjayguthula.com/assets/img/games/pong-og-image.png"> --> <!-- OG Image for Pong -->
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/line-awesome.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Game-specific styles -->
+    <link rel="stylesheet" href="../assets/css/game-specific/pong-classic.css">
+</head>
+<body class="game-page">
+
+    <div class="preloader"><span class="loader"></span></div>
+
+    <div id="navigation" class="navbar-light bg-faded site-navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-20 align-self-center">
+                    <div class="site-logo"><a href="../index.html"><img src="../assets/img/new-logo.png" alt="Sanjay Guthula Logo"></a></div>
+                </div>
+                <div class="col-60 d-flex justify-content-center">
+                    <nav id="main-menu">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../tools.html">Free Tools</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li class="current"><a href="../games.html">Games</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-20 d-none d-xl-block text-end align-self-center"><a href="../contact.html" class="border-btn">Get in Touch</a></div>
+                 <ul class="mobile_menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../tools.html">Free Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-banner tool-specific-banner game-banner">
+        <div class="container text-center">
+            <h1>Play Pong Classic - Free Online Retro Arcade Game</h1>
+            <h4>The original paddle and ball game. Simple, addictive, timeless.</h4>
+        </div>
+    </section>
+
+    <section class="game-area-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="game-container card shadow-sm text-center">
+                        <div class="card-header game-header">
+                            <span class="player-score">Player 1: <span id="player1Score">0</span></span>
+                            <span class="player-score ms-4">Player 2 (AI): <span id="player2Score">0</span></span>
+                        </div>
+                        <div class="card-body game-body p-1 p-sm-3">
+                            <canvas id="pongGameCanvas" width="600" height="400" class="mx-auto d-block border"></canvas>
+                            <div id="pongMessageScreen" class="pong-message-screen" style="display:block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                <h5 id="pongMessageText">Select Mode</h5>
+                                <button id="onePlayerBtn" class="btn btn-primary m-2">1 Player (vs AI)</button>
+                                <button id="twoPlayerBtn" class="btn btn-secondary m-2">2 Players</button>
+                                <button id="restartPongBtn" class="btn btn-info m-2" style="display:none;">Play Again</button>
+                            </div>
+                        </div>
+                         <div class="card-footer game-controls-info small">
+                           <p class="mb-1"><strong>1 Player:</strong> P1: W (Up), S (Down). AI is P2.</p>
+                           <p class="mb-0"><strong>2 Players:</strong> P1: W (Up), S (Down). P2: Up Arrow (Up), Down Arrow (Down).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-info-section section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How to Play Pong</h2>
+                            <ol>
+                                <li>Select a game mode: "1 Player (vs AI)" or "2 Players".</li>
+                                <li>The game will start automatically after selecting the mode.</li>
+                                <li><strong>For Player 1 (Left Paddle):</strong> Use the 'W' key to move your paddle up and the 'S' key to move it down.</li>
+                                <li><strong>For Player 2 (Right Paddle, in 2 Player mode):</strong> Use the 'Up Arrow' key to move the paddle up and the 'Down Arrow' key to move it down. In 1 Player mode, the AI controls the right paddle.</li>
+                                <li>The objective is to hit the ball with your paddle and make your opponent miss.</li>
+                                <li>If your opponent misses the ball, you score a point.</li>
+                                <li>The first player to reach a certain score (e.g., 10 points) wins the game, or play continues.</li>
+                            </ol>
+
+                            <h2 class="mt-4">Game Features</h2>
+                            <ul>
+                                <li>Classic Pong gameplay, one of the earliest arcade video games.</li>
+                                <li>Single-player mode against a simple AI opponent.</li>
+                                <li>Two-player local mode for challenging a friend.</li>
+                                <li>Simple, intuitive controls.</li>
+                                <li>Real-time score tracking.</li>
+                                <li>Clean, retro-inspired visuals.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="faq-section card mt-4 mt-lg-0">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Frequently Asked Questions (Pong)</h2>
+                            <div class="accordion" id="faqAccordionPong">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqPongHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPongCollapseOne" aria-expanded="false" aria-controls="faqPongCollapseOne">
+                                            How do I control my paddle?
+                                        </button>
+                                    </h3>
+                                    <div id="faqPongCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqPongHeadingOne" data-bs-parent="#faqAccordionPong">
+                                        <div class="accordion-body">
+                                            If you are Player 1 (left paddle), use the 'W' key for up and 'S' key for down. If you are Player 2 (right paddle in a 2-player game), use the Up Arrow for up and Down Arrow for down.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqPongHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPongCollapseTwo" aria-expanded="false" aria-controls="faqPongCollapseTwo">
+                                            Can I play Pong with a friend?
+                                        </button>
+                                    </h3>
+                                    <div id="faqPongCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqPongHeadingTwo" data-bs-parent="#faqAccordionPong">
+                                        <div class="accordion-body">
+                                            Yes! Select the "2 Players" mode from the start screen. One player will use W/S keys and the other will use Up/Down arrow keys on the same keyboard.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="faqPongHeadingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPongCollapseThree" aria-expanded="false" aria-controls="faqPongCollapseThree">
+                                            How does the AI work in single-player mode?
+                                        </button>
+                                    </h3>
+                                    <div id="faqPongCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqPongHeadingThree" data-bs-parent="#faqAccordionPong">
+                                        <div class="accordion-body">
+                                            The AI in single-player mode is designed to be a fair opponent. It tries to follow the ball's vertical position but isn't perfect, giving you a chance to score!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="sidebar card mt-4">
+                        <div class="card-body">
+                            <h3 class="h5">More Retro Fun</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="snake.html">Snake Classic</a></li>
+                                <li><a href="brickbuster-retro.html">BrickBuster Retro</a></li>
+                                <li><a href="../games.html">View All Games</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt100 pb100">
+        <div class="container">
+            <div class="footer-bottom wow fadeIn">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-12 align-self-center text-start">
+                        <p class="copyright_text">Copyright © 2024 Sanjay Guthula. All rights reserved.</p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-12 text-end">
+                        <div class="foot_menu">
+                            <ul>
+                                <li><a href="../tools.html">Free Tools</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-simple-mobilemenu.js"></script>
+    <script src="../assets/js/wow.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/game-specific/pong-classic.js"></script>
+</body>
+</html>

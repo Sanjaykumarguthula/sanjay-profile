@@ -1,0 +1,57 @@
+/* assets/css/game-specific/pong-classic.css */
+
+#pongGameCanvas {
+    border: 2px solid #ccc;
+    background-color: #212529; /* Dark background for Pong */
+    max-width: 100%;
+    /* aspect-ratio: 3 / 2; */ /* Typical Pong ratio, if height set by JS based on this */
+}
+
+.game-container .card-header.game-header {
+    background-color: #495057; /* Dark grey header */
+    color: white;
+    font-size: 1.1rem;
+}
+.player-score {
+    font-weight: bold;
+}
+
+.pong-message-screen {
+    /* Styles for the message overlay (start/game over) */
+    /* General styles are in games-style.css, add specifics here if needed */
+}
+.pong-message-screen h5 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.game-controls-info {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    #pongGameCanvas {
+        height: 300px; /* Fixed height on smaller screens, width 100% */
+    }
+}
+@media (max-width: 576px) {
+    .game-container .card-header.game-header {
+        font-size: 1rem;
+        flex-direction: column; /* Stack scores on small screens */
+    }
+    .player-score {
+        margin-bottom: 0.25rem;
+    }
+    .pong-message-screen h5 {
+        font-size: 1.5rem;
+    }
+    .pong-message-screen button {
+        font-size: 0.9rem;
+        margin: 0.25rem !important;
+    }
+     #pongGameCanvas {
+        height: 250px;
+    }
+}

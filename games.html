@@ -6,8 +6,18 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- SITE TITLE -->
-		<title>Games - Coming Soon - Sanjay Guthula</title>
+		<!-- SITE TITLE & SEO -->
+		<title>Free Online Games - Play 15 Addictive Browser Games | Sanjay Guthula</title>
+		<meta name="description" content="Explore our collection of 15 free-to-play online games. Enjoy classic puzzles, arcade challenges, and strategy games directly in your browser. No downloads needed!">
+		<meta name="keywords" content="free games, online games, browser games, html5 games, arcade games, puzzle games, strategy games, classic games">
+
+		<meta property="og:title" content="Free Online Games - Play 15 Addictive Browser Games | Sanjay Guthula">
+		<meta property="og:description" content="Explore our collection of 15 free-to-play online games. Enjoy classic puzzles, arcade challenges, and strategy games directly in your browser. No downloads needed!">
+		<meta property="og:type" content="website">
+		<!-- <meta property="og:url" content="[Full URL to games.html]"> -->
+		<!-- <meta property="og:image" content="assets/img/og-games-main.png"> --> <!-- Generic OG image for games page -->
+
+
 		<!-- Latest Bootstrap min CSS -->
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<!-- Google Font -->
@@ -36,15 +46,8 @@
 		<link rel="stylesheet" href="assets/css/slick-theme.css">
 		<!-- Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
-		<style>
-			.page-content-simple {
-				min-height: calc(100vh - 300px); /* Adjust 300px based on header/footer height */
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-			}
-		</style>
+		<!-- Games Page Specific CSS -->
+		<link rel="stylesheet" href="assets/css/games-style.css">
 	</head>
 
     <body data-spy="scroll" data-offset="80">
@@ -93,24 +96,66 @@
 		</div>
 		<!-- END NAVBAR -->
 
-		<!-- START Main Content Area -->
-		<section class="page-content-simple section-padding">
+		<!-- START Main Banner -->
+		<section class="main-banner games-banner"> <!-- Added .games-banner for specific styling -->
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
-						<h1 class="display-3 wow fadeInDown">Coming Soon!</h1>
-						<p class="lead wow fadeInUp" data-wow-delay="0.2s">Exciting games are on the way. Please check back later!</p>
-						<a href="index.html" class="yellow_btn wow fadeInUp mt-4" data-wow-delay="0.4s">Go to Homepage</a>
+					<div class="col-xl-10 mx-auto align-self-center wow fadeIn text-center"> <!-- Centered and wider -->
+						<div class="main_banner_content">
+							<h1>Play Free Online Games</h1>
+							<h4>Dive into 15 exciting browser games. Classics, puzzles, and more await!</h4>
+							<div class="ba_shape" style="display:none;"> <!-- Hiding default shape for games page -->
+								<svg fill="none" viewBox="0 0 16 141"><path fill="#fff" d="M10.387 11.014l4.886-9.945L3.727.939l4.66 10.053 2 .022zm-3.17 129.69a1 1 0 001.414.016l6.436-6.292a1 1 0 10-1.399-1.43l-5.72 5.592-5.592-5.72a1 1 0 00-1.43 1.398l6.291 6.436zM8.4 9.992L6.932 139.993l2 .023 1.466-130.002-2-.022z"/></svg>
+							</div>
+						</div>
+					</div><!-- End Col -->
+				</div>
+			</div>
+			<!-- Optional: Add game-specific banner background or elements via CSS -->
+		</section>
+		<!-- END Main Banner -->
+
+		<!-- START Games Content -->
+		<section class="games-content section-padding">
+			<div class="container">
+				<!-- Optional: Search Bar -->
+				<!--
+				<div class="row mb-4">
+					<div class="col-md-8 offset-md-2">
+						<div class="input-group">
+							<input type="text" id="gameSearchInput" class="form-control" placeholder="Search for games by name or category...">
+							<button class="btn btn-outline-secondary" type="button" id="clearGameSearchBtn">Clear</button>
+						</div>
+					</div>
+				</div>
+				-->
+
+				<div class="row mb-4">
+					<div class="col-12 text-center">
+						<h2>Our Game Collection</h2>
+						<p>Click on any game to start playing instantly in your browser!</p>
+					</div>
+				</div>
+
+				<!-- Game Cards Grid -->
+				<div id="gameCardsContainer" class="row">
+					<!-- Game cards will be dynamically inserted here by assets/js/games-page.js -->
+					<div class="col-12 text-center p-5">
+						<div class="spinner-border text-primary" role="status">
+							<span class="visually-hidden">Loading Games...</span>
+						</div>
+						<p class="mt-2">Loading Games...</p>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- END Main Content Area -->
+		<!-- END Games Content -->
+
 
 		<!-- START FOOTER -->
-		<footer class="footer" style="padding-top: 80px;"> <!-- Reduced top padding as there's no CTA -->
+		<footer class="footer pt100 pb100"> <!-- Adjusted padding -->
 			<div class="container">
-				<div class="footer-top">
+				<div class="footer-top" style="display:none;"> <!-- Hiding default footer top for this page for cleaner look -->
 					<div class="row">
 						<div class="col-xl-4 col-lg-4 col-md-6 col-12 wow fadeIn">
 							<div class="footer-widget">
@@ -142,7 +187,6 @@
 								</div>
 							</div>
 						</div><!--- END COL -->
-
 					</div>
 				</div>
 
@@ -172,37 +216,37 @@
 		<!-- Latest jQuery -->
 		<script src="assets/js/jquery.min.js" ></script>
 		<!-- Latest compiled and minified Bootstrap -->
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Using bundle for Popper if needed by BS components -->
 		<!-- jquery-simple-mobilemenu.min -->
 		<script src="assets/js/jquery-simple-mobilemenu.js"></script>
 		<!-- imagesloaded.pkgd -->
 		<script src="assets/js/imagesloaded.pkgd.min.js"></script>
 		<!-- masonry -->
-		<script src="assets/js/masonry.pkgd.min.js" ></script>
+		<!-- <script src="assets/js/masonry.pkgd.min.js" ></script> --> <!-- Masonry might not be needed for simple grid -->
 		<!-- modernizer JS -->
 		<script src="assets/js/modernizr-2.8.3.min.js"></script>
 		<!-- owl-carousel min js  -->
-		<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+		<!-- <script src="assets/owlcarousel/js/owl.carousel.min.js"></script> --> <!-- Owl Carousel not used here -->
 		<!-- waypoints -->
 		<script src="assets/js/waypoints.min.js"></script>
 		<!-- counterup -->
 		<script src="assets/js/jquery.counterup.min.js"></script>
 		<!-- magnific-popup js -->
-		<script src="assets/js/jquery.magnific-popup.js"></script>
+		<!-- <script src="assets/js/jquery.magnific-popup.js"></script> -->
 		<!-- YouTubePopUp js -->
-		<script src="assets/js/YouTubePopUp.jquery.js"></script>
+		<!-- <script src="assets/js/YouTubePopUp.jquery.js"></script> -->
 		<!-- yvpopup-active js -->
-		<script src="assets/js/yvpopup-active.js"></script>
+		<!-- <script src="assets/js/yvpopup-active.js"></script> -->
 		<!-- Wow js -->
 		<script src="assets/js/wow.js"></script>
 		<!-- scrolltopcontrol js -->
 		<script src="assets/js/scrolltopcontrol.js"></script>
 		<!-- slick js -->
-		<script src="assets/js/slick.js"></script>
+		<!-- <script src="assets/js/slick.js"></script> -->
 		<!-- scripts js -->
 		<script src="assets/js/scripts.js"></script>
-		<!-- Tools Page Specific JS (might not be needed here, but harmless) -->
-		<script src="assets/js/tools-page.js"></script>
+		<!-- Games Page Specific JS -->
+		<script src="assets/js/games-page.js"></script>
 
     </body>
 </html>
