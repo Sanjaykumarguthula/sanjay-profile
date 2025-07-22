@@ -4,49 +4,286 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
-  <loc>https://sanjaykumar.pro/</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://sanjaykumar.pro/tools</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sanjaykumar.pro/blog</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sanjaykumar.pro/games</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sanjaykumar.pro/contact</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sanjaykumar.pro/blog-ai-image-generators-2025</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sanjaykumar.pro/blog-ai-voice-generators-2025</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sanjaykumar.pro/index.html</loc>
-  <lastmod>2025-07-14T02:17:54+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://sanjayguthula.com/blog-heading-structure-seo.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
 </url>
 
+<url>
+  <loc>https://sanjayguthula.com/blog-utm-guide-2025.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
 
+<url>
+  <loc>https://sanjayguthula.com/coming-soon.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/blog.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/contact.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/blog-ai-voice-generators-2025.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/blog-details.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/blog-serp-snippet-guide.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/blog-ai-image-generators-2025.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/blog-keyword-density-guide.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/blog-sitemap-robots-guide.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/typing-ace-test.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/minesweeper-classic.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/dot-gobbler-maze.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/tap-the-target-game.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/tappy-plane-flyer.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/pong-classic.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/wordguesser-challenge.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/coin-clicker-tycoon.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/four-in-a-row-connect.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/blockfall-challenge.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/snake.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/memory-match-cards.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/pixel-jumper-adventure.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/brickbuster-retro.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/games/numbermerge-challenge.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/qr-code-generator.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/image-compressor.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/color-palette-generator.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/email-subject-line-tester.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/ad-copy-previewer.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/seo-meta-tag-checker.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/html-heading-checker.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/seo-file-generator.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/base64-encoder-decoder.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/password-generator.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/keyword-density-checker.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/markdown-previewer.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/url-encoder-decoder.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/json-validator-formatter.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/text-case-converter.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/serp-snippet-preview.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/word-counter.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://sanjayguthula.com/tools/utm-campaign-url-builder.html</loc>
+  <lastmod>2025-07-22T09:11:56+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
 </urlset>
