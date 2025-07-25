@@ -20,3 +20,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 # ...then internally serve the .html file.
 RewriteRule ^(.*)$ $1.html [L]
+
+# ----------------------------------------------------------------------
+# Rule 3: Redirect specific tool and game URLs
+# ----------------------------------------------------------------------
+RewriteRule ^tools/utm-campaign-url-builder$ /utm-campaign-url-builder [R=301,L]
+RewriteRule ^games/blockfall-challenge$ /blockfall-challenge [R=301,L]
