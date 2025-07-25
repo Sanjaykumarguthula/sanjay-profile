@@ -10,7 +10,7 @@
     color: #e0e0e0;
 }
 .games-banner {
-    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Example vibrant gradient */
+    background: #1C3F39; /* Example vibrant gradient */
     /* Or use an abstract background image:
     background-image: url('../img/games-banner-bg.jpg');
     background-size: cover;
@@ -32,7 +32,7 @@
 
 /* Minimalist Game Card Styling */
 .game-card.minimalist-card {
-    border: none; /* Remove default card border if desired */
+    border: 1px solid #d9d9d9; /* Remove default card border if desired */
     border-radius: 15px; /* Softer rounded corners */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     overflow: hidden; /* Ensure pseudo-elements or gradients don't overflow */
@@ -43,6 +43,7 @@
 .game-card.minimalist-card:hover {
     transform: translateY(-10px) scale(1.02); /* Lift effect */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+    border-color: #1C3F39;
 }
 
 .game-card.minimalist-card .card-body {
@@ -93,9 +94,13 @@
     padding: 0.6rem 1.5rem;
     border-radius: 50px; /* Pill shape */
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    background-color: #1C3F39;
+    color: #fff;
 }
 .game-card.minimalist-card .btn:hover {
     transform: scale(1.05);
+    background-color: #C9F31D;
+    color: #1C3F39;
 }
 
 /* Responsive adjustments for cards if needed beyond Bootstrap's grid */

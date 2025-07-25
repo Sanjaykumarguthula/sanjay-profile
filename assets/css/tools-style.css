@@ -10,7 +10,7 @@
     color: #e0e0e0;
 }
 .tools-banner {
-    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC); /* Example blue gradient */
+    background: #1C3F39;
     padding: 100px 0;
 }
 
@@ -27,7 +27,7 @@
 
 /* Minimalist Tool Card Styling (Shared with game cards, but scoped to .tool-card) */
 .tool-card.minimalist-card {
-    border: none;
+    border: 1px solid #d9d9d9;
     border-radius: 15px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     overflow: hidden;
@@ -38,6 +38,7 @@
 .tool-card.minimalist-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: #1C3F39;
 }
 
 .tool-card.minimalist-card .card-body {
@@ -77,9 +78,13 @@
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    background-color: #1C3F39;
+    color: #fff;
 }
 .tool-card.minimalist-card .btn:hover {
     transform: scale(1.05);
+    background-color: #C9F31D;
+    color: #1C3F39;
 }
 
 /* General styles for individual tool pages (can be enhanced in tool-specific CSS) */
