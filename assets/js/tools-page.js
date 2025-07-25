@@ -1,26 +1,26 @@
 const toolsData = [
     // New Digital Marketing & SEO Tools
-    { name: "UTM Campaign URL Builder", category: "Digital Marketing", description: "Create URLs with UTM parameters for campaign tracking.", url: "tools/utm-campaign-url-builder", cardStyle: { backgroundColor: "#17a2b8", textColor: "#FFFFFF" } },
-    { name: "Ad Copy Previewer", category: "Digital Marketing", description: "Preview Google & Facebook ad copy in real-time.", url: "tools/ad-copy-previewer", cardStyle: { backgroundColor: "#4285F4", textColor: "#FFFFFF" } },
-    { name: "Email Subject Line Tester", category: "Digital Marketing", description: "Analyze subject lines for open rates and spam triggers.", url: "tools/email-subject-line-tester", cardStyle: { backgroundColor: "#d63384", textColor: "#FFFFFF" } },
-    { name: "SERP Snippet Preview", category: "SEO", description: "Preview your page's title and description on Google.", url: "tools/serp-snippet-preview", cardStyle: { backgroundColor: "#34A853", textColor: "#FFFFFF" } },
-    { name: "HTML Heading Checker", category: "SEO", description: "Analyze H1-H6 heading structure of your page.", url: "tools/html-heading-checker", cardStyle: { backgroundColor: "#6f42c1", textColor: "#FFFFFF" } },
-    { name: "Keyword Density Checker", category: "SEO", description: "Analyze keyword frequency and density in your text.", url: "tools/keyword-density-checker", cardStyle: { backgroundColor: "#EA4335", textColor: "#FFFFFF" } },
-    { name: "SEO Meta Tag Checker", category: "SEO", description: "Analyzes a page's HTML meta tags for SEO.", url: "tools/seo-meta-tag-checker", cardStyle: { backgroundColor: "#198754", textColor: "#FFFFFF" } },
-    { name: "SEO File Generator", category: "SEO", description: "Generate robots.txt and sitemap.xml files.", url: "tools/seo-file-generator", cardStyle: { backgroundColor: "#7856d7", textColor: "#FFFFFF" } },
+    { name: "UTM Campaign URL Builder", category: "Digital Marketing", description: "Create URLs with UTM parameters for campaign tracking.", url: "utm-campaign-url-builder.html", cardStyle: { backgroundColor: "#17a2b8", textColor: "#FFFFFF" } },
+    { name: "Ad Copy Previewer", category: "Digital Marketing", description: "Preview Google & Facebook ad copy in real-time.", url: "ad-copy-previewer.html", cardStyle: { backgroundColor: "#4285F4", textColor: "#FFFFFF" } },
+    { name: "Email Subject Line Tester", category: "Digital Marketing", description: "Analyze subject lines for open rates and spam triggers.", url: "email-subject-line-tester.html", cardStyle: { backgroundColor: "#d63384", textColor: "#FFFFFF" } },
+    { name: "SERP Snippet Preview", category: "SEO", description: "Preview your page's title and description on Google.", url: "serp-snippet-preview.html", cardStyle: { backgroundColor: "#34A853", textColor: "#FFFFFF" } },
+    { name: "HTML Heading Checker", category: "SEO", description: "Analyze H1-H6 heading structure of your page.", url: "html-heading-checker.html", cardStyle: { backgroundColor: "#6f42c1", textColor: "#FFFFFF" } },
+    { name: "Keyword Density Checker", category: "SEO", description: "Analyze keyword frequency and density in your text.", url: "keyword-density-checker.html", cardStyle: { backgroundColor: "#EA4335", textColor: "#FFFFFF" } },
+    { name: "SEO Meta Tag Checker", category: "SEO", description: "Analyzes a page's HTML meta tags for SEO.", url: "seo-meta-tag-checker.html", cardStyle: { backgroundColor: "#198754", textColor: "#FFFFFF" } },
+    { name: "SEO File Generator", category: "SEO", description: "Generate robots.txt and sitemap.xml files.", url: "seo-file-generator.html", cardStyle: { backgroundColor: "#7856d7", textColor: "#FFFFFF" } },
 
     // Existing Tools
-    { name: "Word Counter", category: "Text Analysis", description: "Counts words and characters in text input.", url: "tools/word-counter", cardStyle: { backgroundColor: "#0d6efd", textColor: "#FFFFFF" } },
-    { name: "JSON Validator", category: "Developer Tools", description: "Validates and formats JSON input for developers.", url: "tools/json-validator-formatter", cardStyle: { backgroundColor: "#343a40", textColor: "#FFFFFF" } },
-    { name: "Image Compressor", category: "Web Optimization", description: "Compresses images client-side for web optimization.", url: "tools/image-compressor", cardStyle: { backgroundColor: "#fd7e14", textColor: "#FFFFFF" } },
-    { name: "Color Palette Generator", category: "Design", description: "Creates color schemes from a base color.", url: "tools/color-palette-generator", cardStyle: { backgroundColor: "#e83e8c", textColor: "#FFFFFF" } },
-    { name: "QR Code Generator", category: "Utilities", description: "Generates QR codes from URLs or text.", url: "tools/qr-code-generator", cardStyle: { backgroundColor: "#20c997", textColor: "#FFFFFF" } },
-    { name: "Text Case Converter", category: "Text Manipulation", description: "Converts text to upper, lower, or title case.", url: "tools/text-case-converter", cardStyle: { backgroundColor: "#6c757d", textColor: "#FFFFFF" } },
-    { name: "Password Generator", category: "Security", description: "Creates secure, random passwords for security.", url: "tools/password-generator", cardStyle: { backgroundColor: "#dc3545", textColor: "#FFFFFF" } },
-    { name: "URL Encoder/Decoder", category: "Developer Tools", description: "Encodes or decodes URLs and strings.", url: "tools/url-encoder-decoder", cardStyle: { backgroundColor: "#495057", textColor: "#FFFFFF" } },
-    { name: "Markdown Previewer", category: "Developer Tools", description: "Converts Markdown to HTML in real-time.", url: "tools/markdown-previewer", cardStyle: { backgroundColor: "#212529", textColor: "#FFFFFF" } },
-    { name: "Base64 Encoder/Decoder", category: "Developer Tools", description: "Encodes or decodes Base64 strings.", url: "tools/base64-encoder-decoder", cardStyle: { backgroundColor: "#0dcaf0", textColor: "#212529" } },
-    { name: "Sitemap Generator", category: "SEO", description: "Creates a basic XML sitemap from a list of URLs.", url: "tools/sitemap-generator", cardStyle: { backgroundColor: "#ffc107", textColor: "#212529" } }
+    { name: "Word Counter", category: "Text Analysis", description: "Counts words and characters in text input.", url: "word-counter.html", cardStyle: { backgroundColor: "#0d6efd", textColor: "#FFFFFF" } },
+    { name: "JSON Validator", category: "Developer Tools", description: "Validates and formats JSON input for developers.", url: "json-validator-formatter.html", cardStyle: { backgroundColor: "#343a40", textColor: "#FFFFFF" } },
+    { name: "Image Compressor", category: "Web Optimization", description: "Compresses images client-side for web optimization.", url: "image-compressor.html", cardStyle: { backgroundColor: "#fd7e14", textColor: "#FFFFFF" } },
+    { name: "Color Palette Generator", category: "Design", description: "Creates color schemes from a base color.", url: "color-palette-generator.html", cardStyle: { backgroundColor: "#e83e8c", textColor: "#FFFFFF" } },
+    { name: "QR Code Generator", category: "Utilities", description: "Generates QR codes from URLs or text.", url: "qr-code-generator.html", cardStyle: { backgroundColor: "#20c997", textColor: "#FFFFFF" } },
+    { name: "Text Case Converter", category: "Text Manipulation", description: "Converts text to upper, lower, or title case.", url: "text-case-converter.html", cardStyle: { backgroundColor: "#6c757d", textColor: "#FFFFFF" } },
+    { name: "Password Generator", category: "Security", description: "Creates secure, random passwords for security.", url: "password-generator.html", cardStyle: { backgroundColor: "#dc3545", textColor: "#FFFFFF" } },
+    { name: "URL Encoder/Decoder", category: "Developer Tools", description: "Encodes or decodes URLs and strings.", url: "url-encoder-decoder.html", cardStyle: { backgroundColor: "#495057", textColor: "#FFFFFF" } },
+    { name: "Markdown Previewer", category: "Developer Tools", description: "Converts Markdown to HTML in real-time.", url: "markdown-previewer.html", cardStyle: { backgroundColor: "#212529", textColor: "#FFFFFF" } },
+    { name: "Base64 Encoder/Decoder", category: "Developer Tools", description: "Encodes or decodes Base64 strings.", url: "base64-encoder-decoder.html", cardStyle: { backgroundColor: "#0dcaf0", textColor: "#212529" } },
+    { name: "Sitemap Generator", category: "SEO", description: "Creates a basic XML sitemap from a list of URLs.", url: "sitemap-generator.html", cardStyle: { backgroundColor: "#ffc107", textColor: "#212529" } }
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
