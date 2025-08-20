@@ -598,6 +598,7 @@ fieldset {
 	/* Not for flex items */
 	position: relative;
 	z-index: 11;
+	text-align: center;
 }
 
 .home-banner .social_link {
@@ -665,7 +666,8 @@ fieldset {
 	max-width: 650px;
 	/* Limit line length for readability on desktop */
 	/* If text is centered in mobile, ensure it's not here unless intended */
-	/* margin-left: 0; margin-right: 0; /* Resets mobile centering if it was applied directly */
+	margin-left: auto;
+	margin-right: auto;
 	/* On mobile, if it was centered, ensure it's reset for desktop if needed */
 	/* Example: text-align: left; margin-left: 0; */
 }
