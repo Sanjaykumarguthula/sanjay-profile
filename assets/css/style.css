@@ -3720,7 +3720,6 @@ li.comment {
 	}
 
 	.home_banner_content {
-		padding-left: 100px;
 	}
 
 	/* Responsive adjustments for home banner text and padding */
@@ -3736,7 +3735,6 @@ li.comment {
 		}
 
 		.home_banner_content {
-			padding-left: 40px;
 			/* Reduce padding for tablets */
 		}
 	}
