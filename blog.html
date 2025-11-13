@@ -450,34 +450,6 @@
 		<script src="assets/js/slick.js"></script>
 		<!-- scripts js -->
 		<script src="assets/js/scripts.js"></script>
-<script>
-        (function () {
-          function loadQuestLabsWidget() {
-            const script = document.createElement("script");
-            const div = document.createElement("div");
-            div.id = "quest-sdk-helphub";
-            document.body.appendChild(div);
-            script.src = "https://cdn.jsdelivr.net/npm/@questlabs/nocode-sdk@0.1.0/dist/index.min.js";
-            script.async = true;
-            script.onload = function () {
-              if (typeof window.mountHelpHub === 'function') {
-                window.mountHelpHub('quest-sdk-helphub', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnRpdHlJZCI6ImUtOTMzNzY0MDUtZTgzOC00Yjg1LTg3NGItMmI2MDNkNGI3OTgyIiwicXVlc3RJZCI6ImMtMWQzODJlYTQtZDMwYi00MTdiLThlNWYtOWQzNzMyNGY4ZTQwIiwiYXBpVHlwZSI6IlBST0RVQ1RJT04iLCJhcGlLZXkiOiJrLTBkMDg3YTA0LWY2MzEtNDFlMS04MGRkLWZkYzlhYjJhYmIwNyIsImlhdCI6MTc1NTg1NTMwMSwiZXhwIjoxOTEzNjQzMzAxfQ.jvoZ1cL1mon13qy4sko3cK9I5IrUYxXVxvnJlkt1pMY");
-              } else {
-                console.error("window.mountHelpHub is not a function");
-              }
-            };
-            script.onerror = function () {
-              console.error("Failed to load the PLG OS script.");
-            };
-            document.head.appendChild(script);
-          }
-          if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", loadQuestLabsWidget);
-          } else {
-            loadQuestLabsWidget();
-          }
-        })();
-      </script>
 		<script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '6912d888b7659900c327103a'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>
     </body>
 </html>
